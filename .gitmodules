@@ -1,0 +1,4 @@
+[submodule "schemas"]
+	path = schemas
+	url = git@github.com:STIXProject/schemas.git
+	branch = version_1.1.1
