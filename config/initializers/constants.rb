@@ -3,4 +3,5 @@ module SchemaProfiler
     USAGE_SUGGESTED = "Suggested"
     USAGE_OPTIONAL = "Optional"
     USAGE_PROHIBITED = "Prohibited"
+    USAGES = [USAGE_REQUIRED, USAGE_SUGGESTED, USAGE_OPTIONAL, USAGE_PROHIBITED]
 end

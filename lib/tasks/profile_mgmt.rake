@@ -15,7 +15,7 @@ namespace :profile_mgmt do
             process_xsd(profile_hash, file, 0, "CybOX - " + File.basename(file, ".xsd").gsub("_", " ").titleize)
         end
         object_hash = {}
-        profile_hash["CybOX Objects"] = object_hash
+        profile_hash["CybOX - Objects"] = object_hash
         for file in Dir.glob(Rails.root.join("schemas/cybox/objects/*.xsd"))
             title = File.basename(file, ".xsd").gsub("_", " ").titleize
             process_xsd(object_hash, file, 1, title)

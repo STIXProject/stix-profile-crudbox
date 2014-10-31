@@ -1,17 +1,116 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-xs-3 sidebar">
+        <div class="col-xs-2 sidebar">
           <ul class="nav nav-sidebar">
               <li role="presentation">
                   <h3 class="navbar-label">Groups</h3>
               </li>
               <% @baseline.each do |title, contents| %>
-                  <li role="presentation"><a href="#home"><%= title %></a></li>
+                  <li role="presentation"><a href="#" class="group-accessor" data-target="<%= title.gsub(" ", "_") %>"><%= title %></a></li>
               <% end %>
           </ul>
         </div>
-        <div class="col-xs-9 text-center">
-            <h1>Create Your Profile</h1>
+        <div class="col-xs-10 col-xs-offset-2">
+            <h1 class=" text-center">Create Profile</h1>
+            <p class="text-center">
+                Use the groups to <strong>the left</strong> to view groups of STIX and CybOX constructs. Edit the items within those groups to build your profile.
+                <br/>When you've finished, <button id="finalize-btn" class="btn btn-success btn-sm">finalize your profile!</button>
+            </p>
+            <hr/>
+            <% @baseline.each do |title, contents| %>
+                <div id="<%= title.gsub(" ", "_") %>" style="display: none;">
+                    <h2 class="text-info"><%= title %></h2>
+                    <% if contents.has_key?("constructs") %>
+                        <% contents['constructs'].each do |construct| %>
+                            <table class="table table-striped table-hover table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th colspan="3" class="text-danger">
+                                            <%= construct["name"] %>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Usage</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if construct.has_key?("attributes") %>
+                                        <% construct["attributes"].each do |attrb| %>
+                                            <% case attrb['use']
+                                                when SchemaProfiler::USAGE_PROHIBITED %><tr class="danger">
+                                                <% when SchemaProfiler::USAGE_OPTIONAL %><tr class="warning">
+                                                <% when SchemaProfiler::USAGE_SUGGESTED %><tr class="info">
+                                                <% when SchemaProfiler::USAGE_REQUIRED %><tr class="success">
+                                            <% end %>
+                                                <td>@<%= attrb['name'] %></td>
+                                                <td><%= attrb['type'] %></td>
+                                                <td>
+                                                    <select class="usage-selector">
+                                                        <option <%= "selected" if attrb['use'] == SchemaProfiler::USAGE_REQUIRED %> value="<%= SchemaProfiler::USAGE_REQUIRED %>"><%= SchemaProfiler::USAGE_REQUIRED %></option>
+                                                        <option <%= "selected" if attrb['use'] == SchemaProfiler::USAGE_SUGGESTED %> value="<%= SchemaProfiler::USAGE_SUGGESTED %>"><%= SchemaProfiler::USAGE_SUGGESTED %></option>
+                                                        <option <%= "selected" if attrb['use'] == SchemaProfiler::USAGE_OPTIONAL %> value="<%= SchemaProfiler::USAGE_OPTIONAL %>"><%= SchemaProfiler::USAGE_OPTIONAL %></option>
+                                                        <option <%= "selected" if attrb['use'] == SchemaProfiler::USAGE_PROHIBITED %> value="<%= SchemaProfiler::USAGE_PROHIBITED %>"><%= SchemaProfiler::USAGE_PROHIBITED %></option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                        <% end %>
+                                    <% end %>
+                                    <% if construct.has_key?("elements") %>
+                                        <% construct["elements"].each do |attrb| %>
+                                            <% case attrb['use']
+                                                when SchemaProfiler::USAGE_PROHIBITED %><tr class="danger">
+                                                <% when SchemaProfiler::USAGE_OPTIONAL %><tr class="warning">
+                                                <% when SchemaProfiler::USAGE_SUGGESTED %><tr class="info">
+                                                <% when SchemaProfiler::USAGE_REQUIRED %><tr class="success">
+                                            <% end %>
+                                                <td><%= attrb['name'] %></td>
+                                                <td><%= attrb['type'] %></td>
+                                                <td>
+                                                    <select class="usage-selector">
+                                                        <option <%= "selected" if attrb['use'] == SchemaProfiler::USAGE_REQUIRED %> value="<%= SchemaProfiler::USAGE_REQUIRED %>"><%= SchemaProfiler::USAGE_REQUIRED %></option>
+                                                        <option <%= "selected" if attrb['use'] == SchemaProfiler::USAGE_SUGGESTED %> value="<%= SchemaProfiler::USAGE_SUGGESTED %>"><%= SchemaProfiler::USAGE_SUGGESTED %></option>
+                                                        <option <%= "selected" if attrb['use'] == SchemaProfiler::USAGE_OPTIONAL %> value="<%= SchemaProfiler::USAGE_OPTIONAL %>"><%= SchemaProfiler::USAGE_OPTIONAL %></option>
+                                                        <option <%= "selected" if attrb['use'] == SchemaProfiler::USAGE_PROHIBITED %> value="<%= SchemaProfiler::USAGE_PROHIBITED %>"><%= SchemaProfiler::USAGE_PROHIBITED %></option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                        <% end %>
+                                    <% end %>
+                                </tbody>
+                            </table>
+                        <% end %>
+                    <% else # subgroups, so we need to put multiple%>
+                        iterate over subgroups
+                    <% end %>
+                </div>
+            <% end %>
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    var active = undefined;
+    var profile = JSON.parse('<%= @baseline.to_json.html_safe%>')
+    $(".group-accessor").click(function() {
+        if (active) {
+            active.hide();
+        }
+        active = $("#" + this.getAttribute("data-target"));
+        active.show();
+    });
+    $(".usage-selector").change(function(e) { // when a usage level is changed, update the row highlighting
+        var parent = $(this).parent().parent();
+        parent.removeClass();
+        if (this.value === "<%= SchemaProfiler::USAGE_REQUIRED %>") {
+            parent.addClass("success");
+        } else if (this.value === "<%= SchemaProfiler::USAGE_SUGGESTED %>") {
+            parent.addClass("info");
+        } else if (this.value === "<%= SchemaProfiler::USAGE_OPTIONAL %>") {
+            parent.addClass("warning");
+        } else {
+            parent.addClass("danger");
+        }
+    });
+</script>
