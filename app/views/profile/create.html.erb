@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-3 sidebar">
+          <ul class="nav nav-sidebar">
+              <li role="presentation">
+                  <h3 class="navbar-label">Groups</h3>
+              </li>
+              <% @baseline.each do |title, contents| %>
+                  <li role="presentation"><a href="#home"><%= title %></a></li>
+              <% end %>
+          </ul>
+        </div>
+        <div class="col-xs-9 text-center">
+            <h1>Create Your Profile</h1>
+        </div>
+    </div>
+</div>

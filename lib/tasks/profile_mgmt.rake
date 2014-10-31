@@ -6,60 +6,66 @@ namespace :profile_mgmt do
     desc "Update the baseline profile information"
     task :update_baseline do
 
-        base_prof = File.open(Rails.root.join("base_profile.yaml"), "w")
+        profile_hash = {}
         @schemas = Dir.glob(Rails.root.join("schemas/*.xsd"))
         for file in @schemas
-            process_xsd(base_prof, file, 0, "STIX - " + File.basename(file, ".xsd").gsub("_", " ").titleize)
+            process_xsd(profile_hash, file, 0, "STIX - " + File.basename(file, ".xsd").gsub("_", " ").titleize)
         end
-
         for file in Dir.glob(Rails.root.join("schemas/cybox/*.xsd"))
-            process_xsd(base_prof, file, 0, "CybOX - " + File.basename(file, ".xsd").gsub("_", " ").titleize)
+            process_xsd(profile_hash, file, 0, "CybOX - " + File.basename(file, ".xsd").gsub("_", " ").titleize)
         end
-
-        base_prof.write("CybOX Objects:\n")
+        object_hash = {}
+        profile_hash["CybOX Objects"] = object_hash
         for file in Dir.glob(Rails.root.join("schemas/cybox/objects/*.xsd"))
-            process_xsd(base_prof, file, 1, "CybOX - " + File.basename(file, ".xsd").gsub("_", " ").titleize)
+            title = File.basename(file, ".xsd").gsub("_", " ").titleize
+            process_xsd(object_hash, file, 1, title)
         end
+        base_prof = File.open(Rails.root.join("base_profile.yaml"), "w")
+        base_prof.write(YAML.dump(profile_hash))
         base_prof.close
     end
 
-    def process_xsd(base_prof, file, level, title)
-        output_item(base_prof, level, title)
+    def process_xsd(profile_hash, file, level, title)
+        xsd_hash = { }
+        constructs = []
         xsd = File.open(file)
         ndoc = Nokogiri::XML(xsd)
         for elem in ndoc.xpath("//xs:complexType")
-            output_item(base_prof, level + 1, "- " + elem['name'])
+            elem_hash = {"name" => elem['name'], "use" => SchemaProfiler::USAGE_PROHIBITED}
+            constructs.push(elem_hash)
             attrs = elem.xpath(".//xs:attribute")
-            if not attrs.to_a.empty?
-                output_item(base_prof, level + 2, "attributes")
-                for attrb in attrs
-                    output_child_item(base_prof, level + 3, attrb['name'], attrb['type'], attrb['ref'])
-                end
-            end
             fields = elem.xpath(".//xs:sequence//xs:element")
-            if not fields.to_a.empty?
-                output_item(base_prof, level + 2, "fields")
-                for attrb in fields
-                    output_child_item(base_prof, level + 3, attrb['name'], attrb['type'], attrb['ref'])
+            if not attrs.to_a.empty?
+                elem_hash["attributes"] = []
+                for attrb in attrs
+                    ref = attrb['ref']
+                    name = attrb['name']
+                    type = attrb['type']
+                    if ref
+                        elem_hash["attributes"].push({"name" => ref, "type" => ref, "use" => SchemaProfiler::USAGE_PROHIBITED})
+                    else
+                        elem_hash["attributes"].push({"name" => name, "type" => type, "use" => SchemaProfiler::USAGE_PROHIBITED})
+                    end
                 end
             end
+            if not fields.to_a.empty?
+                elem_hash["elements"] = []
+                for attrb in fields
+                    ref = attrb['ref']
+                    name = attrb['name']
+                    type = attrb['type']
+                    if ref
+                        elem_hash["elements"].push({"name" => ref, "type" => ref, "use" => SchemaProfiler::USAGE_PROHIBITED})
+                    else
+                        elem_hash["elements"].push({"name" => name, "type" => type, "use" => SchemaProfiler::USAGE_PROHIBITED})
+                    end
+                end
+            end
+        end
+        if not constructs.to_a.empty?
+            xsd_hash["constructs"] = constructs
         end
         xsd.close
-    end
-
-    def output_item(outfile, level, catname)
-        outfile.write("\t" * level + catname + ":\n")
-    end
-
-    def output_child_item(outfile, level, name, type, ref)
-        if ref
-            outfile.write("\t" * level + "- name:\t" + ref + "\n")
-            outfile.write("\t" * level + "  type:\t" + ref + "\n")
-            outfile.write("\t" * level + "  use:\t0\n\n")
-        else
-            outfile.write("\t" * level + "- name:\t" + (name.to_s == '' ? "UNKNOWN" : name) + "\n")
-            outfile.write("\t" * level + "  type:\t" + (type.to_s == '' ? "UNKNOWN" : type) + "\n")
-            outfile.write("\t" * level + "  use:\t0\n\n")
-        end
+        profile_hash[title] = xsd_hash
     end
 end
