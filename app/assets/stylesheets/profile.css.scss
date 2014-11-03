@@ -1,3 +1,14 @@
+$prof1-color: #258FD0;
+$prof2-color: #E2611F;
+
+.prof1 {
+    color: $prof1-color;
+}
+
+.prof2 {
+    color: $prof2-color;
+}
+
 .bg-icon {
     font-size: 3em;
     text-align: center;
@@ -47,4 +58,57 @@
         padding-bottom: 5px;
         margin-bottom: 10px;
     }
+}
+
+.profile-uploader {
+    height: 150px;
+}
+
+.key-indicator {
+    color: #555;
+}
+
+.breadcrumb > .key-indicator:last-child {
+    color: #C71B1B;
+}
+
+.centered-breadcrumb {
+    text-align: center;
+    margin-bottom: 5px !important;
+}
+
+.split-border {
+    border-left: 5px solid black;
+}
+
+.space-bottom {
+    padding-bottom: 20px;
+}
+
+.diff-item {
+    font-size: 1.1em;
+    .label {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.key-item {
+    .label {
+        padding: 3px 9px !important;
+        margin-right: 10px;
+    }
+
+    .mono {
+        font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+        font-size: .85em;
+    }
+}
+
+.border-right {
+    border-right: 1px solid #999;
+}
+
+.border-left {
+    border-left: 1px solid #999;
 }

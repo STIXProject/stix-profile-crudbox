@@ -5,14 +5,11 @@ STIX - Campaign:
       attributes:
         version:
           type: campaign:CampaignVersionType
-          use: Prohibited
+          use: Suggested
       elements:
         Title:
           type: xs:string
-          use: Prohibited
-        Description:
-          type: stixCommon:StructuredTextType
-          use: Prohibited
+          use: Required
         Short_Description:
           type: stixCommon:StructuredTextType
           use: Prohibited
@@ -9447,14 +9444,6 @@ CybOX - Objects:
           Not_After:
             type: cyboxCommon:DateTimeObjectPropertyType
             use: Prohibited
-      RSAPublicKeyType:
-        elements:
-          Modulus:
-            type: cyboxCommon:StringObjectPropertyType
-            use: Prohibited
-          Exponent:
-            type: cyboxCommon:IntegerObjectPropertyType
-            use: Prohibited
       X509V3ExtensionsType:
         elements:
           Basic_Constraints:
@@ -9499,14 +9488,11 @@ CybOX - Objects:
           Certificate_Policies:
             type: cyboxCommon:StringObjectPropertyType
             use: Prohibited
-          Policy_Mappings:
-            type: cyboxCommon:StringObjectPropertyType
-            use: Prohibited
       X509NonStandardExtensionsType:
         elements:
           Netscape_Comment:
             type: cyboxCommon:StringObjectPropertyType
-            use: Prohibited
+            use: Required
           Netscape_Certificate_Type:
             type: cyboxCommon:StringObjectPropertyType
             use: Prohibited

@@ -2,6 +2,91 @@
     <div class="row">
         <div class="col-xs-12 text-center">
             <h1>Compare Profiles</h1>
+            <p>Give CRUDbox two profiles, and it will tell you how those profiles differ! So useful.</p>
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <%= form_tag({action: :do_compare}, multipart: true, id: "compare-form") do %>
+            <div class="col-xs-3 col-xs-offset-2 text-center">
+                <h3>Profile #1</h3>
+                <div class="well profile-uploader">
+                    <div class="checkbox text-left">
+                        <label>
+                            <%= check_box_tag(:prof1_baseline) %> Use baseline profile
+                        </label>
+                    </div>
+                    <%= file_field_tag :prof1, class: "form-control", id: "prof1-file" %>
+                </div>
+            </div>
+            <div class="col-xs-3 col-xs-offset-2 text-center">
+                <h3>Profile #2</h3>
+                <div class=" profile-uploader well">
+                    <div class="checkbox text-left">
+                        <label>
+                            <%= check_box_tag :prof2_baseline %> Use baseline profile
+                        </label>
+                    </div>
+                    <%= file_field_tag :prof2, class: "form-control", id: "prof2-file" %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+    <div class="row text-center">
+        <div class="col-xs-4 col-xs-offset-4">
+            <div id="warning-alert" class="alert alert-warning alert-dismissible fade in" style="display: none;" role="alert">
+                <button type="button" class="close" data-dismiss="alert">
+                    <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                </button>
+                <strong>Whoops!</strong> You can't compare the baseline to itself. Provide at least one file!
+            </div>
+            <div id="error-alert" class="alert alert-danger alert-dismissible fade in" style="display: none;" role="alert">
+                <button type="button" class="close" data-dismiss="alert">
+                    <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                </button>
+                <strong>Error!</strong> You need to compare two profiles, or compare one profile to the baseline. Please fix your inputs and try again.
+            </div>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-xs-12">
+            <button id="submit-btn" class="btn btn-success"> Compare Profiles</button>
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    var file1 = undefined;
+    var file2 = undefined;
+    var cb1 = undefined;
+    var cb2 = undefined;
+    var warningAlert = undefined;
+    var errorAlert = undefined;
+    var form = undefined;
+
+    $(function() {
+        file1 = $("#prof1-file");
+        file2 = $("#prof2-file");
+        cb1 = $("#prof1_baseline");
+        cb2 = $("#prof2_baseline");
+        warningAlert = $("#warning-alert");
+        errorAlert = $("#error-alert");
+        form = $("#compare-form");
+    });
+
+    $("#submit-btn").click(function() {
+        errorAlert.hide();
+        warningAlert.hide();
+        var f1val = file1.val();
+        var f2val = file2.val();
+        f1cb = cb1.is(':checked');
+        f2cb = cb2.is(':checked');
+        if (f1cb && f2cb) {
+            warningAlert.show();
+        } else if ((f1val || f1cb) && (f2val || f2cb)) {
+            form.submit();
+        } else {
+            errorAlert.show();
+        }
+    });
+</script>

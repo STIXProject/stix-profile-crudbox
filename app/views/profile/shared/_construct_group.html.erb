@@ -1,8 +1,8 @@
-<table class="table table-striped table-hover table-condensed" data-idx="<%= index %>">
+<table class="table table-striped table-hover table-condensed" data-key="<%= key %>">
     <thead>
         <tr>
             <th colspan="3" class="text-danger">
-                <%= construct["name"] %>
+                <%= key %>
             </th>
         </tr>
         <tr>
@@ -12,15 +12,15 @@
     </thead>
         <% if construct.has_key?("attributes") %>
             <tbody data-key="attributes">
-                <% construct["attributes"].each_with_index do |attrb, attrb_idx| %>
+                <% construct["attributes"].each do |attr_key, attrb| %>
                     <% case attrb['use']
                         when SchemaProfiler::USAGE_PROHIBITED %><tr class="danger">
                         <% when SchemaProfiler::USAGE_OPTIONAL %><tr class="warning">
                         <% when SchemaProfiler::USAGE_SUGGESTED %><tr class="info">
                         <% when SchemaProfiler::USAGE_REQUIRED %><tr class="success">
                     <% end %>
-                        <td>@<%= attrb['name'] %><br/><code><%= attrb['type'] %></code></td>
-                        <td data-idx="<%= attrb_idx %>">
+                        <td>@<%= attr_key %><br/><code><%= attrb['type'] %></code></td>
+                        <td data-key="<%= attr_key %>">
                             <select class="usage-selector form-control" data-key="use">
                                 <option <%= "selected" if attrb['use'] == SchemaProfiler::USAGE_REQUIRED %> value="<%= SchemaProfiler::USAGE_REQUIRED %>"><%= SchemaProfiler::USAGE_REQUIRED %></option>
                                 <option <%= "selected" if attrb['use'] == SchemaProfiler::USAGE_SUGGESTED %> value="<%= SchemaProfiler::USAGE_SUGGESTED %>"><%= SchemaProfiler::USAGE_SUGGESTED %></option>
@@ -34,20 +34,20 @@
         <% end %>
         <% if construct.has_key?("elements") %>
             <tbody data-key="elements">
-                <% construct["elements"].each_with_index do |attrb, attrb_idx| %>
-                    <% case attrb['use']
+                <% construct["elements"].each do |elem_key, elem| %>
+                    <% case elem['use']
                         when SchemaProfiler::USAGE_PROHIBITED %><tr class="danger">
                         <% when SchemaProfiler::USAGE_OPTIONAL %><tr class="warning">
                         <% when SchemaProfiler::USAGE_SUGGESTED %><tr class="info">
                         <% when SchemaProfiler::USAGE_REQUIRED %><tr class="success">
                     <% end %>
-                        <td><%= attrb['name'] %><br/><code><%= attrb['type'] %></code></td>
-                        <td data-idx="<%= attrb_idx %>">
+                        <td><%= elem_key %><br/><code><%= elem['type'] %></code></td>
+                        <td data-key="<%= elem_key %>">
                             <select class="usage-selector form-control" data-key="use">
-                                <option <%= "selected" if attrb['use'] == SchemaProfiler::USAGE_REQUIRED %> value="<%= SchemaProfiler::USAGE_REQUIRED %>"><%= SchemaProfiler::USAGE_REQUIRED %></option>
-                                <option <%= "selected" if attrb['use'] == SchemaProfiler::USAGE_SUGGESTED %> value="<%= SchemaProfiler::USAGE_SUGGESTED %>"><%= SchemaProfiler::USAGE_SUGGESTED %></option>
-                                <option <%= "selected" if attrb['use'] == SchemaProfiler::USAGE_OPTIONAL %> value="<%= SchemaProfiler::USAGE_OPTIONAL %>"><%= SchemaProfiler::USAGE_OPTIONAL %></option>
-                                <option <%= "selected" if attrb['use'] == SchemaProfiler::USAGE_PROHIBITED %> value="<%= SchemaProfiler::USAGE_PROHIBITED %>"><%= SchemaProfiler::USAGE_PROHIBITED %></option>
+                                <option <%= "selected" if elem['use'] == SchemaProfiler::USAGE_REQUIRED %> value="<%= SchemaProfiler::USAGE_REQUIRED %>"><%= SchemaProfiler::USAGE_REQUIRED %></option>
+                                <option <%= "selected" if elem['use'] == SchemaProfiler::USAGE_SUGGESTED %> value="<%= SchemaProfiler::USAGE_SUGGESTED %>"><%= SchemaProfiler::USAGE_SUGGESTED %></option>
+                                <option <%= "selected" if elem['use'] == SchemaProfiler::USAGE_OPTIONAL %> value="<%= SchemaProfiler::USAGE_OPTIONAL %>"><%= SchemaProfiler::USAGE_OPTIONAL %></option>
+                                <option <%= "selected" if elem['use'] == SchemaProfiler::USAGE_PROHIBITED %> value="<%= SchemaProfiler::USAGE_PROHIBITED %>"><%= SchemaProfiler::USAGE_PROHIBITED %></option>
                             </select>
                         </td>
                     </tr>

@@ -1,0 +1,110 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <h1>Comparison Results</h1>
+            <p>Here's how the profiles stacked up!</p>
+            <hr />
+        </div>
+    </div>
+    <% if @prof1error or @prof2error or @differror %>
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-3 text-center">
+                <% if @prof1error %>
+                    <div class="alert alert-danger alert-dismissible fade in" role="alert">
+                        <button type="button" class="close" data-dismiss="alert">
+                            <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                        </button>
+                        <strong>Error!</strong> There was an error loading profile #1.
+                        <br/> You may not have supplied a valid STIX file in YAML format.
+                    </div>
+                <% end %>
+                <% if @prof2error %>
+                    <div class="alert alert-danger alert-dismissible fade in" role="alert">
+                        <button type="button" class="close" data-dismiss="alert">
+                            <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                        </button>
+                        <strong>Error!</strong> There was an error loading profile #2.
+                        <br/> You may not have supplied a valid STIX file in YAML format.
+                    </div>
+                <% end %>
+                <% if @differror %>
+                    <div class="alert alert-danger alert-dismissible fade in" role="alert">
+                        <button type="button" class="close" data-dismiss="alert">
+                            <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                        </button>
+                        <strong>Error!</strong> There was an error comparing the two profiles.
+                        <br/> You may not have supplied a valid STIX file in YAML format.
+                    </div>
+                <% end %>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-xs-12">
+                <%= link_to "Try Again", profile_compare_path(),
+                    { :class=>"btn btn-danger" }  %>
+            </div>
+        </div>
+    <% else %>
+        <div class="row text-center">
+            <div class="col-xs-8 col-xs-offset-2 key-item">
+                <div class="alert alert-info alert-dismissible fade in" role="alert">
+                    <button type="button" class="close" data-dismiss="alert">
+                        <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                    </button>
+                    <strong>Key:</strong>
+                    <br/>
+                    <span class="label label-danger">✘</span>
+                    <span class="mono">Item missing in the profile that is present in the other profile.</span>
+                    <br/>
+                    <span class="label label-success">✓</span>
+                    <span class="mono">Item present in the profile that is missing in the other profile.</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="row text-center">
+                    <h2 class="col-xs-6 prof1">Profile #1</h2>
+                    <h2 class="col-xs-6 prof2">Profile #2</h2>
+                </div>
+                <% @diff.each do |key, value| %>
+                    <div class="row">
+                        <ol class="breadcrumb centered-breadcrumb">
+                            <% key.split("::").each do |item| %>
+                                <li class="key-indicator"><%= item %></li>
+                            <% end %>
+                        </ol>
+                    </div>
+                    <div class="row text-center space-bottom">
+                        <div class="col-xs-6 border-right">
+                            <strong class="diff-item">
+                                <% if value["p1"] == "Missing" %>
+                                    <span class="label label-danger"> ✘ </span>
+                                <% elsif value["p1"] == "Present" %>
+                                    <span class="label label-success"> ✓ </span>
+                                <% else %>
+                                    <%= value["p1"] %>
+                                <% end %>
+                            </strong>
+                        </div>
+                        <div class="col-xs-6 border-left">
+                            <strong class="diff-item">
+                                <% if value["p2"] == "Missing" %>
+                                    <span class="label label-danger"> ✘ </span>
+                                <% elsif value["p2"] == "Present" %>
+                                    <span class="label label-success"> ✓ </span>
+                                <% else %>
+                                    <%= value["p2"] %>
+                                <% end %>
+                            </strong>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    <% end %>
+</div>
+
+<script type="text/javascript">
+
+</script>

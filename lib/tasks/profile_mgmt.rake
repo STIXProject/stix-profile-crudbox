@@ -27,37 +27,39 @@ namespace :profile_mgmt do
 
     def process_xsd(profile_hash, file, level, title)
         xsd_hash = { }
-        constructs = []
+        constructs = { }
         xsd = File.open(file)
         ndoc = Nokogiri::XML(xsd)
         for elem in ndoc.xpath("//xs:complexType")
-            elem_hash = {"name" => elem['name'], "use" => SchemaProfiler::USAGE_PROHIBITED}
-            constructs.push(elem_hash)
+            const_hash = {}
+            constructs[elem['name']] = const_hash
             attrs = elem.xpath(".//xs:attribute")
             fields = elem.xpath(".//xs:sequence//xs:element")
             if not attrs.to_a.empty?
-                elem_hash["attributes"] = []
+                attr_hash = {}
+                const_hash["attributes"] = attr_hash
                 for attrb in attrs
                     ref = attrb['ref']
                     name = attrb['name']
                     type = attrb['type']
                     if ref
-                        elem_hash["attributes"].push({"name" => ref, "type" => ref, "use" => SchemaProfiler::USAGE_PROHIBITED})
+                        attr_hash[ref] = {"type" => ref, "use" => SchemaProfiler::USAGE_PROHIBITED}
                     else
-                        elem_hash["attributes"].push({"name" => name, "type" => type, "use" => SchemaProfiler::USAGE_PROHIBITED})
+                        attr_hash[name] = {"type" => type, "use" => SchemaProfiler::USAGE_PROHIBITED}
                     end
                 end
             end
             if not fields.to_a.empty?
-                elem_hash["elements"] = []
+                elem_hash = {}
+                const_hash["elements"] = elem_hash
                 for attrb in fields
                     ref = attrb['ref']
                     name = attrb['name']
                     type = attrb['type']
                     if ref
-                        elem_hash["elements"].push({"name" => ref, "type" => ref, "use" => SchemaProfiler::USAGE_PROHIBITED})
+                        elem_hash[ref] = {"type" => ref, "use" => SchemaProfiler::USAGE_PROHIBITED}
                     else
-                        elem_hash["elements"].push({"name" => name, "type" => type, "use" => SchemaProfiler::USAGE_PROHIBITED})
+                        elem_hash[name] = {"type" => type, "use" => SchemaProfiler::USAGE_PROHIBITED}
                     end
                 end
             end
