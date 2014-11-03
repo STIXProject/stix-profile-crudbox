@@ -8,7 +8,7 @@
     </div>
     <div class="row">
         <%= form_tag({action: :do_compare}, multipart: true, id: "compare-form") do %>
-            <div class="col-xs-3 col-xs-offset-2 text-center">
+            <div class="col-xs-6 text-center">
                 <h3>Profile #1</h3>
                 <div class="well profile-uploader">
                     <div class="checkbox text-left">
@@ -19,7 +19,7 @@
                     <%= file_field_tag :prof1, class: "form-control", id: "prof1-file" %>
                 </div>
             </div>
-            <div class="col-xs-3 col-xs-offset-2 text-center">
+            <div class="col-xs-6 text-center">
                 <h3>Profile #2</h3>
                 <div class=" profile-uploader well">
                     <div class="checkbox text-left">
@@ -50,7 +50,7 @@
     </div>
     <div class="row text-center">
         <div class="col-xs-12">
-            <button id="submit-btn" class="btn btn-success"> Compare Profiles</button>
+            <button id="submit-btn" class="btn btn-success btn-block"> Compare Profiles</button>
         </div>
     </div>
 </div>
