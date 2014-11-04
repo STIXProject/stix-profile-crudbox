@@ -53,7 +53,11 @@ module ProfileHelper
 
     def excel_fields(sheet, fields)
         fields.each do |key, field|
-            sheet.add_row [key, "Type: ", field['use']]
+            if field.has_key?("type") and not field['type'].nil?
+                sheet.add_row [key, "Type: " + field["type"], field['use']]
+            else
+                sheet.add_row [key, "Type: <NONE>", field['use']]
+            end
         end
     end
 
