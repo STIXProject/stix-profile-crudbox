@@ -18,7 +18,7 @@
             </p>
             <hr/>
             <% profile_modifying.each do |title, contents| %>
-                <div id="<%= title.gsub(" ", "_") %>" style="display: none;" data-root-key="<%= title %>">
+                <div id="<%= title.gsub(' ', '_') %>" style="display: none;" data-root-key="<%= title %>">
                     <h2 class="text-info"><%= title %></h2>
                     <% if contents.has_key?("constructs") %>
                         <span data-key="constructs">
@@ -28,8 +28,13 @@
                         </span>
                     <% else # subgroups, so we need to put multiple  sections with items (used for CybOX Objects list) %>
                         <% contents.each do |subgroup_name, subgroup| %>
-                            <h4 class="text-warning"><%= subgroup_name %></h4>
-                            <span data-key="<%= subgroup_name %>">
+                            <h4 class="text-warning">
+                                <%= subgroup_name %>
+                                <small>
+                                    <button id="group-btn-<%= subgroup_name.gsub(' ', '_') %>" class="btn btn-info btn-xs collapse-group-btn" data-toggle="collapse" data-target="span[data-key='<%= subgroup_name %>']"><span class="glyphicon glyphicon-plus"></span></button>
+                                </small>
+                            </h4>
+                            <span class="group-section collapse" data-key="<%= subgroup_name %>">
                                 <span data-key="constructs">
                                     <% subgroup['constructs'].each do |key, construct| %>
                                         <%= render partial: "profile/shared/construct_group", locals: {construct: construct, key: key} %>
@@ -47,6 +52,14 @@
 <script type="text/javascript">
     var active = undefined;
     var profile = JSON.parse('<%= profile_modifying.to_json.html_safe %>')
+    $('.group-section').on('hide.bs.collapse show.bs.collapse', function () {
+        var btn = $("#group-btn-" + $(this).attr("data-key").replace(/ /g, "_"));
+        btn.toggleClass("btn-info");
+        btn.toggleClass("btn-warning");
+        var icon = btn.find(".glyphicon");
+        icon.toggleClass("glyphicon-plus");
+        icon.toggleClass("glyphicon-minus");
+    });
     function getKeySet(currNode) {
         var keyset = [];
         while (!currNode.attr("data-root-key")) {
