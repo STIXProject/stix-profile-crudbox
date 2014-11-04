@@ -10,24 +10,17 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-6 col-xs-offset-3">
-            <div class="dropdown">
-                <button class="btn btn-info dropdown-toggle btn-block btn-lg" type="button" id="groupDropdownButton" data-toggle="dropdown">
-                    Profile Groups <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" role="menu">
-                    <% profile_modifying.each do |title, contents| %>
-                        <li role="menuitem" tabindex="-1"><a href="#" class="group-accessor" data-target="<%= title.gsub(" ", "_") %>"><%= title %></a></li>
-                    <% end %>
-                </ul>
-            </div>
+        <div class="col-xs-12 col-sm-3 col-lg-2 button-group-vertical">
+            <h3 class="text-center">Profile Groups</h3>
+            <hr style="width: 70%;" />
+            <% profile_modifying.each do |title, contents| %>
+                <a href="#" class="group-accessor btn btn-sm btn-primary md-block" data-target="<%= title.gsub(" ", "_") %>"><%= title %></a>
+            <% end %>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-12 col-sm-9 col-lg-10">
             <% profile_modifying.each do |title, contents| %>
                 <div id="<%= title.gsub(' ', '_') %>" style="display: none;" data-root-key="<%= title %>">
-                    <h2 class="text-info"><%= title %></h2>
+                    <h2 class="text-info text-center"><%= title %></h2>
                     <% if contents.has_key?("constructs") %>
                         <span data-key="constructs">
                             <% contents['constructs'].each do |key, construct| %>
@@ -36,7 +29,7 @@
                         </span>
                     <% else # subgroups, so we need to put multiple  sections with items (used for CybOX Objects list) %>
                         <% contents.each do |subgroup_name, subgroup| %>
-                            <h4 class="text-warning">
+                            <h4 class="text-warning text-center">
                                 <%= subgroup_name %>
                                 <small>
                                     <button id="group-btn-<%= subgroup_name.gsub(' ', '_') %>" class="btn btn-info btn-xs collapse-group-btn" data-toggle="collapse" data-target="span[data-key='<%= subgroup_name %>']"><span class="glyphicon glyphicon-plus"></span></button>

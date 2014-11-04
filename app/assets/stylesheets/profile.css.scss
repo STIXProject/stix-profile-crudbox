@@ -116,3 +116,16 @@ $prof2-color: #E2611F;
 .type-name {
     font-size: 1.25em;
 }
+
+@media(min-width: 768px) {
+    .md-block {
+        width: 100%;
+    }
+}
+.md-block {
+    white-space: normal !important;
+}
+
+.md-block + .md-block {
+    margin-top: 2px;
+}
