@@ -23,9 +23,13 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-left">
-            <li><a href="/profile/create">New Profile</a></li>
-            <li><a href="/profile/start_edit">View / Edit Profile</a></li>
-            <li><a href="/profile/compare">Compare Profiles</a></li>
+            <li <%= current_page?(profile_create_path) ? "class=active" : ""%>><a href="/profile/create">New Profile</a></li>
+            <li <%= current_page?(profile_edit_path) || @editing ? "class=active" : ""%>>
+                <a href="/profile/start_edit">View / Edit Profile</a>
+            </li>
+            <li <%= current_page?(profile_compare_path) || @comparing ? "class=active" : ""%>>
+                <a href="/profile/compare">Compare Profiles</a>
+            </li>
           </ul>
         </div>
       </div>

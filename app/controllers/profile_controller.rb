@@ -49,7 +49,7 @@ class ProfileController < ApplicationController
                 raise e
             end
         end
-        puts @diff
+        @comparing = true
         render "compare_results"
     end
 
@@ -61,6 +61,7 @@ class ProfileController < ApplicationController
 
     def open_profile
         @profile = SafeYAML.load(request.POST['profile'].tempfile)
+        @editing = true
         render "edit"
     end
 
