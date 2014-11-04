@@ -1,22 +1,30 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-xs-2 sidebar">
-          <ul class="nav nav-sidebar">
-              <li role="presentation">
-                  <h3 class="navbar-label">Groups</h3>
-              </li>
-              <% profile_modifying.each do |title, contents| %>
-                  <li role="presentation"><a href="#" class="group-accessor" data-target="<%= title.gsub(" ", "_") %>"><%= title %></a></li>
-              <% end %>
-          </ul>
-        </div>
-        <div class="col-xs-10 col-xs-offset-2">
+        <div class="col-xs-12">
             <h1 class=" text-center"><%= page_title %></h1>
             <p class="text-center">
                 Use the groups to <strong>the left</strong> to view groups of STIX and CybOX constructs. Edit the items within those groups to build your profile.
-                <br/>When you've finished, <button id="finalize-btn" class="btn btn-success btn-sm">finalize your profile!</button>
+                <br/><br/>When you've finished, <button id="finalize-btn" class="btn btn-success btn-sm">finalize your profile!</button>
             </p>
             <hr/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-xs-offset-3">
+            <div class="dropdown">
+                <button class="btn btn-info dropdown-toggle btn-block btn-lg" type="button" id="groupDropdownButton" data-toggle="dropdown">
+                    Profile Groups <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <% profile_modifying.each do |title, contents| %>
+                        <li role="menuitem" tabindex="-1"><a href="#" class="group-accessor" data-target="<%= title.gsub(" ", "_") %>"><%= title %></a></li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
             <% profile_modifying.each do |title, contents| %>
                 <div id="<%= title.gsub(' ', '_') %>" style="display: none;" data-root-key="<%= title %>">
                     <h2 class="text-info"><%= title %></h2>
