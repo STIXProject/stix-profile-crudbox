@@ -13,6 +13,7 @@
     </thead>
         <% if construct.has_key?("attributes") %>
             <tbody data-key="attributes">
+                <tr class="active mono"><td colspan="3"><em><strong>Attributes</strong></em></td></tr>
                 <% construct["attributes"].each do |attr_key, attrb| %>
                     <% case attrb['use']
                         when SchemaProfiler::USAGE_PROHIBITED %><tr class="danger">
@@ -36,6 +37,7 @@
         <% end %>
         <% if construct.has_key?("elements") %>
             <tbody data-key="elements">
+                <tr class="active mono"><td colspan="3"><em><strong>Fields</strong></em></td></tr>
                 <% construct["elements"].each do |elem_key, elem| %>
                     <% case elem['use']
                         when SchemaProfiler::USAGE_PROHIBITED %><tr class="danger">

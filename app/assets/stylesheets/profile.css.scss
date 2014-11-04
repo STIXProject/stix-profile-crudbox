@@ -65,7 +65,7 @@ $prof2-color: #E2611F;
 }
 
 .key-indicator {
-    color: #555;
+    //color: #555;
 }
 
 .breadcrumb > .key-indicator:last-child {
@@ -98,11 +98,11 @@ $prof2-color: #E2611F;
         padding: 3px 9px !important;
         margin-right: 10px;
     }
+}
 
-    .mono {
-        font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
-        font-size: .85em;
-    }
+.mono {
+    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+    font-size: .85em;
 }
 
 .border-right {
@@ -128,4 +128,11 @@ $prof2-color: #E2611F;
 
 .md-block + .md-block {
     margin-top: 2px;
+}
+
+.collapse-group-btn {
+    padding: 1px 6px !important;
+    .glyphicon {
+        font-size: .8em;
+    }
 }
