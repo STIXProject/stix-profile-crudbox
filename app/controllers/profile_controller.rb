@@ -32,7 +32,7 @@ class ProfileController < ApplicationController
                 @prof2_name = "Base Profile"
             else
                 prof2 = SafeYAML.load(request.POST['prof2'].tempfile)
-                @prof2_name = request.POST['prof1'].original_filename
+                @prof2_name = request.POST['prof2'].original_filename
             end
         rescue Exception
             @prof2error = true
