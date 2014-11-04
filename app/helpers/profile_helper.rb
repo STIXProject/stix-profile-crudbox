@@ -1,4 +1,61 @@
+require "yaml"
+require "safe_yaml/load"
+
 module ProfileHelper
+
+    def profile_to_excel(pyaml)
+        p = Axlsx::Package.new
+        wb = p.workbook
+        pyaml.each do |key, value|
+            if key.length >= 31
+                smallkey = key[0...28] + "..."
+            else
+                smallkey = key
+            end
+            wb.add_worksheet(:name => smallkey) do |sheet|
+                sheet.add_row [key]
+                sheet.merge_cells("A1:G1")
+                if value["constructs"].nil?
+                    excel_cybox_objects(sheet, value)
+                else
+                    excel_constructs(sheet, value)
+                end
+            end
+        end
+        return p
+    end
+
+    def excel_cybox_objects(sheet, objects)
+        sheet.add_row ["GROUPS"]
+        objects.each do |key, object|
+            sheet.add_row ["", key]
+            excel_constructs(sheet, object)
+            sheet.add_row []
+        end
+    end
+
+    def excel_constructs(sheet, value)
+        sheet.add_row []
+        sheet.add_row []
+        value['constructs'].each do |key, construct|
+            sheet.add_row [key]
+            if construct['attributes']
+                sheet.add_row ["attributes"]
+                excel_fields(sheet, construct['attributes'])
+            end
+            if construct['elements']
+                sheet.add_row ["elements"]
+                excel_fields(sheet, construct['elements'])
+            end
+            sheet.add_row []
+        end
+    end
+
+    def excel_fields(sheet, fields)
+        fields.each do |key, field|
+            sheet.add_row [key, "Type: ", field['use']]
+        end
+    end
 
     def diff_profiles(prof1, prof2)
         @diff_forward = profile_diff(prof1, prof2)

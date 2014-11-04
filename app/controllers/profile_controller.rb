@@ -1,3 +1,4 @@
+require 'axlsx'
 require "yaml"
 require "safe_yaml/load"
 
@@ -77,6 +78,11 @@ class ProfileController < ApplicationController
 
     def download
         send_data(@@new_file, type: 'application/x-yaml', disposition: 'attachment', filename: 'new_profile.yaml')
+    end
+
+    def download_excel
+        theyaml = SafeYAML.load(@@new_file)
+        send_data(profile_to_excel(theyaml).to_stream.read, type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', disposition: 'attachment', filename: 'stix_profile.xlsx')
     end
 
     def created

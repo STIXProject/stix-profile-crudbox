@@ -4,7 +4,10 @@
             <h1 class=" text-center"><%= page_title %></h1>
             <p class="text-center">
                 Use the groups to <strong>the left</strong> to view groups of STIX and CybOX constructs. Edit the items within those groups to build your profile.
-                <br/><br/>When you've finished, <button id="finalize-btn" class="btn btn-success btn-sm">finalize your profile!</button>
+                <br/>When you've finished, finalize your profile!
+                <br/>
+                <button id="finalize-btn" class="btn btn-success btn-xs">Save</button>
+                <button id="excel-btn" class="btn btn-warning btn-xs">View as Excel</button>
             </p>
             <hr/>
         </div>
@@ -126,6 +129,22 @@
             window.location.href = "/profile/download"
         }).error(function() {
             alert("Error! Profile not created.");
+        });
+    });
+
+    $("#excel-btn").click(function() {
+        $.ajax({
+            url: '/profile/upload',
+            type: 'POST',
+            data: {
+                profile: JSON.stringify(profile),
+                action: "create"
+            },
+            dataType: 'text'
+        }).success(function() {
+            window.location.href = "/profile/download_excel"
+        }).error(function() {
+            alert("Error! Profile XLSX not created.");
         });
     });
 </script>

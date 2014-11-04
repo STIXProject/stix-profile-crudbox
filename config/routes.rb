@@ -11,4 +11,5 @@ Rails.application.routes.draw do
     post "/profile/upload", to: "profile#upload"
     get "/profile/created", to: "profile#created"
     get "/profile/download", to: "profile#download"
+    get "/profile/download_excel", to: "profile#download_excel"
 end
