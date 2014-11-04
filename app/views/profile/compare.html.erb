@@ -72,6 +72,26 @@
         warningAlert = $("#warning-alert");
         errorAlert = $("#error-alert");
         form = $("#compare-form");
+
+        cb1.click(function() {
+            if (this.checked) {
+                cb2.parent().hide();
+                file1.hide();
+            } else {
+                cb2.parent().show();
+                file1.show();
+            }
+        });
+
+        cb2.click(function() {
+            if (this.checked) {
+                cb1.parent().hide();
+                file2.hide();
+            } else {
+                cb1.parent().show();
+                file2.show();
+            }
+        });
     });
 
     $("#submit-btn").click(function() {
