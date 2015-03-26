@@ -5,20 +5,14 @@ require "safe_yaml/load"
 class ProfileController < ApplicationController
     include ProfileHelper
 
-    def index
-    end
-
     def create
-        @baseline = SafeYAML.load_file(Rails.root.join("base_profile.yaml"))
-    end
-
-    def compare
+        @baseline = SafeYAML.load_file(Rails.root.join("base_profile_1.1.1.yaml"))
     end
 
     def do_compare
         begin
             if request.POST['prof1_baseline']
-                prof1 = SafeYAML.load_file(Rails.root.join("base_profile.yaml"))
+                prof1 = SafeYAML.load_file(Rails.root.join("base_profile_1.1.1.yaml"))
                 @prof1_name = "Base Profile"
             elsif request.POST['prof1']
                 prof1 = SafeYAML.load(request.POST['prof1'].tempfile)
@@ -31,7 +25,7 @@ class ProfileController < ApplicationController
         end
         begin
             if request.POST['prof2_baseline']
-                prof2 = SafeYAML.load_file(Rails.root.join("base_profile.yaml"))
+                prof2 = SafeYAML.load_file(Rails.root.join("base_profile_1.1.1.yaml"))
                 @prof2_name = "Base Profile"
             elsif request.POST['prof2']
                 prof2 = SafeYAML.load(request.POST['prof2'].tempfile)
@@ -54,21 +48,12 @@ class ProfileController < ApplicationController
         render "compare_results"
     end
 
-    def view
-    end
-
-    def start_edit
-    end
-
     def open_profile
         @profile = SafeYAML.load(request.POST['profile'].tempfile)
         @editing = true
         render "edit"
     end
 
-    def edit
-
-    end
 
     def upload
         uploaded = JSON.parse(request.POST['profile'])
@@ -86,5 +71,20 @@ class ProfileController < ApplicationController
     end
 
     def created
+    end
+
+    def view
+    end
+
+    def start_edit
+    end
+
+    def edit
+    end
+
+    def index
+    end
+
+    def compare
     end
 end

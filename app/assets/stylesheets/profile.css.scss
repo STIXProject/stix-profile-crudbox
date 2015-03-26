@@ -1,6 +1,12 @@
 $prof1-color: #258FD0;
 $prof2-color: #E2611F;
 
+$must-color: #A1BDDB;
+$should-color: #dff0d8;
+$may-color: #fcf8e3;
+$should-not-color: #FF9157;
+$must-not-color: #f2dede;
+
 .prof1 {
     color: $prof1-color;
 }
@@ -135,4 +141,79 @@ $prof2-color: #E2611F;
     .glyphicon {
         font-size: .8em;
     }
+}
+
+tr.must > td {
+    background-color: rgba($must-color, .6);
+}
+
+tr.should > td {
+    background-color: $should-color;
+}
+
+tr.may > td {
+    background-color: $may-color;
+}
+
+tr.should-not > td {
+    background-color: rgba($should-not-color, .5);
+}
+
+tr.must-not > td {
+    background-color: $must-not-color;
+}
+
+
+.btn-must {
+    background-color: darken($must-color, 10%);
+    border-color: darken($must-color, 15%);
+    color: #eee;
+
+    &:hover {
+        color: #fff !important;
+    }
+}
+
+.btn-should {
+    background-color: darken($should-color, 30%);
+    border-color: darken($should-color, 35%);
+    color: #eee;
+
+    &:hover {
+        color: #fff !important;
+    }
+}
+
+.btn-may {
+    background-color: darken($may-color, 45%);
+    border-color: darken($may-color, 45%);
+    color: #efefef;
+
+    &:hover {
+        color: #fff !important;
+    }
+}
+
+.btn-should-not {
+    background-color: darken($should-not-color, 10%);
+    border-color: darken($should-not-color, 15%);
+    color: #eee;
+
+    &:hover {
+        color: #fff !important;
+    }
+}
+
+.btn-must-not {
+    background-color: darken($must-not-color, 30%);
+    border-color: darken($must-not-color, 35%);
+    color: #eee;
+
+    &:hover {
+        color: #fff !important;
+    }
+}
+
+.hidden-notice {
+    font-style: italic;
 }

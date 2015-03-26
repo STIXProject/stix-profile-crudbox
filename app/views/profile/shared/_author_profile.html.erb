@@ -3,9 +3,10 @@
         <div class="col-xs-12">
             <h1 class=" text-center"><%= page_title %></h1>
             <p class="text-center">
-                Use the groups to <strong>the left</strong> to view groups of STIX and CybOX constructs. Edit the items within those groups to build your profile.
+                Use the dropdowns <strong>below</strong> to view groups of STIX and CybOX constructs.
+                <br/>Edit the items within those groups to build your profile.
                 <br/>When you've finished, finalize your profile!
-                <br/>
+                <br/><br/>
                 <button id="finalize-btn" class="btn btn-success btn-xs">Save</button>
                 <button id="excel-btn" class="btn btn-warning btn-xs">View as Excel</button>
             </p>
@@ -13,39 +14,39 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-12 col-sm-3 col-lg-2 button-group-vertical" style="margin-bottom: 25px;">
-            <h3 class="text-center">Profile Groups</h3>
-            <hr style="width: 70%;" />
-            <% profile_modifying.each do |title, contents| %>
-                <a href="#" class="group-accessor btn btn-sm btn-primary md-block" data-target="<%= title.gsub(" ", "_") %>"><%= title %></a>
-            <% end %>
+        <div class="col-xs-6 col-md-3 col-md-offset-3 text-center">
+            <label for="stix-selector"><h4>STIX Groups</h4></label>
+            <select id="stix-selector" class="form-control group-accessor">
+                <option value="choose" selected disabled="disabled">Select a group...</option>
+                <% profile_modifying['groups'].select {|key, val| val['project'].downcase() == "stix"}.each do |group_name, group| %>
+                    <option value="<%= group_name %>" data-target="<%= group_name.gsub(" ", "_") %>">
+                        <%= group_name %>
+                    </option>
+                <% end %>
+            </select>
         </div>
-        <div class="col-xs-12 col-sm-9 col-lg-10">
-            <% profile_modifying.each do |title, contents| %>
-                <div id="<%= title.gsub(' ', '_') %>" style="display: none;" data-root-key="<%= title %>">
-                    <h2 class="text-info text-center" style="font-weight: 500;"><%= title %></h2>
-                    <% if contents.has_key?("constructs") %>
-                        <span data-key="constructs">
-                            <% contents['constructs'].each do |key, construct| %>
-                                <%= render partial: "profile/shared/construct_group", locals: {construct: construct, key: key} %>
-                            <% end %>
-                        </span>
-                    <% else # subgroups, so we need to put multiple  sections with items (used for CybOX Objects list) %>
-                        <% contents.each do |subgroup_name, subgroup| %>
-                            <h4 class="text-warning text-center">
-                                <%= subgroup_name %>
-                                <button id="group-btn-<%= subgroup_name.gsub(' ', '_') %>" class="btn btn-info btn-link collapse-group-btn" data-toggle="collapse" data-target="span[data-key='<%= subgroup_name %>']"><span class="glyphicon glyphicon-plus"></span> <span class="text-indicator">Show</span></button>
-                            </h4>
-                            <hr style="margin-top: 5px; margin-bottom: 5px;" />
-                            <span class="group-section collapse" data-key="<%= subgroup_name %>">
-                                <span data-key="constructs">
-                                    <% subgroup['constructs'].each do |key, construct| %>
-                                        <%= render partial: "profile/shared/construct_group", locals: {construct: construct, key: key} %>
-                                    <% end %>
-                                </span>
-                            </span>
+        <div class="col-xs-6 col-md-3 text-center">
+            <label for="cybox-selector"><h4>CybOX Groups</h4></label>
+            <select id="cybox-selector" class="form-control group-accessor">
+                <option value="choose" selected disabled="disabled">Select a group...</option>
+                <% profile_modifying['groups'].select {|key, val| val['project'].downcase() == "cybox"}.each do |group_name, group| %>
+                    <option value="<%= group_name %>" data-target="<%= group_name.gsub(" ", "_") %>">
+                        <%= group_name %>
+                    </option>
+                <% end %>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+            <% profile_modifying['groups'].each do |group_name, group_hash| %>
+                <div id="<%= group_name.gsub(' ', '_') %>" style="display: none;">
+                    <h2 class="text-info text-center" style="font-weight: 500;"><%= group_name %></h2>
+                    <span>
+                        <% group_hash['constructs'].each do |construct_name, construct_hash| %>
+                            <%= render partial: "profile/shared/construct_group", locals: {group_name: group_name, construct_name: construct_name, construct: construct_hash } %>
                         <% end %>
-                    <% end %>
+                    </span>
                 </div>
             <% end %>
         </div>
@@ -55,67 +56,89 @@
 <script type="text/javascript">
     var active = undefined;
     var profile = JSON.parse('<%= profile_modifying.to_json.html_safe %>')
-    $('.group-section').on('hide.bs.collapse show.bs.collapse', function () {
-        var btn = $("#group-btn-" + $(this).attr("data-key").replace(/ /g, "_"));
-        btn.toggleClass("btn-info");
-        btn.toggleClass("btn-warning");
-        var icon = btn.find(".glyphicon");
-        icon.toggleClass("glyphicon-plus");
-        icon.toggleClass("glyphicon-minus");
-        var textInd = btn.find(".text-indicator");
-        textInd.text(textInd.text() === "Show" ? "Hide" : "Show");
+
+    function setConstructUse(grpName, constrName, use) {
+        profile['groups'][grpName]['constructs'][constrName]['use'] = use;
+    }
+
+    function setAttributeUse(grpName, constrName, attrName, idx, use) {
+        var attr = profile['groups'][grpName]['constructs'][constrName]['attributes'][idx];
+        if (attr['name'] === attrName) {
+            attr['use'] = use;
+        } else {
+            console.log("Trying to update an attribute that isn't found!");
+        }
+    }
+
+    function setFieldUse(grpName, constrName, fieldName, idx, use) {
+        var field = profile['groups'][grpName]['constructs'][constrName]['fields'][idx];
+        if (field['name'] === fieldName) {
+            field['use'] = use;
+        } else {
+            console.log("Trying to update an field that isn't found!");
+        }
+    }
+
+    $(".construct-usage-changer").click(function(evt) {
+        evt.preventDefault();
+        var thisEl = $(this);
+        var newUse = thisEl.attr('data-usage');
+
+        var master = thisEl.parent().parent();
+        var constrName = master.attr('data-construct-name');
+        var button = $("#" + constrName + "-use-changer");
+        var buttonText = button.find(".use-info");
+
+        var currUse = master.attr('data-construct-use');
+        var groupName = master.attr('data-group-name');
+        var className = currUse.toLowerCase().replace(/ /g, "-");
+        buttonText.text(newUse);
+        master.attr('data-construct-use', newUse)
+        button.removeClass("btn-" + className);
+        button.addClass("btn-" + newUse.toLowerCase().replace(/ /g, "-"));
+
+        var table = $("#" + constrName.replace(/ /g, "-") + "-table");
+        var tableSects = table.find("thead, tbody");
+        var caption = table.find(".hidden-notice");
+        if (newUse === "<%= SchemaProfiler::USAGE_MUST_NOT %>") {
+            tableSects.hide();
+            caption.show();
+        } else {
+            tableSects.show();
+            caption.hide();
+        }
+
+        setConstructUse(groupName, constrName, newUse);
     });
-    function getKeySet(currNode) {
-        var keyset = [];
-        while (!currNode.attr("data-root-key")) {
-            if (currNode.attr("data-key")) {
-                keyset.unshift({"key": currNode.attr("data-key"), "node" : currNode})
-            } else if (currNode.attr("data-idx")) {
-                keyset.unshift({"idx": currNode.attr("data-idx"), "node" : currNode})
-            }
-            currNode = currNode.parent();
-        }
-        keyset.unshift({"key": currNode.attr("data-root-key")});
-        return keyset;
-    }
 
-    function setKey(keyset, value) {
-        var idx = 0;
-        var target = profile;
-        while (idx < keyset.length - 1) {
-            var currKey = keyset[idx];
-            if (currKey.key) {
-                target = target[currKey.key];
-            } else {
-                target = target[currKey.idx];
-            }
-            idx = idx + 1;
-        }
-        target[keyset[idx].key] = value;
-    }
-
-    $(".group-accessor").click(function() {
+    $(".group-accessor").change(function(e) {
         if (active) {
             active.hide();
         }
-        active = $("#" + this.getAttribute("data-target"));
+        var newId = "#" + this.value.replace(/ /g, "_").replace(/\./g, "\\.");
+        active = $(newId);
         active.show();
+        $(".group-accessor").find('option:first').attr('selected', 'selected');
     });
-    $(".usage-selector").change(function(e) { // when a usage level is changed, update the row highlighting
-        var parent = $(this).parent().parent();
+
+    $(".field-usage-selector, .attr-usage-selector").change(function(e) { // when a field/attr usage level is changed, update the row highlighting
+        var newVal = this.value;
+        var thisEl = $(this);
+        var parent = thisEl.parent().parent(); // this should be the <tr> for the field or attr
         parent.removeClass();
-        if (this.value === "<%= SchemaProfiler::USAGE_REQUIRED %>") {
-            parent.addClass("success");
-        } else if (this.value === "<%= SchemaProfiler::USAGE_SUGGESTED %>") {
-            parent.addClass("info");
-        } else if (this.value === "<%= SchemaProfiler::USAGE_OPTIONAL %>") {
-            parent.addClass("warning");
+        parent.addClass(this.value.toLowerCase().replace(/ /g, "-"));
+        var groupName = thisEl.attr('data-group-name');
+        var constName = thisEl.attr('data-construct-name');
+        var idx = thisEl.attr('data-idx');
+        if (thisEl.attr('data-attr-name') != null) {
+            var attrName = thisEl.attr('data-attr-name');
+            setAttributeUse(groupName, constName, attrName, idx, newVal);
         } else {
-            parent.addClass("danger");
+            var fieldName = thisEl.attr('data-field-name');
+            setFieldUse(groupName, constName, attrName, idx, newVal);
         }
-        var myKeySet = getKeySet($(this));
-        setKey(myKeySet, this.value);
     });
+
     $("#finalize-btn").click(function() {
         $.ajax({
             url: '/profile/upload',

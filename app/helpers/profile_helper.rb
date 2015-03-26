@@ -3,6 +3,14 @@ require "safe_yaml/load"
 
 module ProfileHelper
 
+    def jqueryize(str)
+        str.downcase().gsub(".", "\\.").gsub(" ", "-")
+    end
+
+    def attributize(str)
+        str.downcase().gsub(" ", "-")
+    end
+
     def profile_to_excel(pyaml)
         p = Axlsx::Package.new
         wb = p.workbook

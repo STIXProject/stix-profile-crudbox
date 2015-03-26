@@ -1,7 +1,8 @@
 module SchemaProfiler
-    USAGE_REQUIRED = "Required"
-    USAGE_SUGGESTED = "Suggested"
-    USAGE_OPTIONAL = "Optional"
-    USAGE_PROHIBITED = "Prohibited"
-    USAGES = [USAGE_REQUIRED, USAGE_SUGGESTED, USAGE_OPTIONAL, USAGE_PROHIBITED]
+    USAGE_MUST = "Must"
+    USAGE_SHOULD = "Should"
+    USAGE_MAY = "May"
+    USAGE_SHOULD_NOT = "Should Not"
+    USAGE_MUST_NOT = "Must Not"
+    USAGES = [USAGE_MUST, USAGE_SHOULD, USAGE_MAY, USAGE_SHOULD_NOT, USAGE_MUST_NOT]
 end

@@ -1,12 +1,63 @@
 require 'nokogiri'
 require 'yaml'
+require 'stix_schema_spy'
+
+StixSchemaSpy::Schema.preload!
 
 namespace :profile_mgmt do
+
+    desc ""
+    task :print_schemas do
+        profile = {} # ActiveSupport::OrderedHash.new
+        profile['name'] = 'Baseline Profile'
+        profile['version'] = ''
+        profile['groups'] = {}
+        StixSchemaSpy::Schema.all.each do |schema|
+            if profile['version'].empty?
+                profile['version'] = schema.stix_version
+            end
+            if not schema.title.nil?
+                profile['groups'][schema.title] = {'project' => schema.project.to_s, 'constructs' => {}}
+                process_schema(profile, schema)
+            end
+        end
+        base_prof = File.open(Rails.root.join("test_profile_#{profile['version']}.yaml"), "w")
+        base_prof.write(YAML.dump(profile))
+        base_prof.close
+    end
+
+    def process_schema(profile_hash, schema)
+        schema_title = schema.title
+        schema.types.sort_by { |type| type[0].downcase }.each do |type| # for each type
+            if type[1].enumeration? || type[0].include?("Enum") # let's ignore Enums for now
+                next
+            end
+            this_type = {'use' => SchemaProfiler::USAGE_MUST_NOT, 'attributes' => [], 'fields' => []}
+            type[1].fields.each do |field|
+                this_field = {}
+                is_attr = field.name.start_with?("@")
+                fieldname = is_attr ? field.name[1..-1] : field.name
+                this_field['name'] = fieldname
+                this_field['type'] = field.type!.full_name
+                this_field['use'] = SchemaProfiler::USAGE_MUST_NOT # default to must not/prohibited
+                this_type[is_attr ? "attributes" : "fields"].append(this_field)
+            end
+            if this_type['attributes'].empty?
+                this_type.delete('attributes')
+            end
+            if this_type['fields'].empty?
+                this_type.delete('fields')
+            end
+            profile_hash['groups'][schema_title]['constructs'][type[0]] = this_type
+        end
+    end
 
     desc "Update the baseline profile information"
     task :update_baseline do
 
         profile_hash = {}
+        profile_hash["Profile Name"] = "Baseline Profile"
+        profile_hash["STIX Version"] = "1.1.1"
         @schemas = Dir.glob(Rails.root.join("schemas/*.xsd"))
         for file in @schemas
             process_xsd(profile_hash, file, 0, "STIX - " + File.basename(file, ".xsd").gsub("_", " ").titleize)
