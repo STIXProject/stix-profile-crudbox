@@ -35,8 +35,8 @@ namespace :profile_mgmt do
             this_type = {
                 'use' => SchemaProfiler::USAGE_MUST_NOT,
                 'is_vocab' => false,
-                'attributes' => [],
-                 'fields' => []}
+                'attributes' => {},
+                 'fields' => {}}
             if not type[1].vocab?.nil?
                 this_type['is_vocab'] = true
                 this_type.delete('attributes')
@@ -49,10 +49,9 @@ namespace :profile_mgmt do
                 this_field = {}
                 is_attr = field.name.start_with?("@")
                 fieldname = is_attr ? field.name[1..-1] : field.name
-                this_field['name'] = fieldname
                 this_field['type'] = field.type!.full_name
                 this_field['use'] = SchemaProfiler::USAGE_MUST_NOT # default to must not/prohibited
-                this_type[is_attr ? "attributes" : "fields"].append(this_field)
+                this_type[is_attr ? "attributes" : "fields"][fieldname] = this_field
             end
             if this_type['attributes'].empty?
                 this_type.delete('attributes')

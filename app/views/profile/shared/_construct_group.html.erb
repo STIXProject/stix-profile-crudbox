@@ -67,18 +67,18 @@
         <% if construct.has_key?("attributes") %>
             <tbody style="<%= 'display:none;' if SchemaProfiler::USAGE_MUST_NOT == construct['use'] %>">
                 <tr class="active mono"><td colspan="3"><em><strong>Attributes</strong></em></td></tr>
-                <% construct["attributes"].each_with_index do |attrb, idx| %>
-                    <tr class="<%= attrb['use'].downcase().gsub(" ", "-") %>">
+                <% construct["attributes"].each do |attrName, attrHash| %>
+                    <tr class="<%= attrHash['use'].downcase().gsub(" ", "-") %>">
 
-                        <td>@<%= attrb['name'] %></td>
-                        <td><code><%= attrb['type'] %></code></td>
+                        <td>@<%= attrName %></td>
+                        <td><code><%= attrHash['type'] %></code></td>
                         <td>
-                            <select class="attr-usage-selector form-control" data-attr-name="<%= attrb['name'] %>" data-idx="<%= idx %>">
-                                <option <%= "selected" if attrb['use'] == SchemaProfiler::USAGE_MUST %> value="<%= SchemaProfiler::USAGE_MUST %>"><%= SchemaProfiler::USAGE_MUST %></option>
-                                <option <%= "selected" if attrb['use'] == SchemaProfiler::USAGE_SHOULD %> value="<%= SchemaProfiler::USAGE_SHOULD %>"><%= SchemaProfiler::USAGE_SHOULD %></option>
-                                <option <%= "selected" if attrb['use'] == SchemaProfiler::USAGE_MAY %> value="<%= SchemaProfiler::USAGE_MAY %>"><%= SchemaProfiler::USAGE_MAY %></option>
-                                <option <%= "selected" if attrb['use'] == SchemaProfiler::USAGE_SHOULD_NOT %> value="<%= SchemaProfiler::USAGE_SHOULD_NOT %>"><%= SchemaProfiler::USAGE_SHOULD_NOT %></option>
-                                <option <%= "selected" if attrb['use'] == SchemaProfiler::USAGE_MUST_NOT %> value="<%= SchemaProfiler::USAGE_MUST_NOT %>"><%= SchemaProfiler::USAGE_MUST_NOT %></option>
+                            <select class="attr-usage-selector form-control" data-attr-name="<%= attrName %>">
+                                <option <%= "selected" if attrHash['use'] == SchemaProfiler::USAGE_MUST %> value="<%= SchemaProfiler::USAGE_MUST %>"><%= SchemaProfiler::USAGE_MUST %></option>
+                                <option <%= "selected" if attrHash['use'] == SchemaProfiler::USAGE_SHOULD %> value="<%= SchemaProfiler::USAGE_SHOULD %>"><%= SchemaProfiler::USAGE_SHOULD %></option>
+                                <option <%= "selected" if attrHash['use'] == SchemaProfiler::USAGE_MAY %> value="<%= SchemaProfiler::USAGE_MAY %>"><%= SchemaProfiler::USAGE_MAY %></option>
+                                <option <%= "selected" if attrHash['use'] == SchemaProfiler::USAGE_SHOULD_NOT %> value="<%= SchemaProfiler::USAGE_SHOULD_NOT %>"><%= SchemaProfiler::USAGE_SHOULD_NOT %></option>
+                                <option <%= "selected" if attrHash['use'] == SchemaProfiler::USAGE_MUST_NOT %> value="<%= SchemaProfiler::USAGE_MUST_NOT %>"><%= SchemaProfiler::USAGE_MUST_NOT %></option>
                             </select>
                         </td>
                     </tr>
@@ -88,17 +88,17 @@
         <% if construct.has_key?("fields") %>
             <tbody style="<%= 'display:none;' if SchemaProfiler::USAGE_MUST_NOT == construct['use'] %>">
                 <tr class="active mono"><td colspan="3"><em><strong>Fields</strong></em></td></tr>
-                <% construct["fields"].each_with_index do |elem, idx| %>
-                    <tr class="<%= elem['use'].downcase().gsub(" ", "-") %>">
-                        <td><%= elem['name'] %></td>
-                        <td><code><%= elem['type'] %></code></td>
+                <% construct["fields"].each do |elemName, elemHash| %>
+                    <tr class="<%= elemHash['use'].downcase().gsub(" ", "-") %>">
+                        <td><%= elemName %></td>
+                        <td><code><%= elemHash['type'] %></code></td>
                         <td>
-                            <select class="field-usage-selector form-control" data-field-name="<%= elem['name'] %>" data-idx="<%= idx %>">
-                                <option <%= "selected" if elem['use'] == SchemaProfiler::USAGE_MUST %> value="<%= SchemaProfiler::USAGE_MUST %>"><%= SchemaProfiler::USAGE_MUST %></option>
-                                <option <%= "selected" if elem['use'] == SchemaProfiler::USAGE_SHOULD %> value="<%= SchemaProfiler::USAGE_SHOULD %>"><%= SchemaProfiler::USAGE_SHOULD %></option>
-                                <option <%= "selected" if elem['use'] == SchemaProfiler::USAGE_MAY %> value="<%= SchemaProfiler::USAGE_MAY %>"><%= SchemaProfiler::USAGE_MAY %></option>
-                                <option <%= "selected" if elem['use'] == SchemaProfiler::USAGE_SHOULD_NOT %> value="<%= SchemaProfiler::USAGE_SHOULD_NOT %>"><%= SchemaProfiler::USAGE_SHOULD_NOT %></option>
-                                <option <%= "selected" if elem['use'] == SchemaProfiler::USAGE_MUST_NOT %> value="<%= SchemaProfiler::USAGE_MUST_NOT %>"><%= SchemaProfiler::USAGE_MUST_NOT %></option>
+                            <select class="field-usage-selector form-control" data-field-name="<%= elemName %>">
+                                <option <%= "selected" if elemHash['use'] == SchemaProfiler::USAGE_MUST %> value="<%= SchemaProfiler::USAGE_MUST %>"><%= SchemaProfiler::USAGE_MUST %></option>
+                                <option <%= "selected" if elemHash['use'] == SchemaProfiler::USAGE_SHOULD %> value="<%= SchemaProfiler::USAGE_SHOULD %>"><%= SchemaProfiler::USAGE_SHOULD %></option>
+                                <option <%= "selected" if elemHash['use'] == SchemaProfiler::USAGE_MAY %> value="<%= SchemaProfiler::USAGE_MAY %>"><%= SchemaProfiler::USAGE_MAY %></option>
+                                <option <%= "selected" if elemHash['use'] == SchemaProfiler::USAGE_SHOULD_NOT %> value="<%= SchemaProfiler::USAGE_SHOULD_NOT %>"><%= SchemaProfiler::USAGE_SHOULD_NOT %></option>
+                                <option <%= "selected" if elemHash['use'] == SchemaProfiler::USAGE_MUST_NOT %> value="<%= SchemaProfiler::USAGE_MUST_NOT %>"><%= SchemaProfiler::USAGE_MUST_NOT %></option>
                             </select>
                         </td>
                     </tr>

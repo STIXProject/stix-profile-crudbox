@@ -13,10 +13,10 @@ class ProfileController < ApplicationController
         begin
             if request.POST['prof1_baseline']
                 prof1 = SafeYAML.load_file(Rails.root.join("base_profile_1.1.1.yaml"))
-                @prof1_name = "Base Profile"
+                @prof1_name = prof1['name']
             elsif request.POST['prof1']
                 prof1 = SafeYAML.load(request.POST['prof1'].tempfile)
-                @prof1_name = request.POST['prof1'].original_filename
+                @prof1_name = prof1['name']
             else
                 raise Exception
             end
@@ -26,10 +26,10 @@ class ProfileController < ApplicationController
         begin
             if request.POST['prof2_baseline']
                 prof2 = SafeYAML.load_file(Rails.root.join("base_profile_1.1.1.yaml"))
-                @prof2_name = "Base Profile"
+                @prof2_name = prof2['name']
             elsif request.POST['prof2']
                 prof2 = SafeYAML.load(request.POST['prof2'].tempfile)
-                @prof2_name = request.POST['prof2'].original_filename
+                @prof2_name = prof2['name']
             else
                 raise Exception
             end
@@ -38,7 +38,8 @@ class ProfileController < ApplicationController
         end
         if not @prof1error and not @prof2error
             begin
-                diff_profiles(prof1, prof2)
+                new_diff(prof1, prof2)
+                puts @diff
             rescue => e
                 @differror = true
                 raise e

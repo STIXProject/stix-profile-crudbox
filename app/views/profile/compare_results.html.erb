@@ -1,8 +1,11 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-xs-12 text-center">
-            <h1>Comparison Results</h1>
-            <p>Here's how the profiles stacked up!</p>
+            <h1>
+                Comparison Results
+                <br/>
+                <small>Here's how the profiles stack up</small>
+            </h1>
             <hr />
         </div>
     </div>
@@ -56,55 +59,55 @@
                     <span class="label label-danger">✘</span>
                     <span class="mono">Item missing in the profile that is present in the other profile.</span>
                     <br/>
-                    <span class="label label-success">✓</span>
+                    <span class="label label-success">✔</span>
                     <span class="mono">Item present in the profile that is missing in the other profile.</span>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-12">
-                <div class="row text-center">
-                    <h2 class="col-xs-6 prof1"><%= @prof1_name %></h2>
-                    <h2 class="col-xs-6 prof2"><%= @prof2_name %></h2>
-                </div>
-                <% @diff.each do |key, value| %>
-                    <div class="row">
-                        <ol class="breadcrumb centered-breadcrumb">
-                            <% key.split("::").each do |item| %>
-                                <li class="key-indicator"><%= item %></li>
-                            <% end %>
-                        </ol>
-                    </div>
-                    <div class="row text-center space-bottom">
-                        <div class="col-xs-6 border-right">
-                            <strong class="diff-item">
-                                <% if value["p1"] == "Missing" %>
-                                    <span class="label label-danger"> ✘ </span>
-                                <% elsif value["p1"] == "Present" %>
-                                    <span class="label label-success"> ✓ </span>
-                                <% else %>
-                                    <%= value["p1"] %>
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+                <% if @diff['groups'].empty? %>
+                    <h4 class="text-center">The profiles provided appear identical in content!</h4>
+                <% else %>
+                    <h4 class="text-center">The following differences were found...</h4>
+                    <hr style="width: 50%;" />
+                    <% @diff['groups'].each do |groupName, group| %>
+                        <h5 class="text-center"><strong>Group: </strong><%= groupName %></h5>
+                        <table class="table table-hover text-center">
+                            <thead>
+                                <tr>
+                                    <td><%= @prof1_name %></td>
+                                    <td><%= @prof2_name %></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% if group.has_key?(@prof1_name) && group.has_key?(@prof2_name) %>
+                                    <tr>
+                                        <td>
+                                            <% if group[@prof1_name] == SchemaProfiler::ITEM_PRESENT %>
+                                                <span class="label label-success">✔</span>
+                                            <% else %>
+                                                <span class="label label-danger">✘</span> Not Found
+                                            <% end %>
+                                        </td>
+                                        <td>
+                                            <% if group[@prof2_name] == SchemaProfiler::ITEM_PRESENT %>
+                                                <span class="label label-success">✔</span>
+                                            <% else %>
+                                                <span class="label label-danger">✘</span> Not Found
+                                            <% end %>
+                                        </td>
+                                    </tr>
+                                <% else # difference within constructs somewhere... %>
+
                                 <% end %>
-                            </strong>
-                        </div>
-                        <div class="col-xs-6 border-left">
-                            <strong class="diff-item">
-                                <% if value["p2"] == "Missing" %>
-                                    <span class="label label-danger"> ✘ </span>
-                                <% elsif value["p2"] == "Present" %>
-                                    <span class="label label-success"> ✓ </span>
-                                <% else %>
-                                    <%= value["p2"] %>
-                                <% end %>
-                            </strong>
-                        </div>
-                    </div>
+                            </tbody>
+                        </table>
+                        <br/><br/>
+                    <% end %>
                 <% end %>
             </div>
         </div>
     <% end %>
 </div>
-
-<script type="text/javascript">
-
-</script>
+<br/><br/><br/>
