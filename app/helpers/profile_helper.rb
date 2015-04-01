@@ -3,12 +3,9 @@ require "safe_yaml/load"
 
 module ProfileHelper
 
-    def jqueryize(str)
-        str.downcase().gsub(".", "\\.").gsub(" ", "-")
-    end
-
     def attributize(str)
-        str.downcase().gsub(" ", "-")
+        # lowercase, replace spaces, remove periods
+        str.downcase().gsub(" ", "-").gsub(".", "")
     end
 
     def profile_to_excel(pyaml)

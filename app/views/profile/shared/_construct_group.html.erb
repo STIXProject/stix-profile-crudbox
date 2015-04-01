@@ -1,4 +1,6 @@
-<table id="<%= construct_name.gsub(" ", "-") %>-table" class="table table-striped table-condensed table-responsive">
+<table class="table table-striped table-condensed table-responsive"
+    data-construct-display-name="<%= construct_name %>"
+    data-construct-safe-name="<%= attributize(construct_name) %>">
     <caption>
         <h3 class="text-primary">
             <%= construct_name %>
@@ -9,16 +11,14 @@
         </span>
         <!-- Split button -->
         <div class="btn-group">
-          <button id="<%= construct_name.gsub(" ", "-") %>-use-changer" type="button"
-              class="btn btn-xs btn-<%= construct['use'].downcase.gsub(" ", "-") %> dropdown-toggle"
-              data-toggle="dropdown" aria-expanded="false" style="width: 125px;">
+          <button type="button" data-toggle="dropdown" aria-expanded="false" style="width: 125px;"
+                    class="construct-usage-dropdown btn btn-xs btn-<%= attributize(construct['use']) %> dropdown-toggle">
               <span class="use-info">
                   <%= construct['use'] %>
               </span>
               <span class="caret"></span>
           </button>
-          <ul class="dropdown-menu" role="menu" data-group-name="<%= group_name %>"
-              data-construct-name="<%= construct_name %>" data-construct-use="<%= construct['use'] %>">
+          <ul class="dropdown-menu" role="menu">
             <li>
                 <a href="#" class="construct-usage-changer" data-usage="<%= SchemaProfiler::USAGE_MUST %>">
                     <%= SchemaProfiler::USAGE_MUST %>
@@ -49,7 +49,9 @@
     </caption>
 
     <% if construct.has_key?("attributes") || construct.has_key?("fields") %>
-        <caption class="hidden-notice" style="<%= 'display:none;' if SchemaProfiler::USAGE_MUST_NOT != construct['use'] %>">Table hidden because construct is marked <strong>"<%= SchemaProfiler::USAGE_MUST_NOT %>"</strong></caption>
+        <caption class="hidden-notice" style="<%= 'display:none;' if SchemaProfiler::USAGE_MUST_NOT != construct['use'] %>">
+            Table hidden because construct is marked <strong>"<%= SchemaProfiler::USAGE_MUST_NOT %>"</strong>
+        </caption>
         <thead style="<%= 'display:none;' if SchemaProfiler::USAGE_MUST_NOT == construct['use'] %>">
             <tr>
                 <th style="min-width: 300px; width: 300px;">Name</th>
@@ -57,6 +59,8 @@
                 <th style="width: 125px; min-width: 125px;">Usage</th>
             </tr>
         </thead>
+    <% elsif construct.has_key?("is_vocab") && construct['is_vocab'] %>
+        <caption class="empty-notice"><em>Vocabs have no fields or attributes to show...</em></caption>
     <% else %>
         <caption class="empty-notice"><em>This construct has no fields or attributes in the profile...</em></caption>
     <% end %>
@@ -69,7 +73,7 @@
                         <td>@<%= attrb['name'] %></td>
                         <td><code><%= attrb['type'] %></code></td>
                         <td>
-                            <select class="attr-usage-selector form-control" data-group-name="<%= group_name%>" data-construct-name="<%= construct_name %>" data-attr-name="<%= attrb['name'] %>" data-idx="<%= idx %>">
+                            <select class="attr-usage-selector form-control" data-attr-name="<%= attrb['name'] %>" data-idx="<%= idx %>">
                                 <option <%= "selected" if attrb['use'] == SchemaProfiler::USAGE_MUST %> value="<%= SchemaProfiler::USAGE_MUST %>"><%= SchemaProfiler::USAGE_MUST %></option>
                                 <option <%= "selected" if attrb['use'] == SchemaProfiler::USAGE_SHOULD %> value="<%= SchemaProfiler::USAGE_SHOULD %>"><%= SchemaProfiler::USAGE_SHOULD %></option>
                                 <option <%= "selected" if attrb['use'] == SchemaProfiler::USAGE_MAY %> value="<%= SchemaProfiler::USAGE_MAY %>"><%= SchemaProfiler::USAGE_MAY %></option>
@@ -89,7 +93,7 @@
                         <td><%= elem['name'] %></td>
                         <td><code><%= elem['type'] %></code></td>
                         <td>
-                            <select class="field-usage-selector form-control" data-group-name="<%= group_name%>" data-construct-name="<%= construct_name %>" data-field-name="<%= elem['name'] %>" data-idx="<%= idx %>">
+                            <select class="field-usage-selector form-control" data-field-name="<%= elem['name'] %>" data-idx="<%= idx %>">
                                 <option <%= "selected" if elem['use'] == SchemaProfiler::USAGE_MUST %> value="<%= SchemaProfiler::USAGE_MUST %>"><%= SchemaProfiler::USAGE_MUST %></option>
                                 <option <%= "selected" if elem['use'] == SchemaProfiler::USAGE_SHOULD %> value="<%= SchemaProfiler::USAGE_SHOULD %>"><%= SchemaProfiler::USAGE_SHOULD %></option>
                                 <option <%= "selected" if elem['use'] == SchemaProfiler::USAGE_MAY %> value="<%= SchemaProfiler::USAGE_MAY %>"><%= SchemaProfiler::USAGE_MAY %></option>

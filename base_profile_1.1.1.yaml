@@ -7,6 +7,7 @@ groups:
     constructs:
       AnyURIObjectPropertyType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -70,6 +71,7 @@ groups:
           use: Must Not
       Base64BinaryObjectPropertyType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -133,6 +135,7 @@ groups:
           use: Must Not
       BaseObjectPropertyGroup:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -169,6 +172,7 @@ groups:
           use: Must Not
       BaseObjectPropertyType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -232,6 +236,7 @@ groups:
           use: Must Not
       BuildConfigurationType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Configuration_Setting_Description
           type: xs:string
@@ -241,6 +246,7 @@ groups:
           use: Must Not
       BuildInformationType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Build_ID
           type: xs:string
@@ -277,6 +283,7 @@ groups:
           use: Must Not
       BuildUtilityType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Build_Utility_Name
           type: xs:string
@@ -286,12 +293,14 @@ groups:
           use: Must Not
       ByteRunsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Byte_Run
           type: cyboxCommon:ByteRunType
           use: Must Not
       ByteRunType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Offset
           type: cyboxCommon:IntegerObjectPropertyType
@@ -316,6 +325,7 @@ groups:
           use: Must Not
       CipherType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -379,12 +389,14 @@ groups:
           use: Must Not
       CodeSnippetsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Code_Snippet
           type: cyboxCommon:ObjectPropertiesType
           use: Must Not
       CompensationModelType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -448,6 +460,7 @@ groups:
           use: Must Not
       CompilerInformalDescriptionType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Compiler_Name
           type: xs:string
@@ -457,12 +470,14 @@ groups:
           use: Must Not
       CompilersType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Compiler
           type: cyboxCommon:CompilerType
           use: Must Not
       CompilerType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Compiler_Informal_Description
           type: cyboxCommon:CompilerInformalDescriptionType
@@ -472,12 +487,14 @@ groups:
           use: Must Not
       ConfigurationSettingsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Configuration_Setting
           type: cyboxCommon:ConfigurationSettingType
           use: Must Not
       ConfigurationSettingType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Item_Name
           type: xs:string
@@ -493,6 +510,7 @@ groups:
           use: Must Not
       ContributorType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Role
           type: xs:string
@@ -517,6 +535,7 @@ groups:
           use: Must Not
       ControlledVocabularyStringType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: condition
           type: cyboxCommon:ConditionTypeEnum
@@ -553,12 +572,14 @@ groups:
           use: Must Not
       CustomPropertiesType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Property
           type: cyboxCommon:PropertyType
           use: Must Not
       DataSegmentType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -587,6 +608,7 @@ groups:
           use: Must Not
       DataSizeType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -653,6 +675,7 @@ groups:
           use: Must Not
       DateObjectPropertyRestrictionType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -716,6 +739,7 @@ groups:
           use: Must Not
       DateObjectPropertyType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -782,6 +806,7 @@ groups:
           use: Must Not
       DateRangeType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Start_Date
           type: cyboxCommon:DateWithPrecisionType
@@ -791,6 +816,7 @@ groups:
           use: Must Not
       DateTimeObjectPropertyRestrictionType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -854,6 +880,7 @@ groups:
           use: Must Not
       DateTimeObjectPropertyType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -920,24 +947,28 @@ groups:
           use: Must Not
       DateTimeWithPrecisionType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: precision
           type: cyboxCommon:DateTimePrecisionEnum
           use: Must Not
       DateWithPrecisionType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: precision
           type: cyboxCommon:DatePrecisionEnum
           use: Must Not
       DependenciesType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Dependency
           type: cyboxCommon:DependencyType
           use: Must Not
       DependencyType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Dependency_Type
           type: xs:string
@@ -947,6 +978,7 @@ groups:
           use: Must Not
       DigitalSignatureInfoType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: signature_exists
           type: xs:boolean
@@ -966,12 +998,14 @@ groups:
           use: Must Not
       DigitalSignaturesType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Digital_Signature
           type: cyboxCommon:DigitalSignatureInfoType
           use: Must Not
       DoubleObjectPropertyType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -1035,6 +1069,7 @@ groups:
           use: Must Not
       DurationObjectPropertyType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -1098,6 +1133,7 @@ groups:
           use: Must Not
       EndiannessType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -1161,12 +1197,14 @@ groups:
           use: Must Not
       EnvironmentVariableListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Environment_Variable
           type: cyboxCommon:EnvironmentVariableType
           use: Must Not
       EnvironmentVariableType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Name
           type: cyboxCommon:StringObjectPropertyType
@@ -1176,18 +1214,21 @@ groups:
           use: Must Not
       ErrorInstancesType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Error_Instance
           type: xs:string
           use: Must Not
       ErrorsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Error
           type: cyboxCommon:ErrorType
           use: Must Not
       ErrorType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Error_Type
           type: xs:string
@@ -1200,6 +1241,7 @@ groups:
           use: Must Not
       ExecutionEnvironmentType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: System
           type: cyboxCommon:ObjectPropertiesType
@@ -1215,6 +1257,7 @@ groups:
           use: Must Not
       ExtractedFeaturesType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Strings
           type: cyboxCommon:ExtractedStringsType
@@ -1230,12 +1273,14 @@ groups:
           use: Must Not
       ExtractedStringsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: String
           type: cyboxCommon:ExtractedStringType
           use: Must Not
       ExtractedStringType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Encoding
           type: cyboxCommon:ControlledVocabularyStringType
@@ -1263,6 +1308,7 @@ groups:
           use: Must Not
       FloatObjectPropertyType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -1326,12 +1372,14 @@ groups:
           use: Must Not
       FunctionsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Function
           type: cyboxCommon:StringObjectPropertyType
           use: Must Not
       FuzzyHashBlockType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Block_Hash_Value
           type: cyboxCommon:HashValueType
@@ -1344,6 +1392,7 @@ groups:
           use: Must Not
       FuzzyHashStructureType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Block_Size
           type: cyboxCommon:IntegerObjectPropertyType
@@ -1353,6 +1402,7 @@ groups:
           use: Must Not
       FuzzyHashValueType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -1416,18 +1466,21 @@ groups:
           use: Must Not
       HashListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Hash
           type: cyboxCommon:HashType
           use: Must Not
       HashSegmentsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Segment
           type: cyboxCommon:HashSegmentType
           use: Must Not
       HashSegmentType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Trigger_Point
           type: cyboxCommon:HexBinaryObjectPropertyType
@@ -1440,6 +1493,7 @@ groups:
           use: Must Not
       HashType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Type
           type: cyboxCommon:ControlledVocabularyStringType
@@ -1455,6 +1509,7 @@ groups:
           use: Must Not
       HashValueType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Simple_Hash_Value
           type: cyboxCommon:SimpleHashValueType
@@ -1464,6 +1519,7 @@ groups:
           use: Must Not
       HexBinaryObjectPropertyType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -1527,12 +1583,14 @@ groups:
           use: Must Not
       ImportsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Import
           type: cyboxCommon:StringObjectPropertyType
           use: Must Not
       IntegerObjectPropertyType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -1596,6 +1654,7 @@ groups:
           use: Must Not
       InternalStringsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Key
           type: xs:string
@@ -1605,12 +1664,14 @@ groups:
           use: Must Not
       InternationalizationSettingsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Internal_Strings
           type: cyboxCommon:InternalStringsType
           use: Must Not
       Layer4ProtocolType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -1674,12 +1735,14 @@ groups:
           use: Must Not
       LibrariesType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Library
           type: cyboxCommon:LibraryType
           use: Must Not
       LibraryType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: name
           type: xs:string
@@ -1689,6 +1752,7 @@ groups:
           use: Must Not
       LocationType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -1702,6 +1766,7 @@ groups:
           use: Must Not
       LongObjectPropertyType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -1765,6 +1830,7 @@ groups:
           use: Must Not
       MeasureSourceType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: class
           type: cyboxCommon:SourceClassTypeEnum
@@ -1814,6 +1880,7 @@ groups:
           use: Must Not
       MetadataType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: type
           type: xs:string
@@ -1827,6 +1894,7 @@ groups:
           use: Must Not
       NameObjectPropertyType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -1890,6 +1958,7 @@ groups:
           use: Must Not
       NonNegativeIntegerObjectPropertyType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -1953,6 +2022,7 @@ groups:
           use: Must Not
       ObjectPropertiesType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -1963,6 +2033,7 @@ groups:
           use: Must Not
       PatternableFieldType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: condition
           type: cyboxCommon:ConditionTypeEnum
@@ -1993,6 +2064,7 @@ groups:
           use: Must Not
       PatternFieldGroup:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: condition
           type: cyboxCommon:ConditionTypeEnum
@@ -2023,12 +2095,14 @@ groups:
           use: Must Not
       PersonnelType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Contributor
           type: cyboxCommon:ContributorType
           use: Must Not
       PlatformIdentifierType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -2098,6 +2172,7 @@ groups:
           use: Must Not
       PlatformSpecificationType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Description
           type: cyboxCommon:StructuredTextType
@@ -2107,6 +2182,7 @@ groups:
           use: Must Not
       PositiveIntegerObjectPropertyType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -2170,6 +2246,7 @@ groups:
           use: Must Not
       PropertyType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -2239,6 +2316,7 @@ groups:
           use: Must Not
       RegionalRegistryType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -2302,6 +2380,7 @@ groups:
           use: Must Not
       SIDType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -2365,6 +2444,7 @@ groups:
           use: Must Not
       SimpleHashValueType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -2428,6 +2508,7 @@ groups:
           use: Must Not
       StringObjectPropertyType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -2491,12 +2572,14 @@ groups:
           use: Must Not
       StructuredTextType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: structuring_format
           type: xs:string
           use: Must Not
       TimeObjectPropertyRestrictionType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -2560,6 +2643,7 @@ groups:
           use: Must Not
       TimeObjectPropertyType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -2626,6 +2710,7 @@ groups:
           use: Must Not
       TimeType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Start_Time
           type: cyboxCommon:DateTimeWithPrecisionType
@@ -2641,6 +2726,7 @@ groups:
           use: Must Not
       ToolConfigurationType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Configuration_Settings
           type: cyboxCommon:ConfigurationSettingsType
@@ -2659,6 +2745,7 @@ groups:
           use: Must Not
       ToolInformationType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -2711,26 +2798,31 @@ groups:
           use: Must Not
       ToolReferencesType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Reference
           type: cyboxCommon:ToolReferenceType
           use: Must Not
       ToolReferenceType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: reference_type
           type: cyboxCommon:ToolReferenceTypeEnum
           use: Must Not
       ToolsInformationType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Tool
           type: cyboxCommon:ToolInformationType
           use: Must Not
       ToolSpecificDataType:
         use: Must Not
+        is_vocab: false
       UnsignedIntegerObjectPropertyType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -2794,6 +2886,7 @@ groups:
           use: Must Not
       UnsignedLongObjectPropertyType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -2857,6 +2950,7 @@ groups:
           use: Must Not
       UsageContextAssumptionsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Usage_Context_Assumption
           type: cyboxCommon:StructuredTextType
@@ -2866,18 +2960,21 @@ groups:
     constructs:
       ActionAliasesType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Action_Alias
           type: xs:string
           use: Must Not
       ActionArgumentsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Action_Argument
           type: cybox:ActionArgumentType
           use: Must Not
       ActionArgumentType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Argument_Name
           type: cyboxCommon:ControlledVocabularyStringType
@@ -2887,12 +2984,14 @@ groups:
           use: Must Not
       ActionPertinentObjectPropertiesType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Property
           type: cybox:ActionPertinentObjectPropertyType
           use: Must Not
       ActionPertinentObjectPropertyType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: name
           type: xs:string
@@ -2902,24 +3001,28 @@ groups:
           use: Must Not
       ActionPoolType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Action
           type: cybox:ActionType
           use: Must Not
       ActionReferenceType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: action_id
           type: xs:QName
           use: Must Not
       ActionRelationshipsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Relationship
           type: cybox:ActionRelationshipType
           use: Must Not
       ActionRelationshipType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Type
           type: cyboxCommon:ControlledVocabularyStringType
@@ -2929,12 +3032,14 @@ groups:
           use: Must Not
       ActionsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Action
           type: cybox:ActionType
           use: Must Not
       ActionType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -2990,12 +3095,14 @@ groups:
           use: Must Not
       AssociatedObjectsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Associated_Object
           type: cybox:AssociatedObjectType
           use: Must Not
       AssociatedObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -3039,6 +3146,7 @@ groups:
           use: Must Not
       DataReadEffectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: effect_type
           type: cybox:EffectTypeEnum
@@ -3049,6 +3157,7 @@ groups:
           use: Must Not
       DataReceivedEffectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: effect_type
           type: cybox:EffectTypeEnum
@@ -3059,6 +3168,7 @@ groups:
           use: Must Not
       DataSentEffectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: effect_type
           type: cybox:EffectTypeEnum
@@ -3069,6 +3179,7 @@ groups:
           use: Must Not
       DataWrittenEffectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: effect_type
           type: cybox:EffectTypeEnum
@@ -3079,20 +3190,24 @@ groups:
           use: Must Not
       DefinedEffectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: effect_type
           type: cybox:EffectTypeEnum
           use: Must Not
       DomainSpecificObjectPropertiesType:
         use: Must Not
+        is_vocab: false
       EventPoolType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Event
           type: cybox:EventType
           use: Must Not
       EventType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -3124,6 +3239,7 @@ groups:
           use: Must Not
       FrequencyType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: rate
           type: xs:float
@@ -3139,18 +3255,21 @@ groups:
           use: Must Not
       KeywordsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Keyword
           type: xs:string
           use: Must Not
       ObfuscationTechniquesType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Obfuscation_Technique
           type: cybox:ObfuscationTechniqueType
           use: Must Not
       ObfuscationTechniqueType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Description
           type: cyboxCommon:StructuredTextType
@@ -3160,12 +3279,14 @@ groups:
           use: Must Not
       ObjectPoolType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Object
           type: cybox:ObjectType
           use: Must Not
       ObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -3203,6 +3324,7 @@ groups:
           use: Must Not
       ObservableCompositionType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: operator
           type: cybox:OperatorTypeEnum
@@ -3213,6 +3335,7 @@ groups:
           use: Must Not
       ObservablesType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: cybox_major_version
           type: xs:string
@@ -3235,6 +3358,7 @@ groups:
           use: Must Not
       ObservableType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -3275,6 +3399,7 @@ groups:
           use: Must Not
       PatternFidelityType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Noisiness
           type: cybox:NoisinessEnum
@@ -3287,6 +3412,7 @@ groups:
           use: Must Not
       PoolsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Event_Pool
           type: cybox:EventPoolType
@@ -3302,18 +3428,21 @@ groups:
           use: Must Not
       PropertiesType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Property
           type: xs:string
           use: Must Not
       PropertyPoolType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Property
           type: cyboxCommon:PropertyType
           use: Must Not
       PropertyReadEffectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: effect_type
           type: cybox:EffectTypeEnum
@@ -3327,12 +3456,14 @@ groups:
           use: Must Not
       RelatedObjectsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Related_Object
           type: cybox:RelatedObjectType
           use: Must Not
       RelatedObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -3373,6 +3504,7 @@ groups:
           use: Must Not
       SendControlCodeEffectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: effect_type
           type: cybox:EffectTypeEnum
@@ -3383,6 +3515,7 @@ groups:
           use: Must Not
       StateChangeEffectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: effect_type
           type: cybox:EffectTypeEnum
@@ -3396,6 +3529,7 @@ groups:
           use: Must Not
       ValuesType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Value
           type: xs:string
@@ -3405,294 +3539,31 @@ groups:
     constructs:
       ActionArgumentNameVocab-1.0:
         use: Must Not
-        attributes:
-        - name: condition
-          type: cyboxCommon:ConditionTypeEnum
-          use: Must Not
-        - name: is_case_sensitive
-          type: xs:boolean
-          use: Must Not
-        - name: apply_condition
-          type: cyboxCommon:ConditionApplicationEnum
-          use: Must Not
-        - name: delimiter
-          type: xs:string
-          use: Must Not
-        - name: bit_mask
-          type: xs:hexBinary
-          use: Must Not
-        - name: pattern_type
-          type: cyboxCommon:PatternTypeEnum
-          use: Must Not
-        - name: regex_syntax
-          type: xs:string
-          use: Must Not
-        - name: has_changed
-          type: xs:boolean
-          use: Must Not
-        - name: trend
-          type: xs:boolean
-          use: Must Not
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       ActionNameVocab-1.0:
         use: Must Not
-        attributes:
-        - name: condition
-          type: cyboxCommon:ConditionTypeEnum
-          use: Must Not
-        - name: is_case_sensitive
-          type: xs:boolean
-          use: Must Not
-        - name: apply_condition
-          type: cyboxCommon:ConditionApplicationEnum
-          use: Must Not
-        - name: delimiter
-          type: xs:string
-          use: Must Not
-        - name: bit_mask
-          type: xs:hexBinary
-          use: Must Not
-        - name: pattern_type
-          type: cyboxCommon:PatternTypeEnum
-          use: Must Not
-        - name: regex_syntax
-          type: xs:string
-          use: Must Not
-        - name: has_changed
-          type: xs:boolean
-          use: Must Not
-        - name: trend
-          type: xs:boolean
-          use: Must Not
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       ActionNameVocab-1.1:
         use: Must Not
-        attributes:
-        - name: condition
-          type: cyboxCommon:ConditionTypeEnum
-          use: Must Not
-        - name: is_case_sensitive
-          type: xs:boolean
-          use: Must Not
-        - name: apply_condition
-          type: cyboxCommon:ConditionApplicationEnum
-          use: Must Not
-        - name: delimiter
-          type: xs:string
-          use: Must Not
-        - name: bit_mask
-          type: xs:hexBinary
-          use: Must Not
-        - name: pattern_type
-          type: cyboxCommon:PatternTypeEnum
-          use: Must Not
-        - name: regex_syntax
-          type: xs:string
-          use: Must Not
-        - name: has_changed
-          type: xs:boolean
-          use: Must Not
-        - name: trend
-          type: xs:boolean
-          use: Must Not
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       ActionObjectAssociationTypeVocab-1.0:
         use: Must Not
-        attributes:
-        - name: condition
-          type: cyboxCommon:ConditionTypeEnum
-          use: Must Not
-        - name: is_case_sensitive
-          type: xs:boolean
-          use: Must Not
-        - name: apply_condition
-          type: cyboxCommon:ConditionApplicationEnum
-          use: Must Not
-        - name: delimiter
-          type: xs:string
-          use: Must Not
-        - name: bit_mask
-          type: xs:hexBinary
-          use: Must Not
-        - name: pattern_type
-          type: cyboxCommon:PatternTypeEnum
-          use: Must Not
-        - name: regex_syntax
-          type: xs:string
-          use: Must Not
-        - name: has_changed
-          type: xs:boolean
-          use: Must Not
-        - name: trend
-          type: xs:boolean
-          use: Must Not
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       ActionRelationshipTypeVocab-1.0:
         use: Must Not
-        attributes:
-        - name: condition
-          type: cyboxCommon:ConditionTypeEnum
-          use: Must Not
-        - name: is_case_sensitive
-          type: xs:boolean
-          use: Must Not
-        - name: apply_condition
-          type: cyboxCommon:ConditionApplicationEnum
-          use: Must Not
-        - name: delimiter
-          type: xs:string
-          use: Must Not
-        - name: bit_mask
-          type: xs:hexBinary
-          use: Must Not
-        - name: pattern_type
-          type: cyboxCommon:PatternTypeEnum
-          use: Must Not
-        - name: regex_syntax
-          type: xs:string
-          use: Must Not
-        - name: has_changed
-          type: xs:boolean
-          use: Must Not
-        - name: trend
-          type: xs:boolean
-          use: Must Not
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       ActionTypeVocab-1.0:
         use: Must Not
-        attributes:
-        - name: condition
-          type: cyboxCommon:ConditionTypeEnum
-          use: Must Not
-        - name: is_case_sensitive
-          type: xs:boolean
-          use: Must Not
-        - name: apply_condition
-          type: cyboxCommon:ConditionApplicationEnum
-          use: Must Not
-        - name: delimiter
-          type: xs:string
-          use: Must Not
-        - name: bit_mask
-          type: xs:hexBinary
-          use: Must Not
-        - name: pattern_type
-          type: cyboxCommon:PatternTypeEnum
-          use: Must Not
-        - name: regex_syntax
-          type: xs:string
-          use: Must Not
-        - name: has_changed
-          type: xs:boolean
-          use: Must Not
-        - name: trend
-          type: xs:boolean
-          use: Must Not
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       CharacterEncodingVocab-1.0:
         use: Must Not
-        attributes:
-        - name: condition
-          type: cyboxCommon:ConditionTypeEnum
-          use: Must Not
-        - name: is_case_sensitive
-          type: xs:boolean
-          use: Must Not
-        - name: apply_condition
-          type: cyboxCommon:ConditionApplicationEnum
-          use: Must Not
-        - name: delimiter
-          type: xs:string
-          use: Must Not
-        - name: bit_mask
-          type: xs:hexBinary
-          use: Must Not
-        - name: pattern_type
-          type: cyboxCommon:PatternTypeEnum
-          use: Must Not
-        - name: regex_syntax
-          type: xs:string
-          use: Must Not
-        - name: has_changed
-          type: xs:boolean
-          use: Must Not
-        - name: trend
-          type: xs:boolean
-          use: Must Not
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       EventTypeVocab-1.0:
         use: Must Not
-        attributes:
-        - name: condition
-          type: cyboxCommon:ConditionTypeEnum
-          use: Must Not
-        - name: is_case_sensitive
-          type: xs:boolean
-          use: Must Not
-        - name: apply_condition
-          type: cyboxCommon:ConditionApplicationEnum
-          use: Must Not
-        - name: delimiter
-          type: xs:string
-          use: Must Not
-        - name: bit_mask
-          type: xs:hexBinary
-          use: Must Not
-        - name: pattern_type
-          type: cyboxCommon:PatternTypeEnum
-          use: Must Not
-        - name: regex_syntax
-          type: xs:string
-          use: Must Not
-        - name: has_changed
-          type: xs:boolean
-          use: Must Not
-        - name: trend
-          type: xs:boolean
-          use: Must Not
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       EventTypeVocab-1.0.1:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: condition
           type: cyboxCommon:ConditionTypeEnum
@@ -3729,261 +3600,31 @@ groups:
           use: Must Not
       HashNameVocab-1.0:
         use: Must Not
-        attributes:
-        - name: condition
-          type: cyboxCommon:ConditionTypeEnum
-          use: Must Not
-        - name: is_case_sensitive
-          type: xs:boolean
-          use: Must Not
-        - name: apply_condition
-          type: cyboxCommon:ConditionApplicationEnum
-          use: Must Not
-        - name: delimiter
-          type: xs:string
-          use: Must Not
-        - name: bit_mask
-          type: xs:hexBinary
-          use: Must Not
-        - name: pattern_type
-          type: cyboxCommon:PatternTypeEnum
-          use: Must Not
-        - name: regex_syntax
-          type: xs:string
-          use: Must Not
-        - name: has_changed
-          type: xs:boolean
-          use: Must Not
-        - name: trend
-          type: xs:boolean
-          use: Must Not
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       InformationSourceTypeVocab-1.0:
         use: Must Not
-        attributes:
-        - name: condition
-          type: cyboxCommon:ConditionTypeEnum
-          use: Must Not
-        - name: is_case_sensitive
-          type: xs:boolean
-          use: Must Not
-        - name: apply_condition
-          type: cyboxCommon:ConditionApplicationEnum
-          use: Must Not
-        - name: delimiter
-          type: xs:string
-          use: Must Not
-        - name: bit_mask
-          type: xs:hexBinary
-          use: Must Not
-        - name: pattern_type
-          type: cyboxCommon:PatternTypeEnum
-          use: Must Not
-        - name: regex_syntax
-          type: xs:string
-          use: Must Not
-        - name: has_changed
-          type: xs:boolean
-          use: Must Not
-        - name: trend
-          type: xs:boolean
-          use: Must Not
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       ObjectRelationshipVocab-1.0:
         use: Must Not
-        attributes:
-        - name: condition
-          type: cyboxCommon:ConditionTypeEnum
-          use: Must Not
-        - name: is_case_sensitive
-          type: xs:boolean
-          use: Must Not
-        - name: apply_condition
-          type: cyboxCommon:ConditionApplicationEnum
-          use: Must Not
-        - name: delimiter
-          type: xs:string
-          use: Must Not
-        - name: bit_mask
-          type: xs:hexBinary
-          use: Must Not
-        - name: pattern_type
-          type: cyboxCommon:PatternTypeEnum
-          use: Must Not
-        - name: regex_syntax
-          type: xs:string
-          use: Must Not
-        - name: has_changed
-          type: xs:boolean
-          use: Must Not
-        - name: trend
-          type: xs:boolean
-          use: Must Not
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       ObjectRelationshipVocab-1.1:
         use: Must Not
-        attributes:
-        - name: condition
-          type: cyboxCommon:ConditionTypeEnum
-          use: Must Not
-        - name: is_case_sensitive
-          type: xs:boolean
-          use: Must Not
-        - name: apply_condition
-          type: cyboxCommon:ConditionApplicationEnum
-          use: Must Not
-        - name: delimiter
-          type: xs:string
-          use: Must Not
-        - name: bit_mask
-          type: xs:hexBinary
-          use: Must Not
-        - name: pattern_type
-          type: cyboxCommon:PatternTypeEnum
-          use: Must Not
-        - name: regex_syntax
-          type: xs:string
-          use: Must Not
-        - name: has_changed
-          type: xs:boolean
-          use: Must Not
-        - name: trend
-          type: xs:boolean
-          use: Must Not
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       ObjectStateVocab-1.0:
         use: Must Not
-        attributes:
-        - name: condition
-          type: cyboxCommon:ConditionTypeEnum
-          use: Must Not
-        - name: is_case_sensitive
-          type: xs:boolean
-          use: Must Not
-        - name: apply_condition
-          type: cyboxCommon:ConditionApplicationEnum
-          use: Must Not
-        - name: delimiter
-          type: xs:string
-          use: Must Not
-        - name: bit_mask
-          type: xs:hexBinary
-          use: Must Not
-        - name: pattern_type
-          type: cyboxCommon:PatternTypeEnum
-          use: Must Not
-        - name: regex_syntax
-          type: xs:string
-          use: Must Not
-        - name: has_changed
-          type: xs:boolean
-          use: Must Not
-        - name: trend
-          type: xs:boolean
-          use: Must Not
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       ToolTypeVocab-1.0:
         use: Must Not
-        attributes:
-        - name: condition
-          type: cyboxCommon:ConditionTypeEnum
-          use: Must Not
-        - name: is_case_sensitive
-          type: xs:boolean
-          use: Must Not
-        - name: apply_condition
-          type: cyboxCommon:ConditionApplicationEnum
-          use: Must Not
-        - name: delimiter
-          type: xs:string
-          use: Must Not
-        - name: bit_mask
-          type: xs:hexBinary
-          use: Must Not
-        - name: pattern_type
-          type: cyboxCommon:PatternTypeEnum
-          use: Must Not
-        - name: regex_syntax
-          type: xs:string
-          use: Must Not
-        - name: has_changed
-          type: xs:boolean
-          use: Must Not
-        - name: trend
-          type: xs:boolean
-          use: Must Not
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       ToolTypeVocab-1.1:
         use: Must Not
-        attributes:
-        - name: condition
-          type: cyboxCommon:ConditionTypeEnum
-          use: Must Not
-        - name: is_case_sensitive
-          type: xs:boolean
-          use: Must Not
-        - name: apply_condition
-          type: cyboxCommon:ConditionApplicationEnum
-          use: Must Not
-        - name: delimiter
-          type: xs:string
-          use: Must Not
-        - name: bit_mask
-          type: xs:hexBinary
-          use: Must Not
-        - name: pattern_type
-          type: cyboxCommon:PatternTypeEnum
-          use: Must Not
-        - name: regex_syntax
-          type: xs:string
-          use: Must Not
-        - name: has_changed
-          type: xs:boolean
-          use: Must Not
-        - name: trend
-          type: xs:boolean
-          use: Must Not
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
   Account Object:
     project: cybox
     constructs:
       AccountObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -4018,42 +3659,10 @@ groups:
           use: Must Not
       AuthenticationTokenProtectionMechanismTypeVocab-1.0:
         use: Must Not
-        attributes:
-        - name: condition
-          type: cyboxCommon:ConditionTypeEnum
-          use: Must Not
-        - name: is_case_sensitive
-          type: xs:boolean
-          use: Must Not
-        - name: apply_condition
-          type: cyboxCommon:ConditionApplicationEnum
-          use: Must Not
-        - name: delimiter
-          type: xs:string
-          use: Must Not
-        - name: bit_mask
-          type: xs:hexBinary
-          use: Must Not
-        - name: pattern_type
-          type: cyboxCommon:PatternTypeEnum
-          use: Must Not
-        - name: regex_syntax
-          type: xs:string
-          use: Must Not
-        - name: has_changed
-          type: xs:boolean
-          use: Must Not
-        - name: trend
-          type: xs:boolean
-          use: Must Not
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       AuthenticationType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Authentication_Type
           type: cyboxCommon:ControlledVocabularyStringType
@@ -4069,42 +3678,10 @@ groups:
           use: Must Not
       AuthenticationTypeVocab-1.0:
         use: Must Not
-        attributes:
-        - name: condition
-          type: cyboxCommon:ConditionTypeEnum
-          use: Must Not
-        - name: is_case_sensitive
-          type: xs:boolean
-          use: Must Not
-        - name: apply_condition
-          type: cyboxCommon:ConditionApplicationEnum
-          use: Must Not
-        - name: delimiter
-          type: xs:string
-          use: Must Not
-        - name: bit_mask
-          type: xs:hexBinary
-          use: Must Not
-        - name: pattern_type
-          type: cyboxCommon:PatternTypeEnum
-          use: Must Not
-        - name: regex_syntax
-          type: xs:string
-          use: Must Not
-        - name: has_changed
-          type: xs:boolean
-          use: Must Not
-        - name: trend
-          type: xs:boolean
-          use: Must Not
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       StructuredAuthenticationMechanismType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Description
           type: cyboxCommon:StructuredTextType
@@ -4114,6 +3691,7 @@ groups:
     constructs:
       AddressObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -4148,6 +3726,7 @@ groups:
     constructs:
       APIObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -4176,6 +3755,7 @@ groups:
     constructs:
       ArchiveFileFormatType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -4239,6 +3819,7 @@ groups:
           use: Must Not
       ArchiveFileObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -4357,12 +3938,14 @@ groups:
     constructs:
       EntryPointSignatureListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Entry_Point_Signature
           type: FileObj:EntryPointSignatureType
           use: Must Not
       EntryPointSignatureType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Name
           type: cyboxCommon:StringObjectPropertyType
@@ -4372,6 +3955,7 @@ groups:
           use: Must Not
       EPJumpCodeType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Depth
           type: cyboxCommon:IntegerObjectPropertyType
@@ -4381,8 +3965,10 @@ groups:
           use: Must Not
       FileAttributeType:
         use: Must Not
+        is_vocab: false
       FileObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -4477,6 +4063,7 @@ groups:
           use: Must Not
       FilePathType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -4543,8 +4130,10 @@ groups:
           use: Must Not
       FilePermissionsType:
         use: Must Not
+        is_vocab: false
       PackerClassType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -4608,12 +4197,14 @@ groups:
           use: Must Not
       PackerListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Packer
           type: FileObj:PackerType
           use: Must Not
       PackerType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Name
           type: cyboxCommon:StringObjectPropertyType
@@ -4638,6 +4229,7 @@ groups:
           use: Must Not
       SymLinksListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Sym_Link
           type: cyboxCommon:StringObjectPropertyType
@@ -4647,6 +4239,7 @@ groups:
     constructs:
       ARPCacheEntryType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: IP_Address
           type: AddressObj:AddressObjectType
@@ -4662,6 +4255,7 @@ groups:
           use: Must Not
       ARPCacheEntryTypeType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -4725,6 +4319,7 @@ groups:
           use: Must Not
       ARPCacheObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -4741,6 +4336,7 @@ groups:
     constructs:
       BIOSInfoType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: BIOS_Date
           type: cyboxCommon:DateObjectPropertyType
@@ -4759,6 +4355,7 @@ groups:
           use: Must Not
       BitnessType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -4822,24 +4419,28 @@ groups:
           use: Must Not
       DHCPServerListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: DHCP_Server_Address
           type: AddressObj:AddressObjectType
           use: Must Not
       IPGatewayListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: IP_Gateway_Address
           type: AddressObj:AddressObjectType
           use: Must Not
       IPInfoListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: IP_Info
           type: SystemObj:IPInfoType
           use: Must Not
       IPInfoType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: IP_Address
           type: AddressObj:AddressObjectType
@@ -4849,12 +4450,14 @@ groups:
           use: Must Not
       NetworkInterfaceListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Network_Interface
           type: SystemObj:NetworkInterfaceType
           use: Must Not
       NetworkInterfaceType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Adapter
           type: cyboxCommon:StringObjectPropertyType
@@ -4882,6 +4485,7 @@ groups:
           use: Must Not
       OSType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Description
           type: cyboxCommon:StructuredTextType
@@ -4909,6 +4513,7 @@ groups:
           use: Must Not
       ProcessorArchType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -4972,6 +4577,7 @@ groups:
           use: Must Not
       SystemObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -5030,6 +4636,7 @@ groups:
     constructs:
       ArtifactObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -5064,6 +4671,7 @@ groups:
           use: Must Not
       CompressionType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: compression_mechanism
           type: xs:string
@@ -5073,6 +4681,7 @@ groups:
           use: Must Not
       EncodingType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: algorithm
           type: xs:string
@@ -5085,6 +4694,7 @@ groups:
           use: Must Not
       EncryptionType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: encryption_mechanism
           type: xs:string
@@ -5100,6 +4710,7 @@ groups:
           use: Must Not
       PackagingType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: is_encrypted
           type: xs:boolean
@@ -5119,6 +4730,7 @@ groups:
           use: Must Not
       RawArtifactType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -5188,6 +4800,7 @@ groups:
     constructs:
       ASObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -5213,6 +4826,7 @@ groups:
     constructs:
       CodeLanguageType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -5276,6 +4890,7 @@ groups:
           use: Must Not
       CodeObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -5322,6 +4937,7 @@ groups:
           use: Must Not
       CodePurposeType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -5385,6 +5001,7 @@ groups:
           use: Must Not
       CodeSegmentXORType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -5451,6 +5068,7 @@ groups:
           use: Must Not
       CodeTypeType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -5514,6 +5132,7 @@ groups:
           use: Must Not
       ProcessorTypeType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -5577,6 +5196,7 @@ groups:
           use: Must Not
       TargetedPlatformsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Targeted_Platform
           type: cyboxCommon:PlatformSpecificationType
@@ -5586,6 +5206,7 @@ groups:
     constructs:
       CustomObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -5605,6 +5226,7 @@ groups:
     constructs:
       DeviceObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -5639,6 +5261,7 @@ groups:
     constructs:
       DiskObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -5664,6 +5287,7 @@ groups:
           use: Must Not
       DiskType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -5727,6 +5351,7 @@ groups:
           use: Must Not
       PartitionListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Partition
           type: DiskPartitionObj:DiskPartitionObjectType
@@ -5736,6 +5361,7 @@ groups:
     constructs:
       DiskPartitionObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -5776,6 +5402,7 @@ groups:
           use: Must Not
       PartitionType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -5842,6 +5469,7 @@ groups:
     constructs:
       DNSCacheEntryType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: DNS_Entry
           type: DNSRecordObj:DNSRecordObjectType
@@ -5851,6 +5479,7 @@ groups:
           use: Must Not
       DNSCacheObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -5867,6 +5496,7 @@ groups:
     constructs:
       DNSRecordObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -5916,6 +5546,7 @@ groups:
     constructs:
       URIObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -5935,6 +5566,7 @@ groups:
     constructs:
       DNSQueryObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -5969,6 +5601,7 @@ groups:
           use: Must Not
       DNSQuestionType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: QName
           type: URIObj:URIObjectType
@@ -5981,6 +5614,7 @@ groups:
           use: Must Not
       DNSRecordType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -6044,6 +5678,7 @@ groups:
           use: Must Not
       DNSResourceRecordsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Resource_Record
           type: DNSRecordObj:DNSRecordObjectType
@@ -6053,6 +5688,7 @@ groups:
     constructs:
       DomainNameObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -6072,18 +5708,21 @@ groups:
     constructs:
       AttachmentReferenceType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
           use: Must Not
       AttachmentsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: File
           type: EmailMessageObj:AttachmentReferenceType
           use: Must Not
       EmailHeaderType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Received_Lines
           type: EmailMessageObj:EmailReceivedLineListType
@@ -6147,6 +5786,7 @@ groups:
           use: Must Not
       EmailMessageObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -6175,12 +5815,14 @@ groups:
           use: Must Not
       EmailReceivedLineListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Received
           type: EmailMessageObj:EmailReceivedLineType
           use: Must Not
       EmailReceivedLineType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: From
           type: cyboxCommon:StringObjectPropertyType
@@ -6205,18 +5847,21 @@ groups:
           use: Must Not
       EmailRecipientsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Recipient
           type: AddressObj:AddressObjectType
           use: Must Not
       LinkReferenceType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
           use: Must Not
       LinksType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Link
           type: EmailMessageObj:LinkReferenceType
@@ -6226,6 +5871,7 @@ groups:
     constructs:
       GUIDialogboxObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -6251,6 +5897,7 @@ groups:
     constructs:
       GUIObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -6270,6 +5917,7 @@ groups:
     constructs:
       GUIWindowObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -6298,6 +5946,7 @@ groups:
     constructs:
       HostnameObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -6320,6 +5969,7 @@ groups:
     constructs:
       HostFieldType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Domain_Name
           type: URIObj:URIObjectType
@@ -6329,6 +5979,7 @@ groups:
           use: Must Not
       HTTPClientRequestType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: HTTP_Request_Line
           type: HTTPSessionObj:HTTPRequestLineType
@@ -6341,6 +5992,7 @@ groups:
           use: Must Not
       HTTPMessageType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Length
           type: cyboxCommon:PositiveIntegerObjectPropertyType
@@ -6350,6 +6002,7 @@ groups:
           use: Must Not
       HTTPMethodType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -6413,6 +6066,7 @@ groups:
           use: Must Not
       HTTPRequestHeaderFieldsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Accept
           type: cyboxCommon:StringObjectPropertyType
@@ -6524,6 +6178,7 @@ groups:
           use: Must Not
       HTTPRequestHeaderType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Raw_Header
           type: cyboxCommon:StringObjectPropertyType
@@ -6533,6 +6188,7 @@ groups:
           use: Must Not
       HTTPRequestLineType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: HTTP_Method
           type: HTTPSessionObj:HTTPMethodType
@@ -6545,6 +6201,7 @@ groups:
           use: Must Not
       HTTPRequestResponseType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: ordinal_position
           type: xs:nonNegativeInteger
@@ -6561,6 +6218,7 @@ groups:
           use: Must Not
       HTTPResponseHeaderFieldsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Access_Control_Allow_Origin
           type: cyboxCommon:StringObjectPropertyType
@@ -6678,6 +6336,7 @@ groups:
           use: Must Not
       HTTPResponseHeaderType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Raw_Header
           type: cyboxCommon:StringObjectPropertyType
@@ -6687,6 +6346,7 @@ groups:
           use: Must Not
       HTTPServerResponseType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: HTTP_Status_Line
           type: HTTPSessionObj:HTTPStatusLineType
@@ -6699,6 +6359,7 @@ groups:
           use: Must Not
       HTTPSessionObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -6712,6 +6373,7 @@ groups:
           use: Must Not
       HTTPStatusLineType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Version
           type: cyboxCommon:StringObjectPropertyType
@@ -6727,6 +6389,7 @@ groups:
     constructs:
       PortObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -6746,6 +6409,7 @@ groups:
     constructs:
       ImageFileFormatType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -6809,6 +6473,7 @@ groups:
           use: Must Not
       ImageFileObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -6924,6 +6589,7 @@ groups:
     constructs:
       LibraryObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -6955,6 +6621,7 @@ groups:
           use: Must Not
       LibraryType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -7021,6 +6688,7 @@ groups:
     constructs:
       LinkObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -7043,6 +6711,7 @@ groups:
     constructs:
       LinuxPackageObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -7083,6 +6752,7 @@ groups:
     constructs:
       BlockType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -7146,6 +6816,7 @@ groups:
           use: Must Not
       MemoryObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -7195,6 +6866,7 @@ groups:
     constructs:
       MutexObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -7214,6 +6886,7 @@ groups:
     constructs:
       Layer3ProtocolType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -7277,6 +6950,7 @@ groups:
           use: Must Not
       Layer7ConnectionsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: HTTP_Session
           type: HTTPSessionObj:HTTPSessionObjectType
@@ -7286,6 +6960,7 @@ groups:
           use: Must Not
       Layer7ProtocolType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -7349,6 +7024,7 @@ groups:
           use: Must Not
       NetworkConnectionObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -7392,6 +7068,7 @@ groups:
     constructs:
       SocketAddressObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -7414,30 +7091,35 @@ groups:
     constructs:
       BidirectionalRecordType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: YAF_Record
           type: NetFlowObj:YAFRecordType
           use: Must Not
       FlowCollectionElementType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Flow_Record_Field_Value
           type: cyboxCommon:StringObjectPropertyType
           use: Must Not
       FlowDataRecordType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Flow_Record_Collection_Element
           type: NetFlowObj:FlowCollectionElementType
           use: Must Not
       IPFIXDataRecordType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Field_Value
           type: cyboxCommon:StringObjectPropertyType
           use: Must Not
       IPFIXDataSetType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Set_Header
           type: NetFlowObj:IPFIXSetHeaderType
@@ -7450,6 +7132,7 @@ groups:
           use: Must Not
       IPFIXMessageHeaderType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Version
           type: cyboxCommon:HexBinaryObjectPropertyType
@@ -7468,6 +7151,7 @@ groups:
           use: Must Not
       IPFIXMessageType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Message_Header
           type: NetFlowObj:IPFIXMessageHeaderType
@@ -7477,6 +7161,7 @@ groups:
           use: Must Not
       IPFIXOptionsTemplateRecordFieldSpecifiersType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Scope_Enterprise_Bit
           type: xs:boolean
@@ -7504,6 +7189,7 @@ groups:
           use: Must Not
       IPFIXOptionsTemplateRecordHeaderType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Template_ID
           type: cyboxCommon:IntegerObjectPropertyType
@@ -7516,6 +7202,7 @@ groups:
           use: Must Not
       IPFIXOptionsTemplateRecordType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Options_Template_Record_Header
           type: NetFlowObj:IPFIXOptionsTemplateRecordHeaderType
@@ -7525,6 +7212,7 @@ groups:
           use: Must Not
       IPFIXOptionsTemplateSetType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Set_Header
           type: NetFlowObj:IPFIXSetHeaderType
@@ -7537,6 +7225,7 @@ groups:
           use: Must Not
       IPFIXSetHeaderType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Set_ID
           type: cyboxCommon:IntegerObjectPropertyType
@@ -7546,6 +7235,7 @@ groups:
           use: Must Not
       IPFIXSetType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Template_Set
           type: NetFlowObj:IPFIXTemplateSetType
@@ -7558,6 +7248,7 @@ groups:
           use: Must Not
       IPFIXTemplateRecordFieldSpecifiersType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Enterprise_Bit
           type: xs:boolean
@@ -7573,6 +7264,7 @@ groups:
           use: Must Not
       IPFIXTemplateRecordHeaderType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Template_ID
           type: cyboxCommon:IntegerObjectPropertyType
@@ -7582,6 +7274,7 @@ groups:
           use: Must Not
       IPFIXTemplateRecordType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Template_Record_Header
           type: NetFlowObj:IPFIXTemplateRecordHeaderType
@@ -7591,6 +7284,7 @@ groups:
           use: Must Not
       IPFIXTemplateSetType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Set_Header
           type: NetFlowObj:IPFIXSetHeaderType
@@ -7603,6 +7297,7 @@ groups:
           use: Must Not
       NetflowV5FlowHeaderType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Version
           type: cyboxCommon:HexBinaryObjectPropertyType
@@ -7633,6 +7328,7 @@ groups:
           use: Must Not
       NetflowV5FlowRecordType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Nexthop_IPv4_Addr
           type: AddressObj:AddressObjectType
@@ -7672,6 +7368,7 @@ groups:
           use: Must Not
       NetflowV5PacketType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Flow_Header
           type: NetFlowObj:NetflowV5FlowHeaderType
@@ -7681,6 +7378,7 @@ groups:
           use: Must Not
       NetflowV9DataFlowSetType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Flow_Set_ID_Template_ID
           type: cyboxCommon:IntegerObjectPropertyType
@@ -7696,6 +7394,7 @@ groups:
           use: Must Not
       NetflowV9DataRecordType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Flow_Data_Record
           type: NetFlowObj:FlowDataRecordType
@@ -7705,6 +7404,7 @@ groups:
           use: Must Not
       NetflowV9ExportPacketType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Packet_Header
           type: NetFlowObj:NetflowV9PacketHeaderType
@@ -7714,6 +7414,7 @@ groups:
           use: Must Not
       NetflowV9FieldType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -7777,6 +7478,7 @@ groups:
           use: Must Not
       NetflowV9FlowSetType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Template_Flow_Set
           type: NetFlowObj:NetflowV9TemplateFlowSetType
@@ -7789,6 +7491,7 @@ groups:
           use: Must Not
       NetflowV9OptionsTemplateFlowSetType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Flow_Set_ID
           type: cyboxCommon:HexBinaryObjectPropertyType
@@ -7804,6 +7507,7 @@ groups:
           use: Must Not
       NetflowV9OptionsTemplateRecordType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Template_ID
           type: cyboxCommon:IntegerObjectPropertyType
@@ -7828,6 +7532,7 @@ groups:
           use: Must Not
       NetflowV9PacketHeaderType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Version
           type: cyboxCommon:HexBinaryObjectPropertyType
@@ -7849,6 +7554,7 @@ groups:
           use: Must Not
       NetflowV9ScopeFieldType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -7912,6 +7618,7 @@ groups:
           use: Must Not
       NetflowV9TemplateFlowSetType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Flow_Set_ID
           type: cyboxCommon:HexBinaryObjectPropertyType
@@ -7924,6 +7631,7 @@ groups:
           use: Must Not
       NetflowV9TemplateRecordType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Template_ID
           type: cyboxCommon:IntegerObjectPropertyType
@@ -7939,6 +7647,7 @@ groups:
           use: Must Not
       NetworkFlowLabelType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Src_Socket_Address
           type: SocketAddressObj:SocketAddressObjectType
@@ -7960,6 +7669,7 @@ groups:
           use: Must Not
       NetworkFlowObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -7979,6 +7689,7 @@ groups:
           use: Must Not
       NetworkLayerInfoType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Src_Socket_Address
           type: SocketAddressObj:SocketAddressObjectType
@@ -7991,12 +7702,14 @@ groups:
           use: Must Not
       OptionCollectionElementType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Option_Record_Field_Value
           type: cyboxCommon:StringObjectPropertyType
           use: Must Not
       OptionsDataRecordType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Scope_Field_Value
           type: cyboxCommon:StringObjectPropertyType
@@ -8006,6 +7719,7 @@ groups:
           use: Must Not
       SiLKAddressType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -8069,6 +7783,7 @@ groups:
           use: Must Not
       SiLKCountryCodeType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -8132,6 +7847,7 @@ groups:
           use: Must Not
       SiLKDirectionType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -8195,6 +7911,7 @@ groups:
           use: Must Not
       SiLKFlowAttributesType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -8258,6 +7975,7 @@ groups:
           use: Must Not
       SiLKRecordType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Packet_Count
           type: cyboxCommon:IntegerObjectPropertyType
@@ -8321,6 +8039,7 @@ groups:
           use: Must Not
       SiLKSensorClassType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -8384,6 +8103,7 @@ groups:
           use: Must Not
       SiLKSensorInfoType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Sensor_ID
           type: cyboxCommon:StringObjectPropertyType
@@ -8396,6 +8116,7 @@ groups:
           use: Must Not
       UnidirectionalRecordType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: IPFIX_Message
           type: NetFlowObj:IPFIXMessageType
@@ -8411,6 +8132,7 @@ groups:
           use: Must Not
       YAFFlowType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Flow_Start_Milliseconds
           type: cyboxCommon:IntegerObjectPropertyType
@@ -8456,6 +8178,7 @@ groups:
           use: Must Not
       YAFRecordType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Flow
           type: NetFlowObj:YAFFlowType
@@ -8465,6 +8188,7 @@ groups:
           use: Must Not
       YAFReverseFlowType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Reverse_Octet_Total_Count
           type: cyboxCommon:IntegerObjectPropertyType
@@ -8495,6 +8219,7 @@ groups:
           use: Must Not
       YAFTCPFlowType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: TCP_Sequence_Number
           type: cyboxCommon:IntegerObjectPropertyType
@@ -8510,6 +8235,7 @@ groups:
     constructs:
       ARPOpType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -8573,6 +8299,7 @@ groups:
           use: Must Not
       ARPType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Hardware_Addr_Type
           type: PacketObj:IANAHardwareType
@@ -8603,6 +8330,7 @@ groups:
           use: Must Not
       AuthenticationHeaderType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Next_Header
           type: PacketObj:IANAAssignedIPNumbersType
@@ -8621,6 +8349,7 @@ groups:
           use: Must Not
       DestinationOptionsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Next_Header
           type: PacketObj:IANAAssignedIPNumbersType
@@ -8633,6 +8362,7 @@ groups:
           use: Must Not
       DoNotFragmentType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -8696,6 +8426,7 @@ groups:
           use: Must Not
       EncapsulatingSecurityPayloadType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Security_Parameters_Index
           type: cyboxCommon:HexBinaryObjectPropertyType
@@ -8720,6 +8451,7 @@ groups:
           use: Must Not
       EthernetHeaderType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Destination_MAC_Addr
           type: AddressObj:AddressObjectType
@@ -8735,12 +8467,14 @@ groups:
           use: Must Not
       EthernetInterfaceType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Ethernet_Header
           type: PacketObj:EthernetHeaderType
           use: Must Not
       FragmentationRequiredType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Fragmentation_Required
           type: xs:boolean
@@ -8750,6 +8484,7 @@ groups:
           use: Must Not
       FragmentHeaderType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Next_Header
           type: cyboxCommon:HexBinaryObjectPropertyType
@@ -8765,6 +8500,7 @@ groups:
           use: Must Not
       FragmentType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Fragment_Header
           type: PacketObj:FragmentHeaderType
@@ -8774,6 +8510,7 @@ groups:
           use: Must Not
       HopByHopOptionsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Next_Header
           type: PacketObj:IANAAssignedIPNumbersType
@@ -8786,6 +8523,7 @@ groups:
           use: Must Not
       IANAAssignedIPNumbersType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -8849,6 +8587,7 @@ groups:
           use: Must Not
       IANAEtherType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -8912,6 +8651,7 @@ groups:
           use: Must Not
       IANAHardwareType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -8975,6 +8715,7 @@ groups:
           use: Must Not
       IANAPortNumberRegistryType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -9038,6 +8779,7 @@ groups:
           use: Must Not
       ICMPv4AddressMaskReplyType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Address_Mask_Reply
           type: xs:boolean
@@ -9047,6 +8789,7 @@ groups:
           use: Must Not
       ICMPv4AddressMaskRequestType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Address_Mask_Request
           type: xs:boolean
@@ -9056,6 +8799,7 @@ groups:
           use: Must Not
       ICMPv4DestinationUnreachableType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Destination_Network_Unreachable
           type: xs:boolean
@@ -9107,6 +8851,7 @@ groups:
           use: Must Not
       ICMPv4EchoReplyType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Echo_Reply
           type: xs:boolean
@@ -9116,6 +8861,7 @@ groups:
           use: Must Not
       ICMPv4EchoRequestType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Echo_Request
           type: xs:boolean
@@ -9125,6 +8871,7 @@ groups:
           use: Must Not
       ICMPv4ErrorMessageContentType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: IP_Header
           type: PacketObj:IPv4HeaderType
@@ -9134,6 +8881,7 @@ groups:
           use: Must Not
       ICMPv4ErrorMessageType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Destination_Unreachable
           type: PacketObj:ICMPv4DestinationUnreachableType
@@ -9152,6 +8900,7 @@ groups:
           use: Must Not
       ICMPv4HeaderType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Type
           type: cyboxCommon:HexBinaryObjectPropertyType
@@ -9164,6 +8913,7 @@ groups:
           use: Must Not
       ICMPv4InfoMessageContentType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Identifier
           type: cyboxCommon:HexBinaryObjectPropertyType
@@ -9173,6 +8923,7 @@ groups:
           use: Must Not
       ICMPv4InfoMessageType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Echo_Reply
           type: PacketObj:ICMPv4EchoReplyType
@@ -9197,6 +8948,7 @@ groups:
           use: Must Not
       ICMPv4PacketType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: ICMPv4_Header
           type: PacketObj:ICMPv4HeaderType
@@ -9212,6 +8964,7 @@ groups:
           use: Must Not
       ICMPv4RedirectMessageType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Network_Redirect
           type: xs:boolean
@@ -9230,12 +8983,14 @@ groups:
           use: Must Not
       ICMPv4SourceQuenchType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Source_Quench
           type: xs:boolean
           use: Must Not
       ICMPv4TimeExceededType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: TTL_Exceeded_In_Transit
           type: xs:boolean
@@ -9245,6 +9000,7 @@ groups:
           use: Must Not
       ICMPv4TimestampReplyType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Timestamp_Reply
           type: xs:boolean
@@ -9260,6 +9016,7 @@ groups:
           use: Must Not
       ICMPv4TimestampRequestType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Timestamp
           type: xs:boolean
@@ -9269,6 +9026,7 @@ groups:
           use: Must Not
       ICMPv4TracerouteType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Outbound_Packet_Forward_Success
           type: xs:boolean
@@ -9293,6 +9051,7 @@ groups:
           use: Must Not
       ICMPv6DestinationUnreachableType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: No_Route
           type: xs:boolean
@@ -9317,6 +9076,7 @@ groups:
           use: Must Not
       ICMPv6EchoReplyType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Echo_Reply
           type: xs:boolean
@@ -9326,6 +9086,7 @@ groups:
           use: Must Not
       ICMPv6EchoRequestType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Echo_Request
           type: xs:boolean
@@ -9335,6 +9096,7 @@ groups:
           use: Must Not
       ICMPv6ErrorMessageType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Destination_Unreachable
           type: PacketObj:ICMPv6DestinationUnreachableType
@@ -9353,6 +9115,7 @@ groups:
           use: Must Not
       ICMPv6HeaderType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Type
           type: cyboxCommon:HexBinaryObjectPropertyType
@@ -9365,6 +9128,7 @@ groups:
           use: Must Not
       ICMPv6InfoMessageContentType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Identifier
           type: cyboxCommon:HexBinaryObjectPropertyType
@@ -9374,6 +9138,7 @@ groups:
           use: Must Not
       ICMPv6InfoMessageType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Echo_Request
           type: PacketObj:ICMPv6EchoRequestType
@@ -9386,6 +9151,7 @@ groups:
           use: Must Not
       ICMPv6PacketTooBigType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Packet_Too_Big
           type: xs:boolean
@@ -9395,6 +9161,7 @@ groups:
           use: Must Not
       ICMPv6PacketType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: ICMPv6_Header
           type: PacketObj:ICMPv6HeaderType
@@ -9407,6 +9174,7 @@ groups:
           use: Must Not
       ICMPv6ParameterProblemType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Erroneous_Header_Field
           type: xs:boolean
@@ -9422,6 +9190,7 @@ groups:
           use: Must Not
       ICMPv6TimeExceededType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Hop_Limit_Exceeded
           type: xs:boolean
@@ -9431,6 +9200,7 @@ groups:
           use: Must Not
       InternetLayerType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: IPv4
           type: PacketObj:IPv4PacketType
@@ -9446,6 +9216,7 @@ groups:
           use: Must Not
       IPv4ClassType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -9509,6 +9280,7 @@ groups:
           use: Must Not
       IPv4CopyFlagType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -9572,6 +9344,7 @@ groups:
           use: Must Not
       IPv4FlagsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Reserved
           type: cyboxCommon:IntegerObjectPropertyType
@@ -9584,6 +9357,7 @@ groups:
           use: Must Not
       IPv4HeaderType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: IP_Version
           type: PacketObj:IPVersionType
@@ -9629,6 +9403,7 @@ groups:
           use: Must Not
       IPv4OptionsType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -9692,6 +9467,7 @@ groups:
           use: Must Not
       IPv4OptionType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Copy_Flag
           type: PacketObj:IPv4CopyFlagType
@@ -9704,6 +9480,7 @@ groups:
           use: Must Not
       IPv4PacketType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: IPv4_Header
           type: PacketObj:IPv4HeaderType
@@ -9713,6 +9490,7 @@ groups:
           use: Must Not
       IPv6DoNotRecogActionType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -9776,6 +9554,7 @@ groups:
           use: Must Not
       IPv6ExtHeaderType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Hop_by_Hop_Options
           type: PacketObj:HopByHopOptionsType
@@ -9797,6 +9576,7 @@ groups:
           use: Must Not
       IPv6HeaderType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: IP_Version
           type: PacketObj:IPVersionType
@@ -9824,6 +9604,7 @@ groups:
           use: Must Not
       IPv6OptionType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Do_Not_Recogn_Action
           type: PacketObj:IPv6DoNotRecogActionType
@@ -9836,6 +9617,7 @@ groups:
           use: Must Not
       IPv6PacketChangeType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -9899,6 +9681,7 @@ groups:
           use: Must Not
       IPv6PacketType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: IPv6_Header
           type: PacketObj:IPv6HeaderType
@@ -9911,6 +9694,7 @@ groups:
           use: Must Not
       IPVersionType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -9974,6 +9758,7 @@ groups:
           use: Must Not
       LinkLayerType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Physical_Interface
           type: PacketObj:PhysicalInterfaceType
@@ -9983,6 +9768,7 @@ groups:
           use: Must Not
       LogicalProtocolType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: ARP_RARP
           type: PacketObj:ARPType
@@ -9992,6 +9778,7 @@ groups:
           use: Must Not
       MFlagType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -10055,6 +9842,7 @@ groups:
           use: Must Not
       MoreFragmentsType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -10118,6 +9906,7 @@ groups:
           use: Must Not
       NDPLinkAddrType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Length
           type: cyboxCommon:IntegerObjectPropertyType
@@ -10127,6 +9916,7 @@ groups:
           use: Must Not
       NDPMTUType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Length
           type: cyboxCommon:IntegerObjectPropertyType
@@ -10136,6 +9926,7 @@ groups:
           use: Must Not
       NDPPrefixInfoType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: link_flag
           type: xs:boolean
@@ -10161,6 +9952,7 @@ groups:
           use: Must Not
       NDPRedirectedHeaderType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Length
           type: cyboxCommon:IntegerObjectPropertyType
@@ -10170,6 +9962,7 @@ groups:
           use: Must Not
       NDPType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: ICMPv6_Header
           type: PacketObj:ICMPv6HeaderType
@@ -10191,6 +9984,7 @@ groups:
           use: Must Not
       NeighborAdvertisementType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: router_flag
           type: xs:boolean
@@ -10210,18 +10004,21 @@ groups:
           use: Must Not
       NeighborOptionsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Target_Link_Addr
           type: PacketObj:NDPLinkAddrType
           use: Must Not
       NeighborSolicitationOptionsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Src_Link_Addr
           type: PacketObj:NDPLinkAddrType
           use: Must Not
       NeighborSolicitationType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Target_IPv6_Addr
           type: AddressObj:AddressObjectType
@@ -10231,6 +10028,7 @@ groups:
           use: Must Not
       NetworkPacketObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -10250,6 +10048,7 @@ groups:
           use: Must Not
       OptionDataType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Option_Type
           type: PacketObj:IPv6OptionType
@@ -10265,12 +10064,14 @@ groups:
           use: Must Not
       Pad1Type:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Octet
           type: cyboxCommon:HexBinaryObjectPropertyType
           use: Must Not
       PadNType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Octet
           type: cyboxCommon:HexBinaryObjectPropertyType
@@ -10283,12 +10084,14 @@ groups:
           use: Must Not
       PhysicalInterfaceType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Ethernet
           type: PacketObj:EthernetInterfaceType
           use: Must Not
       PrefixType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: IPv6_Addr
           type: AddressObj:AddressObjectType
@@ -10298,6 +10101,7 @@ groups:
           use: Must Not
       RedirectOptionsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Target_Link_Addr
           type: PacketObj:NDPLinkAddrType
@@ -10307,6 +10111,7 @@ groups:
           use: Must Not
       RedirectType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Target_IPv6_Addr
           type: AddressObj:AddressObjectType
@@ -10319,6 +10124,7 @@ groups:
           use: Must Not
       RouterAdvertisementOptionsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Src_Link_Addr
           type: PacketObj:NDPLinkAddrType
@@ -10331,6 +10137,7 @@ groups:
           use: Must Not
       RouterAdvertisementType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: managed_address_config_flag
           type: xs:boolean
@@ -10356,18 +10163,21 @@ groups:
           use: Must Not
       RouterSolicitationOptionsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Src_Link_Addr
           type: PacketObj:NDPLinkAddrType
           use: Must Not
       RouterSolicitationType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Options
           type: PacketObj:RouterSolicitationOptionsType
           use: Must Not
       RoutingType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Next_Header
           type: PacketObj:IANAAssignedIPNumbersType
@@ -10386,6 +10196,7 @@ groups:
           use: Must Not
       TCPFlagsType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: ns
           type: xs:boolean
@@ -10416,6 +10227,7 @@ groups:
           use: Must Not
       TCPHeaderType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Src_Port
           type: PortObj:PortObjectType
@@ -10449,6 +10261,7 @@ groups:
           use: Must Not
       TCPType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: TCP_Header
           type: PacketObj:TCPHeaderType
@@ -10461,6 +10274,7 @@ groups:
           use: Must Not
       TransportLayerType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: TCP
           type: PacketObj:TCPType
@@ -10470,6 +10284,7 @@ groups:
           use: Must Not
       TypeLengthType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Length
           type: cyboxCommon:HexBinaryObjectPropertyType
@@ -10479,6 +10294,7 @@ groups:
           use: Must Not
       UDPHeaderType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: SrcPort
           type: PortObj:PortObjectType
@@ -10494,6 +10310,7 @@ groups:
           use: Must Not
       UDPType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: UDP_Header
           type: PacketObj:UDPHeaderType
@@ -10506,6 +10323,7 @@ groups:
     constructs:
       NetworkRouteEntryObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -10564,6 +10382,7 @@ groups:
           use: Must Not
       RouteType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -10630,6 +10449,7 @@ groups:
     constructs:
       NetRouteObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -10670,6 +10490,7 @@ groups:
           use: Must Not
       NetworkRouteEntriesType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Network_Route_Entry
           type: NetworkRouteEntryObj:NetworkRouteEntryObjectType
@@ -10679,6 +10500,7 @@ groups:
     constructs:
       AddressFamilyType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -10742,6 +10564,7 @@ groups:
           use: Must Not
       DomainFamilyType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -10805,6 +10628,7 @@ groups:
           use: Must Not
       NetworkSocketObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -10845,6 +10669,7 @@ groups:
           use: Must Not
       ProtocolType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -10908,6 +10733,7 @@ groups:
           use: Must Not
       SocketOptionsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: IP_MULTICAST_IF
           type: cyboxCommon:StringObjectPropertyType
@@ -10974,6 +10800,7 @@ groups:
           use: Must Not
       SocketType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -11040,6 +10867,7 @@ groups:
     constructs:
       NetworkSubnetObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -11062,6 +10890,7 @@ groups:
           use: Must Not
       RoutesType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Route
           type: NetworkRouteEntryObj:NetworkRouteEntryObjectType
@@ -11071,6 +10900,7 @@ groups:
     constructs:
       PDFDictionaryType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Object_Reference
           type: PDFFileObj:PDFIndirectObjectIDType
@@ -11080,6 +10910,7 @@ groups:
           use: Must Not
       PDFDocumentInformationDictionaryType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Title
           type: cyboxCommon:StringObjectPropertyType
@@ -11110,12 +10941,14 @@ groups:
           use: Must Not
       PDFFileIDType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: ID_String
           type: cyboxCommon:StringObjectPropertyType
           use: Must Not
       PDFFileMetadataType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: encrypted
           type: xs:boolean
@@ -11141,6 +10974,7 @@ groups:
           use: Must Not
       PDFFileObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -11250,6 +11084,7 @@ groups:
           use: Must Not
       PDFIndirectObjectContentsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Non_Stream_Contents
           type: cyboxCommon:StringObjectPropertyType
@@ -11259,6 +11094,7 @@ groups:
           use: Must Not
       PDFIndirectObjectIDType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Object_Number
           type: cyboxCommon:PositiveIntegerObjectPropertyType
@@ -11268,12 +11104,14 @@ groups:
           use: Must Not
       PDFIndirectObjectListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Indirect_Object
           type: PDFFileObj:PDFIndirectObjectType
           use: Must Not
       PDFIndirectObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: type
           type: PDFFileObj:PDFObjectTypeEnum
@@ -11293,6 +11131,7 @@ groups:
           use: Must Not
       PDFKeywordCountsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Page_Count
           type: PDFFileObj:PDFKeywordCountType
@@ -11350,6 +11189,7 @@ groups:
           use: Must Not
       PDFKeywordCountType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Non_Obfuscated_Count
           type: cyboxCommon:NonNegativeIntegerObjectPropertyType
@@ -11359,6 +11199,7 @@ groups:
           use: Must Not
       PDFStreamType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Raw_Stream
           type: cyboxCommon:StringObjectPropertyType
@@ -11374,12 +11215,14 @@ groups:
           use: Must Not
       PDFTrailerListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Trailer
           type: PDFFileObj:PDFTrailerType
           use: Must Not
       PDFTrailerType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Size
           type: cyboxCommon:PositiveIntegerObjectPropertyType
@@ -11410,12 +11253,14 @@ groups:
           use: Must Not
       PDFXrefEntryListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Cross_Reference_Entry
           type: PDFFileObj:PDFXrefEntryType
           use: Must Not
       PDFXrefEntryType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: type
           type: PDFFileObj:PDFXrefEntryTypeEnum
@@ -11432,18 +11277,21 @@ groups:
           use: Must Not
       PDFXRefTableListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Cross_Reference_Table
           type: PDFFileObj:PDFXRefTableType
           use: Must Not
       PDFXrefTableSubsectionListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Subsection
           type: PDFFileObj:PDFXrefTableSubsectionType
           use: Must Not
       PDFXrefTableSubsectionType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: First_Object_Number
           type: cyboxCommon:NonNegativeIntegerObjectPropertyType
@@ -11456,6 +11304,7 @@ groups:
           use: Must Not
       PDFXRefTableType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Subsections
           type: PDFFileObj:PDFXrefTableSubsectionListType
@@ -11471,6 +11320,7 @@ groups:
     constructs:
       PipeObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -11490,18 +11340,21 @@ groups:
     constructs:
       ArgumentListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Argument
           type: cyboxCommon:StringObjectPropertyType
           use: Must Not
       ChildPIDListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Child_PID
           type: cyboxCommon:UnsignedIntegerObjectPropertyType
           use: Must Not
       ImageInfoType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: File_Name
           type: cyboxCommon:StringObjectPropertyType
@@ -11517,18 +11370,21 @@ groups:
           use: Must Not
       NetworkConnectionListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Network_Connection
           type: NetworkConnectionObj:NetworkConnectionObjectType
           use: Must Not
       PortListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Port
           type: PortObj:PortObjectType
           use: Must Not
       ProcessObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -11590,11 +11446,13 @@ groups:
           use: Must Not
       ProcessStatusType:
         use: Must Not
+        is_vocab: false
   Product Object:
     project: cybox
     constructs:
       ProductObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -11629,6 +11487,7 @@ groups:
     constructs:
       SemaphoreObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -11654,6 +11513,7 @@ groups:
     constructs:
       SMSMessageObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -11697,6 +11557,7 @@ groups:
     constructs:
       UnixFileObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -11800,6 +11661,7 @@ groups:
           use: Must Not
       UnixFilePermissionsType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: suid
           type: xs:boolean
@@ -11836,6 +11698,7 @@ groups:
           use: Must Not
       UnixFileType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -11902,6 +11765,7 @@ groups:
     constructs:
       UnixNetworkRouteEntryObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -11978,6 +11842,7 @@ groups:
     constructs:
       UnixPipeObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -12000,12 +11865,14 @@ groups:
     constructs:
       FileDescriptorListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: File_Descriptor
           type: cyboxCommon:UnsignedIntegerObjectPropertyType
           use: Must Not
       UnixProcessObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -12079,6 +11946,7 @@ groups:
           use: Must Not
       UnixProcessStateType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -12142,6 +12010,7 @@ groups:
           use: Must Not
       UnixProcessStatusType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Current_Status
           type: UnixProcessObj:UnixProcessStateType
@@ -12154,18 +12023,21 @@ groups:
     constructs:
       UnixGroupType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Group_ID
           type: cyboxCommon:NonNegativeIntegerObjectPropertyType
           use: Must Not
       UnixPrivilegeType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Permissions_Mask
           type: cyboxCommon:StringObjectPropertyType
           use: Must Not
       UnixUserAccountObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -12239,22 +12111,27 @@ groups:
     constructs:
       GroupListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Group
           type: UserAccountObj:GroupType
           use: Must Not
       GroupType:
         use: Must Not
+        is_vocab: false
       PrivilegeListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Privilege
           type: UserAccountObj:PrivilegeType
           use: Must Not
       PrivilegeType:
         use: Must Not
+        is_vocab: false
       UserAccountObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -12319,6 +12196,7 @@ groups:
     constructs:
       UnixVolumeObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -12371,12 +12249,14 @@ groups:
     constructs:
       FileSystemFlagListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: File_System_Flag
           type: VolumeObj:VolumeFileSystemFlagType
           use: Must Not
       VolumeFileSystemFlagType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -12440,6 +12320,7 @@ groups:
           use: Must Not
       VolumeObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -12483,11 +12364,13 @@ groups:
           use: Must Not
       VolumeOptionsType:
         use: Must Not
+        is_vocab: false
   URL History Object:
     project: cybox
     constructs:
       URLHistoryEntryType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: URL
           type: URIObj:URIObjectType
@@ -12524,6 +12407,7 @@ groups:
           use: Must Not
       URLHistoryObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -12543,6 +12427,7 @@ groups:
     constructs:
       UserSessionObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -12574,12 +12459,14 @@ groups:
     constructs:
       WhoisContactsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Contact
           type: WhoisObj:WhoisContactType
           use: Must Not
       WhoisContactType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: contact_type
           type: "@contact_typeInlineType"
@@ -12608,12 +12495,14 @@ groups:
           use: Must Not
       WhoisNameserversType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Nameserver
           type: URIObj:URIObjectType
           use: Must Not
       WhoisObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -12675,6 +12564,7 @@ groups:
           use: Must Not
       WhoisRegistrantInfoType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: contact_type
           type: "@contact_typeInlineType"
@@ -12706,12 +12596,14 @@ groups:
           use: Must Not
       WhoisRegistrantsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Registrant
           type: WhoisObj:WhoisRegistrantInfoType
           use: Must Not
       WhoisRegistrarInfoType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Registrar_ID
           type: cyboxCommon:StringObjectPropertyType
@@ -12742,12 +12634,14 @@ groups:
           use: Must Not
       WhoisStatusesType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Status
           type: WhoisObj:WhoisStatusType
           use: Must Not
       WhoisStatusType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -12814,6 +12708,7 @@ groups:
     constructs:
       FullyQualifiedNameType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: NetBEUI_Name
           type: cyboxCommon:StringObjectPropertyType
@@ -12823,6 +12718,7 @@ groups:
           use: Must Not
       KerberosDelegationType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Bitmask
           type: cyboxCommon:HexBinaryObjectPropertyType
@@ -12832,6 +12728,7 @@ groups:
           use: Must Not
       KerberosServiceType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Computer
           type: cyboxCommon:StringObjectPropertyType
@@ -12847,6 +12744,7 @@ groups:
           use: Must Not
       KerberosType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Delegation
           type: WinComputerAccountObj:KerberosDelegationType
@@ -12856,6 +12754,7 @@ groups:
           use: Must Not
       WindowsComputerAccountObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -12908,6 +12807,7 @@ groups:
     constructs:
       WindowsCriticalSectionObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -12927,12 +12827,14 @@ groups:
     constructs:
       DeviceObjectListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Device_Object_Struct
           type: WinDriverObj:DeviceObjectStructType
           use: Must Not
       DeviceObjectStructType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Attached_Device_Name
           type: cyboxCommon:StringObjectPropertyType
@@ -12960,6 +12862,7 @@ groups:
           use: Must Not
       WindowsDriverObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -13216,6 +13119,7 @@ groups:
     constructs:
       DataDirectoryType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Export_Table
           type: WinExecutableFileObj:PEDataDirectoryStructType
@@ -13267,6 +13171,7 @@ groups:
           use: Must Not
       DOSHeaderType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: e_magic
           type: cyboxCommon:HexBinaryObjectPropertyType
@@ -13330,6 +13235,7 @@ groups:
           use: Must Not
       EntropyType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Value
           type: cyboxCommon:FloatObjectPropertyType
@@ -13342,6 +13248,7 @@ groups:
           use: Must Not
       PEBuildInformationType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Linker_Name
           type: cyboxCommon:StringObjectPropertyType
@@ -13357,6 +13264,7 @@ groups:
           use: Must Not
       PEChecksumType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: PE_Computed_API
           type: cyboxCommon:LongObjectPropertyType
@@ -13369,6 +13277,7 @@ groups:
           use: Must Not
       PEDataDirectoryStructType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Virtual_Address
           type: cyboxCommon:HexBinaryObjectPropertyType
@@ -13378,12 +13287,14 @@ groups:
           use: Must Not
       PEExportedFunctionsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Exported_Function
           type: WinExecutableFileObj:PEExportedFunctionType
           use: Must Not
       PEExportedFunctionType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Function_Name
           type: cyboxCommon:StringObjectPropertyType
@@ -13396,6 +13307,7 @@ groups:
           use: Must Not
       PEExportsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Name
           type: cyboxCommon:StringObjectPropertyType
@@ -13417,6 +13329,7 @@ groups:
           use: Must Not
       PEFileHeaderType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Machine
           type: cyboxCommon:HexBinaryObjectPropertyType
@@ -13444,6 +13357,7 @@ groups:
           use: Must Not
       PEHeadersType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: DOS_Header
           type: WinExecutableFileObj:DOSHeaderType
@@ -13465,12 +13379,14 @@ groups:
           use: Must Not
       PEImportedFunctionsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Imported_Function
           type: WinExecutableFileObj:PEImportedFunctionType
           use: Must Not
       PEImportedFunctionType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Function_Name
           type: cyboxCommon:StringObjectPropertyType
@@ -13489,12 +13405,14 @@ groups:
           use: Must Not
       PEImportListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Import
           type: WinExecutableFileObj:PEImportType
           use: Must Not
       PEImportType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: delay_load
           type: xs:boolean
@@ -13514,6 +13432,7 @@ groups:
           use: Must Not
       PEOptionalHeaderType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Magic
           type: cyboxCommon:HexBinaryObjectPropertyType
@@ -13613,6 +13532,7 @@ groups:
           use: Must Not
       PEResourceContentType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -13676,12 +13596,14 @@ groups:
           use: Must Not
       PEResourceListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Resource
           type: WinExecutableFileObj:PEResourceType
           use: Must Not
       PEResourceType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Type
           type: WinExecutableFileObj:PEResourceContentType
@@ -13709,6 +13631,7 @@ groups:
           use: Must Not
       PESectionHeaderStructType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Name
           type: cyboxCommon:StringObjectPropertyType
@@ -13742,12 +13665,14 @@ groups:
           use: Must Not
       PESectionListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Section
           type: WinExecutableFileObj:PESectionType
           use: Must Not
       PESectionType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Section_Header
           type: WinExecutableFileObj:PESectionHeaderStructType
@@ -13763,6 +13688,7 @@ groups:
           use: Must Not
       PEType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -13826,6 +13752,7 @@ groups:
           use: Must Not
       PEVersionInfoResourceType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Type
           type: WinExecutableFileObj:PEResourceContentType
@@ -13892,6 +13819,7 @@ groups:
           use: Must Not
       SubsystemType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -13955,6 +13883,7 @@ groups:
           use: Must Not
       WindowsExecutableFileObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -14103,12 +14032,14 @@ groups:
     constructs:
       StreamListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Stream
           type: WinFileObj:StreamObjectType
           use: Must Not
       StreamObjectType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Hash
           type: cyboxCommon:HashType
@@ -14121,12 +14052,14 @@ groups:
           use: Must Not
       WindowsFileAttributesType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Attribute
           type: WinFileObj:WindowsFileAttributeType
           use: Must Not
       WindowsFileAttributeType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -14190,6 +14123,7 @@ groups:
           use: Must Not
       WindowsFileObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -14305,6 +14239,7 @@ groups:
           use: Must Not
       WindowsFilePermissionsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Full_Control
           type: xs:boolean
@@ -14326,12 +14261,14 @@ groups:
     constructs:
       UnformattedMessageListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Unformatted_Message
           type: cyboxCommon:StringObjectPropertyType
           use: Must Not
       WindowsEventLogObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -14402,6 +14339,7 @@ groups:
     constructs:
       WindowsHookObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -14427,6 +14365,7 @@ groups:
           use: Must Not
       WinHookType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -14493,6 +14432,7 @@ groups:
     constructs:
       HandleType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -14556,12 +14496,14 @@ groups:
           use: Must Not
       WindowsHandleListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Handle
           type: WinHandleObj:WindowsHandleObjectType
           use: Must Not
       WindowsHandleObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -14593,6 +14535,7 @@ groups:
     constructs:
       PageProtectionAttributeType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -14656,6 +14599,7 @@ groups:
           use: Must Not
       PageProtectionValueType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -14719,6 +14663,7 @@ groups:
           use: Must Not
       WindowsFilemappingObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -14756,6 +14701,7 @@ groups:
     constructs:
       KernelHookType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -14819,6 +14765,7 @@ groups:
           use: Must Not
       WindowsKernelHookObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -14856,12 +14803,14 @@ groups:
     constructs:
       IDTEntryListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: IDT_Entry
           type: WinKernelObj:IDTEntryType
           use: Must Not
       IDTEntryType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Type_Attr
           type: cyboxCommon:HexBinaryObjectPropertyType
@@ -14880,12 +14829,14 @@ groups:
           use: Must Not
       SSDTEntryListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: SSDT_Entry
           type: WinKernelObj:SSDTEntryType
           use: Must Not
       SSDTEntryType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: hooked
           type: xs:boolean
@@ -14905,6 +14856,7 @@ groups:
           use: Must Not
       WindowsKernelObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -14924,6 +14876,7 @@ groups:
     constructs:
       WindowsMailslotObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -14952,6 +14905,7 @@ groups:
     constructs:
       MemoryPageProtectionType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -15015,6 +14969,7 @@ groups:
           use: Must Not
       MemoryPageStateType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -15078,6 +15033,7 @@ groups:
           use: Must Not
       MemoryPageTypeType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -15141,6 +15097,7 @@ groups:
           use: Must Not
       WindowsMemoryPageRegionObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -15205,6 +15162,7 @@ groups:
     constructs:
       WindowsMutexObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -15230,6 +15188,7 @@ groups:
     constructs:
       NLRouteOriginType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -15293,6 +15252,7 @@ groups:
           use: Must Not
       NLRouteProtocolType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -15356,6 +15316,7 @@ groups:
           use: Must Not
       WindowsNetworkRouteEntryObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -15423,6 +15384,7 @@ groups:
     constructs:
       AccessPermissionsGroup:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: ACCESS_READ
           type: xs:boolean
@@ -15450,6 +15412,7 @@ groups:
           use: Must Not
       SharedResourceType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -15513,6 +15476,7 @@ groups:
           use: Must Not
       WindowsNetworkShareObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -15565,6 +15529,7 @@ groups:
     constructs:
       WindowsPipeObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -15608,18 +15573,21 @@ groups:
     constructs:
       AccessedDirectoryListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Accessed_Directory
           type: cyboxCommon:StringObjectPropertyType
           use: Must Not
       AccessedFileListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Accessed_Filename
           type: cyboxCommon:StringObjectPropertyType
           use: Must Not
       VolumeType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: VolumeItem
           type: WinVolumeObj:WindowsVolumeObjectType
@@ -15629,6 +15597,7 @@ groups:
           use: Must Not
       WindowsPrefetchObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -15666,6 +15635,7 @@ groups:
     constructs:
       WindowsDriveType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -15729,12 +15699,14 @@ groups:
           use: Must Not
       WindowsVolumeAttributesListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Attribute
           type: WinVolumeObj:WindowsVolumeAttributeType
           use: Must Not
       WindowsVolumeAttributeType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -15798,6 +15770,7 @@ groups:
           use: Must Not
       WindowsVolumeObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -15853,12 +15826,14 @@ groups:
     constructs:
       MemorySectionListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Memory_Section
           type: MemoryObj:MemoryObjectType
           use: Must Not
       StartupInfoType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: lpDesktop
           type: cyboxCommon:StringObjectPropertyType
@@ -15904,6 +15879,7 @@ groups:
           use: Must Not
       WindowsProcessObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -15998,6 +15974,7 @@ groups:
     constructs:
       ThreadRunningStatusType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -16061,6 +16038,7 @@ groups:
           use: Must Not
       WindowsThreadObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -16107,6 +16085,7 @@ groups:
     constructs:
       RegistryDatatypeType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -16170,6 +16149,7 @@ groups:
           use: Must Not
       RegistryHiveType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -16233,18 +16213,21 @@ groups:
           use: Must Not
       RegistrySubkeysType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Subkey
           type: WinRegistryKeyObj:WindowsRegistryKeyObjectType
           use: Must Not
       RegistryValuesType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Value
           type: WinRegistryKeyObj:RegistryValueType
           use: Must Not
       RegistryValueType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Name
           type: cyboxCommon:StringObjectPropertyType
@@ -16260,6 +16243,7 @@ groups:
           use: Must Not
       WindowsRegistryKeyObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -16303,6 +16287,7 @@ groups:
     constructs:
       WindowsSemaphoreObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -16334,12 +16319,14 @@ groups:
     constructs:
       ServiceDescriptionListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Description
           type: cyboxCommon:StringObjectPropertyType
           use: Must Not
       ServiceModeType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -16403,6 +16390,7 @@ groups:
           use: Must Not
       ServiceStatusType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -16466,6 +16454,7 @@ groups:
           use: Must Not
       ServiceType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -16529,6 +16518,7 @@ groups:
           use: Must Not
       WindowsServiceObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -16671,12 +16661,14 @@ groups:
     constructs:
       GlobalFlagListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Global_Flag
           type: WinSystemObj:GlobalFlagType
           use: Must Not
       GlobalFlagType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Abbreviation
           type: cyboxCommon:StringObjectPropertyType
@@ -16692,6 +16684,7 @@ groups:
           use: Must Not
       WindowsSystemObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -16783,6 +16776,7 @@ groups:
     constructs:
       ChangeLogEntryTypeType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -16846,12 +16840,14 @@ groups:
           use: Must Not
       HiveListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Hive
           type: cyboxCommon:StringObjectPropertyType
           use: Must Not
       WindowsSystemRestoreObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -16922,6 +16918,7 @@ groups:
     constructs:
       IComHandlerActionType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: COM_Data
           type: cyboxCommon:StringObjectPropertyType
@@ -16931,6 +16928,7 @@ groups:
           use: Must Not
       IExecActionType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Exec_Arguments
           type: cyboxCommon:StringObjectPropertyType
@@ -16946,6 +16944,7 @@ groups:
           use: Must Not
       IShowMessageActionType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Show_Message_Body
           type: cyboxCommon:StringObjectPropertyType
@@ -16955,12 +16954,14 @@ groups:
           use: Must Not
       TaskActionListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Action
           type: WinTaskObj:TaskActionType
           use: Must Not
       TaskActionType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Action_Type
           type: WinTaskObj:TaskActionTypeType
@@ -16982,6 +16983,7 @@ groups:
           use: Must Not
       TaskActionTypeType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -17045,6 +17047,7 @@ groups:
           use: Must Not
       TaskFlagType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -17108,6 +17111,7 @@ groups:
           use: Must Not
       TaskPriorityType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -17171,6 +17175,7 @@ groups:
           use: Must Not
       TaskStatusType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -17234,6 +17239,7 @@ groups:
           use: Must Not
       TaskTriggerFrequencyType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -17297,6 +17303,7 @@ groups:
           use: Must Not
       TaskTriggerType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -17360,12 +17367,14 @@ groups:
           use: Must Not
       TriggerListType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Trigger
           type: WinTaskObj:TriggerType
           use: Must Not
       TriggerType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: enabled
           type: xs:boolean
@@ -17394,6 +17403,7 @@ groups:
           use: Must Not
       WindowsTaskObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -17467,18 +17477,21 @@ groups:
     constructs:
       WindowsGroupType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Name
           type: cyboxCommon:StringObjectPropertyType
           use: Must Not
       WindowsPrivilegeType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: User_Right
           type: cyboxCommon:StringObjectPropertyType
           use: Must Not
       WindowsUserAccountObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -17549,6 +17562,7 @@ groups:
     constructs:
       WaitableTimerType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -17612,6 +17626,7 @@ groups:
           use: Must Not
       WindowsWaitableTimerObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -17637,6 +17652,7 @@ groups:
     constructs:
       RSAPublicKeyType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Modulus
           type: cyboxCommon:StringObjectPropertyType
@@ -17646,6 +17662,7 @@ groups:
           use: Must Not
       SubjectPublicKeyType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Public_Key_Algorithm
           type: cyboxCommon:StringObjectPropertyType
@@ -17655,6 +17672,7 @@ groups:
           use: Must Not
       ValidityType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Not_Before
           type: cyboxCommon:DateTimeObjectPropertyType
@@ -17664,6 +17682,7 @@ groups:
           use: Must Not
       X509CertificateContentsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Version
           type: cyboxCommon:IntegerObjectPropertyType
@@ -17694,6 +17713,7 @@ groups:
           use: Must Not
       X509CertificateObjectType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: object_reference
           type: xs:QName
@@ -17713,6 +17733,7 @@ groups:
           use: Must Not
       X509CertificateSignatureType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Signature_Algorithm
           type: cyboxCommon:StringObjectPropertyType
@@ -17722,6 +17743,7 @@ groups:
           use: Must Not
       X509NonStandardExtensionsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Netscape_Comment
           type: cyboxCommon:StringObjectPropertyType
@@ -17737,6 +17759,7 @@ groups:
           use: Must Not
       X509V3ExtensionsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Basic_Constraints
           type: cyboxCommon:StringObjectPropertyType
@@ -17788,6 +17811,7 @@ groups:
     constructs:
       AssociatedCampaignsType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: scope
           type: stixCommon:RelationshipScopeEnum
@@ -17798,6 +17822,7 @@ groups:
           use: Must Not
       AttributionType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: scope
           type: stixCommon:RelationshipScopeEnum
@@ -17808,6 +17833,7 @@ groups:
           use: Must Not
       CampaignType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -17872,12 +17898,14 @@ groups:
           use: Must Not
       NamesType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Name
           type: stixCommon:ControlledVocabularyStringType
           use: Must Not
       RelatedIncidentsType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: scope
           type: stixCommon:RelationshipScopeEnum
@@ -17888,6 +17916,7 @@ groups:
           use: Must Not
       RelatedIndicatorsType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: scope
           type: stixCommon:RelationshipScopeEnum
@@ -17898,6 +17927,7 @@ groups:
           use: Must Not
       RelatedTTPsType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: scope
           type: stixCommon:RelationshipScopeEnum
@@ -17911,6 +17941,7 @@ groups:
     constructs:
       ActivityType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Date_Time
           type: stixCommon:DateTimeWithPrecisionType
@@ -17920,8 +17951,10 @@ groups:
           use: Must Not
       AddressAbstractType:
         use: Must Not
+        is_vocab: false
       CampaignBaseType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -17934,6 +17967,7 @@ groups:
           use: Must Not
       CampaignReferenceType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: idref
           type: xs:QName
@@ -17947,12 +17981,14 @@ groups:
           use: Must Not
       ConfidenceAssertionChainType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Confidence_Assertion
           type: stixCommon:ConfidenceType
           use: Must Not
       ConfidenceType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: timestamp
           type: xs:dateTime
@@ -17975,12 +18011,14 @@ groups:
           use: Must Not
       ContributingSourcesType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Source
           type: stixCommon:InformationSourceType
           use: Must Not
       ControlledVocabularyStringType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: vocab_name
           type: xs:string
@@ -17990,6 +18028,7 @@ groups:
           use: Must Not
       CourseOfActionBaseType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -18002,18 +18041,21 @@ groups:
           use: Must Not
       DateTimeWithPrecisionType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: precision
           type: stixCommon:DateTimePrecisionEnum
           use: Must Not
       EncodedCDATAType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: encoded
           type: xs:boolean
           use: Must Not
       ExploitTargetBaseType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -18026,18 +18068,21 @@ groups:
           use: Must Not
       ExploitTargetsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Exploit_Target
           type: stixCommon:ExploitTargetBaseType
           use: Must Not
       GenericRelationshipListType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: scope
           type: stixCommon:RelationshipScopeEnum
           use: Must Not
       GenericRelationshipType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Confidence
           type: stixCommon:ConfidenceType
@@ -18050,6 +18095,7 @@ groups:
           use: Must Not
       IdentityType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -18066,6 +18112,7 @@ groups:
           use: Must Not
       IncidentBaseType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -18078,6 +18125,7 @@ groups:
           use: Must Not
       IndicatorBaseType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -18090,6 +18138,7 @@ groups:
           use: Must Not
       InformationSourceType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Description
           type: stixCommon:StructuredTextType
@@ -18114,6 +18163,7 @@ groups:
           use: Must Not
       KillChainPhaseReferenceType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: phase_id
           type: xs:QName
@@ -18132,12 +18182,14 @@ groups:
           use: Must Not
       KillChainPhasesReferenceType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Kill_Chain_Phase
           type: stixCommon:KillChainPhaseReferenceType
           use: Must Not
       KillChainPhaseType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: phase_id
           type: xs:QName
@@ -18150,12 +18202,14 @@ groups:
           use: Must Not
       KillChainsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Kill_Chain
           type: stixCommon:KillChainType
           use: Must Not
       KillChainType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -18178,24 +18232,28 @@ groups:
           use: Must Not
       NamesType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Name
           type: stixCommon:ControlledVocabularyStringType
           use: Must Not
       ProfilesType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Profile
           type: xs:anyURI
           use: Must Not
       ReferencesType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Reference
           type: xs:anyURI
           use: Must Not
       RelatedCampaignReferenceType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Confidence
           type: stixCommon:ConfidenceType
@@ -18211,6 +18269,7 @@ groups:
           use: Must Not
       RelatedCampaignType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Confidence
           type: stixCommon:ConfidenceType
@@ -18226,6 +18285,7 @@ groups:
           use: Must Not
       RelatedCourseOfActionType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Confidence
           type: stixCommon:ConfidenceType
@@ -18241,6 +18301,7 @@ groups:
           use: Must Not
       RelatedExploitTargetType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Confidence
           type: stixCommon:ConfidenceType
@@ -18256,12 +18317,14 @@ groups:
           use: Must Not
       RelatedIdentitiesType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Related_Identity
           type: stixCommon:RelatedIdentityType
           use: Must Not
       RelatedIdentityType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Confidence
           type: stixCommon:ConfidenceType
@@ -18277,6 +18340,7 @@ groups:
           use: Must Not
       RelatedIncidentType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Confidence
           type: stixCommon:ConfidenceType
@@ -18292,6 +18356,7 @@ groups:
           use: Must Not
       RelatedIndicatorType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Confidence
           type: stixCommon:ConfidenceType
@@ -18307,6 +18372,7 @@ groups:
           use: Must Not
       RelatedObservableType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Confidence
           type: stixCommon:ConfidenceType
@@ -18322,12 +18388,14 @@ groups:
           use: Must Not
       RelatedPackageRefsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Package_Reference
           type: stixCommon:RelatedPackageRefType
           use: Must Not
       RelatedPackageRefType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: idref
           type: xs:QName
@@ -18347,6 +18415,7 @@ groups:
           use: Must Not
       RelatedThreatActorType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Confidence
           type: stixCommon:ConfidenceType
@@ -18362,6 +18431,7 @@ groups:
           use: Must Not
       RelatedTTPType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Confidence
           type: stixCommon:ConfidenceType
@@ -18377,6 +18447,7 @@ groups:
           use: Must Not
       StatementType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: timestamp
           type: xs:dateTime
@@ -18399,12 +18470,14 @@ groups:
           use: Must Not
       StructuredTextType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: structuring_format
           type: xs:string
           use: Must Not
       ThreatActorBaseType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -18417,6 +18490,7 @@ groups:
           use: Must Not
       ToolInformationType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -18475,6 +18549,7 @@ groups:
           use: Must Not
       TTPBaseType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -18490,6 +18565,7 @@ groups:
     constructs:
       MarkingSpecificationType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -18512,6 +18588,7 @@ groups:
           use: Must Not
       MarkingStructureType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: marking_model_name
           type: xs:QName
@@ -18527,6 +18604,7 @@ groups:
           use: Must Not
       MarkingType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Marking
           type: marking:MarkingSpecificationType
@@ -18536,6 +18614,7 @@ groups:
     constructs:
       CourseOfActionType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -18597,6 +18676,7 @@ groups:
           use: Must Not
       ObjectiveType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Description
           type: stixCommon:StructuredTextType
@@ -18609,6 +18689,7 @@ groups:
           use: Must Not
       RelatedCOAsType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: scope
           type: stixCommon:RelationshipScopeEnum
@@ -18619,6 +18700,7 @@ groups:
           use: Must Not
       StructuredCOAType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -18631,6 +18713,7 @@ groups:
     constructs:
       AffectedSoftwareType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: scope
           type: stixCommon:RelationshipScopeEnum
@@ -18641,8 +18724,10 @@ groups:
           use: Must Not
       CCE_IDInlineType:
         use: Must Not
+        is_vocab: false
       ConfigurationType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Description
           type: stixCommon:StructuredTextType
@@ -18655,16 +18740,22 @@ groups:
           use: Must Not
       CVE_IDInlineType:
         use: Must Not
+        is_vocab: false
       CVSSBaseVectorType:
         use: Must Not
+        is_vocab: false
       CVSSEnvironmentalVectorType:
         use: Must Not
+        is_vocab: false
       CVSSScoreType:
         use: Must Not
+        is_vocab: false
       CVSSTemporalVectorType:
         use: Must Not
+        is_vocab: false
       CVSSVectorType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Overall_Score
           type: et:CVSSScoreType
@@ -18689,8 +18780,10 @@ groups:
           use: Must Not
       CWE_IDInlineType:
         use: Must Not
+        is_vocab: false
       ExploitTargetType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -18740,6 +18833,7 @@ groups:
           use: Must Not
       PotentialCOAsType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: scope
           type: stixCommon:RelationshipScopeEnum
@@ -18750,6 +18844,7 @@ groups:
           use: Must Not
       RelatedExploitTargetsType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: scope
           type: stixCommon:RelationshipScopeEnum
@@ -18760,6 +18855,7 @@ groups:
           use: Must Not
       VulnerabilityType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: is_known
           type: xs:boolean
@@ -18803,6 +18899,7 @@ groups:
           use: Must Not
       WeaknessType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Description
           type: stixCommon:StructuredTextType
@@ -18815,12 +18912,14 @@ groups:
     constructs:
       AffectedAssetsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Affected_Asset
           type: incident:AffectedAssetType
           use: Must Not
       AffectedAssetType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Type
           type: incident:AssetTypeType
@@ -18851,6 +18950,7 @@ groups:
           use: Must Not
       AssetTypeType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: vocab_name
           type: xs:string
@@ -18863,6 +18963,7 @@ groups:
           use: Must Not
       AttributedThreatActorsType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: scope
           type: stixCommon:RelationshipScopeEnum
@@ -18873,12 +18974,14 @@ groups:
           use: Must Not
       CategoriesType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Category
           type: stixCommon:ControlledVocabularyStringType
           use: Must Not
       COARequestedType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: priority
           type: ''
@@ -18895,6 +18998,7 @@ groups:
           use: Must Not
       COATakenType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Time
           type: incident:COATimeType
@@ -18907,6 +19011,7 @@ groups:
           use: Must Not
       COATimeType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Start
           type: stixCommon:DateTimeWithPrecisionType
@@ -18916,12 +19021,14 @@ groups:
           use: Must Not
       ContributorsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Contributor
           type: cyboxCommon:ContributorType
           use: Must Not
       DirectImpactSummaryType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Asset_Losses
           type: stixCommon:ControlledVocabularyStringType
@@ -18934,18 +19041,21 @@ groups:
           use: Must Not
       EffectsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Effect
           type: stixCommon:ControlledVocabularyStringType
           use: Must Not
       ExternalIDType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: source
           type: xs:string
           use: Must Not
       ExternalImpactAssessmentModelType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: model_name
           type: xs:string
@@ -18955,6 +19065,7 @@ groups:
           use: Must Not
       HistoryItemType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Action_Entry
           type: incident:COATakenType
@@ -18964,12 +19075,14 @@ groups:
           use: Must Not
       HistoryType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: History_Item
           type: incident:HistoryItemType
           use: Must Not
       ImpactAssessmentType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Direct_Impact_Summary
           type: incident:DirectImpactSummaryType
@@ -18991,6 +19104,7 @@ groups:
           use: Must Not
       IncidentType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -19097,6 +19211,7 @@ groups:
           use: Must Not
       IndirectImpactSummaryType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Loss_Of_Competitive_Advantage
           type: stixCommon:ControlledVocabularyStringType
@@ -19112,6 +19227,7 @@ groups:
           use: Must Not
       JournalEntryType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: author
           type: xs:string
@@ -19124,6 +19240,7 @@ groups:
           use: Must Not
       LeveragedTTPsType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: scope
           type: stixCommon:RelationshipScopeEnum
@@ -19134,6 +19251,7 @@ groups:
           use: Must Not
       LossEstimationType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: amount
           type: ''
@@ -19143,12 +19261,14 @@ groups:
           use: Must Not
       NatureOfSecurityEffectType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Property_Affected
           type: incident:PropertyAffectedType
           use: Must Not
       NonPublicDataCompromisedType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: vocab_name
           type: xs:string
@@ -19161,6 +19281,7 @@ groups:
           use: Must Not
       PropertyAffectedType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Property
           type: stixCommon:ControlledVocabularyStringType
@@ -19179,6 +19300,7 @@ groups:
           use: Must Not
       RelatedIncidentsType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: scope
           type: stixCommon:RelationshipScopeEnum
@@ -19189,6 +19311,7 @@ groups:
           use: Must Not
       RelatedIndicatorsType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: scope
           type: stixCommon:RelationshipScopeEnum
@@ -19199,6 +19322,7 @@ groups:
           use: Must Not
       RelatedObservablesType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: scope
           type: stixCommon:RelationshipScopeEnum
@@ -19209,6 +19333,7 @@ groups:
           use: Must Not
       TimeType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: First_Malicious_Action
           type: stixCommon:DateTimeWithPrecisionType
@@ -19239,6 +19364,7 @@ groups:
           use: Must Not
       TotalLossEstimationType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Initial_Reported_Total_Loss_Estimation
           type: incident:LossEstimationType
@@ -19251,6 +19377,7 @@ groups:
     constructs:
       CompositeIndicatorExpressionType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: operator
           type: indicator:OperatorTypeEnum
@@ -19261,6 +19388,7 @@ groups:
           use: Must Not
       IndicatorType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -19340,6 +19468,7 @@ groups:
           use: Must Not
       RelatedCampaignReferencesType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: scope
           type: stixCommon:RelationshipScopeEnum
@@ -19350,6 +19479,7 @@ groups:
           use: Must Not
       RelatedIndicatorsType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: scope
           type: stixCommon:RelationshipScopeEnum
@@ -19360,6 +19490,7 @@ groups:
           use: Must Not
       RelatedObservablesType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: scope
           type: stixCommon:RelationshipScopeEnum
@@ -19370,6 +19501,7 @@ groups:
           use: Must Not
       SightingsType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: sightings_count
           type: xs:integer
@@ -19380,6 +19512,7 @@ groups:
           use: Must Not
       SightingType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: timestamp
           type: xs:dateTime
@@ -19405,6 +19538,7 @@ groups:
           use: Must Not
       SuggestedCOAsType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: scope
           type: stixCommon:RelationshipScopeEnum
@@ -19415,12 +19549,14 @@ groups:
           use: Must Not
       TestMechanismsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Test_Mechanism
           type: indicator:TestMechanismType
           use: Must Not
       TestMechanismType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -19437,6 +19573,7 @@ groups:
           use: Must Not
       ValidTimeType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Start_Time
           type: stixCommon:DateTimeWithPrecisionType
@@ -19449,30 +19586,35 @@ groups:
     constructs:
       CampaignsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Campaign
           type: stixCommon:CampaignBaseType
           use: Must Not
       CoursesOfActionType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Course_Of_Action
           type: stixCommon:CourseOfActionBaseType
           use: Must Not
       IncidentsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Incident
           type: stixCommon:IncidentBaseType
           use: Must Not
       IndicatorsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Indicator
           type: stixCommon:IndicatorBaseType
           use: Must Not
       RelatedPackagesType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: scope
           type: stixCommon:RelationshipScopeEnum
@@ -19483,6 +19625,7 @@ groups:
           use: Must Not
       RelatedPackageType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Confidence
           type: stixCommon:ConfidenceType
@@ -19498,6 +19641,7 @@ groups:
           use: Must Not
       STIXHeaderType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Title
           type: xs:string
@@ -19522,6 +19666,7 @@ groups:
           use: Must Not
       STIXType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -19568,12 +19713,14 @@ groups:
           use: Must Not
       ThreatActorsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Threat_Actor
           type: stixCommon:ThreatActorBaseType
           use: Must Not
       TTPsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: TTP
           type: stixCommon:TTPBaseType
@@ -19586,69 +19733,19 @@ groups:
     constructs:
       AssetTypeVocab-1.0:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       AttackerInfrastructureTypeVocab-1.0:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       AttackerToolTypeVocab-1.0:
         use: Must Not
-        attributes:
-        - name: condition
-          type: cyboxCommon:ConditionTypeEnum
-          use: Must Not
-        - name: is_case_sensitive
-          type: xs:boolean
-          use: Must Not
-        - name: apply_condition
-          type: cyboxCommon:ConditionApplicationEnum
-          use: Must Not
-        - name: delimiter
-          type: xs:string
-          use: Must Not
-        - name: bit_mask
-          type: xs:hexBinary
-          use: Must Not
-        - name: pattern_type
-          type: cyboxCommon:PatternTypeEnum
-          use: Must Not
-        - name: regex_syntax
-          type: xs:string
-          use: Must Not
-        - name: has_changed
-          type: xs:boolean
-          use: Must Not
-        - name: trend
-          type: xs:boolean
-          use: Must Not
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       AvailabilityLossTypeVocab-1.0:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       AvailabilityLossTypeVocab-1.1.1:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: vocab_name
           type: xs:string
@@ -19658,195 +19755,70 @@ groups:
           use: Must Not
       CampaignStatusVocab-1.0:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       COAStageVocab-1.0:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       CourseOfActionTypeVocab-1.0:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       DiscoveryMethodVocab-1.0:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       HighMediumLowVocab-1.0:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       ImpactQualificationVocab-1.0:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       ImpactRatingVocab-1.0:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       IncidentCategoryVocab-1.0:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       IncidentEffectVocab-1.0:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       IncidentStatusVocab-1.0:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       IndicatorTypeVocab-1.0:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       IndicatorTypeVocab-1.1:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       InformationSourceRoleVocab-1.0:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       InformationTypeVocab-1.0:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       IntendedEffectVocab-1.0:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       LocationClassVocab-1.0:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       LossDurationVocab-1.0:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       LossPropertyVocab-1.0:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       MalwareTypeVocab-1.0:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       ManagementClassVocab-1.0:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       MotivationVocab-1.0:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       MotivationVocab-1.0.1:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: vocab_name
           type: xs:string
@@ -19856,42 +19828,19 @@ groups:
           use: Must Not
       MotivationVocab-1.1:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       OwnershipClassVocab-1.0:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       PackageIntentVocab-1.0:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       PlanningAndOperationalSupportVocab-1.0:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       PlanningAndOperationalSupportVocab-1.0.1:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: vocab_name
           type: xs:string
@@ -19901,45 +19850,22 @@ groups:
           use: Must Not
       SecurityCompromiseVocab-1.0:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       SystemTypeVocab-1.0:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       ThreatActorSophisticationVocab-1.0:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
       ThreatActorTypeVocab-1.0:
         use: Must Not
-        attributes:
-        - name: vocab_name
-          type: xs:string
-          use: Must Not
-        - name: vocab_reference
-          type: xs:anyURI
-          use: Must Not
+        is_vocab: true
   Threat Actor:
     project: stix
     constructs:
       AssociatedActorsType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: scope
           type: stixCommon:RelationshipScopeEnum
@@ -19950,6 +19876,7 @@ groups:
           use: Must Not
       AssociatedCampaignsType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: scope
           type: stixCommon:RelationshipScopeEnum
@@ -19960,6 +19887,7 @@ groups:
           use: Must Not
       ObservedTTPsType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: scope
           type: stixCommon:RelationshipScopeEnum
@@ -19970,6 +19898,7 @@ groups:
           use: Must Not
       ThreatActorType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -20037,12 +19966,14 @@ groups:
     constructs:
       AttackPatternsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Attack_Pattern
           type: ttp:AttackPatternType
           use: Must Not
       AttackPatternType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -20065,6 +19996,7 @@ groups:
           use: Must Not
       BehaviorType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Attack_Patterns
           type: ttp:AttackPatternsType
@@ -20077,12 +20009,14 @@ groups:
           use: Must Not
       ExploitsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Exploit
           type: ttp:ExploitType
           use: Must Not
       ExploitTargetsType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: scope
           type: stixCommon:RelationshipScopeEnum
@@ -20093,6 +20027,7 @@ groups:
           use: Must Not
       ExploitType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -20112,6 +20047,7 @@ groups:
           use: Must Not
       InfrastructureType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -20137,6 +20073,7 @@ groups:
           use: Must Not
       MalwareInstanceType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -20162,18 +20099,21 @@ groups:
           use: Must Not
       MalwareType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Malware_Instance
           type: ttp:MalwareInstanceType
           use: Must Not
       PersonasType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Persona
           type: stixCommon:IdentityType
           use: Must Not
       RelatedTTPsType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: scope
           type: stixCommon:RelationshipScopeEnum
@@ -20184,6 +20124,7 @@ groups:
           use: Must Not
       ResourceType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Tools
           type: ttp:ToolsType
@@ -20196,12 +20137,14 @@ groups:
           use: Must Not
       ToolsType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Tool
           type: stixCommon:ToolInformationType
           use: Must Not
       TTPType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -20260,6 +20203,7 @@ groups:
           use: Must Not
       VictimTargetingType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Identity
           type: stixCommon:IdentityType
@@ -20278,6 +20222,7 @@ groups:
     constructs:
       CIQAddress3.0InstanceType:
         use: Must Not
+        is_vocab: false
         fields:
         - name: Location
           type: a:AddressType
@@ -20287,6 +20232,7 @@ groups:
     constructs:
       CAPEC2.7InstanceType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -20315,6 +20261,7 @@ groups:
     constructs:
       CIQIdentity3.0InstanceType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -20337,11 +20284,13 @@ groups:
           use: Must Not
       STIXCIQIdentity3.0Type:
         use: Must Not
+        is_vocab: false
   MAEC 4.1 Malware Instance:
     project: stix
     constructs:
       MAEC4.1InstanceType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -20373,6 +20322,7 @@ groups:
     constructs:
       SimpleMarkingStructureType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: marking_model_name
           type: xs:QName
@@ -20395,6 +20345,7 @@ groups:
     constructs:
       TermsOfUseMarkingStructureType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: marking_model_name
           type: xs:QName
@@ -20417,6 +20368,7 @@ groups:
     constructs:
       TLPMarkingStructureType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: marking_model_name
           type: xs:QName
@@ -20438,6 +20390,7 @@ groups:
     constructs:
       GenericStructuredCOAType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -20463,6 +20416,7 @@ groups:
     constructs:
       GenericTestMechanismType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -20494,6 +20448,7 @@ groups:
     constructs:
       OpenIOC2010TestMechanismType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -20516,6 +20471,7 @@ groups:
     constructs:
       OVAL5.10TestMechanismType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -20541,6 +20497,7 @@ groups:
     constructs:
       SnortTestMechanismType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName
@@ -20578,6 +20535,7 @@ groups:
     constructs:
       YaraTestMechanismType:
         use: Must Not
+        is_vocab: false
         attributes:
         - name: id
           type: xs:QName

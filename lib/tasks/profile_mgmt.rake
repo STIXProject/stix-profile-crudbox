@@ -32,7 +32,19 @@ namespace :profile_mgmt do
             if type[1].enumeration? || type[0].include?("Enum") # let's ignore Enums for now
                 next
             end
-            this_type = {'use' => SchemaProfiler::USAGE_MUST_NOT, 'attributes' => [], 'fields' => []}
+            this_type = {
+                'use' => SchemaProfiler::USAGE_MUST_NOT,
+                'is_vocab' => false,
+                'attributes' => [],
+                 'fields' => []}
+            if not type[1].vocab?.nil?
+                this_type['is_vocab'] = true
+                this_type.delete('attributes')
+                this_type.delete('fields')
+                profile_hash['groups'][schema_title]['constructs'][type[0]] = this_type
+                next
+            end
+
             type[1].fields.each do |field|
                 this_field = {}
                 is_attr = field.name.start_with?("@")

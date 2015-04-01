@@ -19,7 +19,7 @@
             <select id="stix-selector" class="form-control group-accessor">
                 <option value="choose" selected disabled="disabled">Select a group...</option>
                 <% profile_modifying['groups'].select {|key, val| val['project'].downcase() == "stix"}.each do |group_name, group| %>
-                    <option value="<%= group_name %>" data-target="<%= group_name.gsub(" ", "_") %>">
+                    <option value="<%= group_name %>" data-target="<%= attributize(group_name) %>">
                         <%= group_name %>
                     </option>
                 <% end %>
@@ -30,7 +30,7 @@
             <select id="cybox-selector" class="form-control group-accessor">
                 <option value="choose" selected disabled="disabled">Select a group...</option>
                 <% profile_modifying['groups'].select {|key, val| val['project'].downcase() == "cybox"}.each do |group_name, group| %>
-                    <option value="<%= group_name %>" data-target="<%= group_name.gsub(" ", "_") %>">
+                    <option value="<%= group_name %>" data-target="<%= attributize(group_name) %>">
                         <%= group_name %>
                     </option>
                 <% end %>
@@ -38,10 +38,18 @@
         </div>
     </div>
     <div class="row">
+        <div class="col-xs-12">
+            <hr/>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
             <% profile_modifying['groups'].each do |group_name, group_hash| %>
-                <div id="<%= group_name.gsub(' ', '_') %>" style="display: none;">
-                    <h2 class="text-info text-center" style="font-weight: 500;"><%= group_name %></h2>
+                <div data-group-safe-name="<%= attributize(group_name) %>" data-group-display-name="<%= group_name %>" style="display: none;">
+                    <h2 class="text-primary text-center" style="font-weight: 500;">
+                        <%= group_name %>
+                    </h2>
+                    <hr style="width: 50%" />
                     <span>
                         <% group_hash['constructs'].each do |construct_name, construct_hash| %>
                             <%= render partial: "profile/shared/construct_group", locals: {group_name: group_name, construct_name: construct_name, construct: construct_hash } %>
@@ -79,27 +87,33 @@
         }
     }
 
+    function getConstructUse(grpName, constrName, use) {
+        return profile['groups'][grpName]['constructs'][constrName]['use'];
+    }
+
     $(".construct-usage-changer").click(function(evt) {
-        evt.preventDefault();
-        var thisEl = $(this);
-        var newUse = thisEl.attr('data-usage');
-
+        evt.preventDefault(); // don't act like a link; we're handling this click
+        var thisEl = $(this); // get this object as jQuery reference
+        var groupDiv = thisEl.closest("div[data-group-safe-name]"); // group root div with groupname info
+        var constrTable = thisEl.closest("table[data-construct-safe-name]"); // construct root table with constructname info
         var master = thisEl.parent().parent();
-        var constrName = master.attr('data-construct-name');
-        var button = $("#" + constrName + "-use-changer");
-        var buttonText = button.find(".use-info");
+        var button = $(".construct-usage-dropdown", master.parent()); // find the dropdown button
+        var buttonTextElem = button.find(".use-info");
 
-        var currUse = master.attr('data-construct-use');
-        var groupName = master.attr('data-group-name');
-        var className = currUse.toLowerCase().replace(/ /g, "-");
-        buttonText.text(newUse);
-        master.attr('data-construct-use', newUse)
-        button.removeClass("btn-" + className);
+        var groupRealName = groupDiv.attr('data-group-display-name'); // get group display name for this construct
+        var constRealName = constrTable.attr('data-construct-display-name'); // get construct display name for this construct
+        var groupName = groupDiv.attr('data-group-safe-name'); // get group name for this construct
+        var constName = constrTable.attr('data-construct-safe-name'); // get construct name
+        var currUse = getConstructUse(groupRealName, constRealName); // get current construct usage info
+        var newUse = thisEl.attr('data-usage'); // get the value the construct usage is going to be set to
+
+        buttonTextElem.text(newUse);
+        //master.attr('data-construct-use', newUse)
+        button.removeClass("btn-" + currUse.toLowerCase().replace(/ /g, "-"));
         button.addClass("btn-" + newUse.toLowerCase().replace(/ /g, "-"));
 
-        var table = $("#" + constrName.replace(/ /g, "-") + "-table");
-        var tableSects = table.find("thead, tbody");
-        var caption = table.find(".hidden-notice");
+        var tableSects = constrTable.find("thead, tbody");
+        var caption = constrTable.find(".hidden-notice");
         if (newUse === "<%= SchemaProfiler::USAGE_MUST_NOT %>") {
             tableSects.hide();
             caption.show();
@@ -108,34 +122,40 @@
             caption.hide();
         }
 
-        setConstructUse(groupName, constrName, newUse);
+        setConstructUse(groupRealName, constRealName, newUse);
     });
 
     $(".group-accessor").change(function(e) {
         if (active) {
             active.hide();
         }
-        var newId = "#" + this.value.replace(/ /g, "_").replace(/\./g, "\\.");
+        var newId = "div[data-group-safe-name=" + $("option:selected", this).attr("data-target") + "]";
         active = $(newId);
         active.show();
         $(".group-accessor").find('option:first').attr('selected', 'selected');
     });
 
     $(".field-usage-selector, .attr-usage-selector").change(function(e) { // when a field/attr usage level is changed, update the row highlighting
-        var newVal = this.value;
         var thisEl = $(this);
+        var groupDiv = thisEl.closest("div[data-group-safe-name]"); // group root div with groupname info
+        var constrTable = thisEl.closest("table[data-construct-safe-name]"); // construct root table with constructname info
         var parent = thisEl.parent().parent(); // this should be the <tr> for the field or attr
-        parent.removeClass();
-        parent.addClass(this.value.toLowerCase().replace(/ /g, "-"));
-        var groupName = thisEl.attr('data-group-name');
-        var constName = thisEl.attr('data-construct-name');
+        var newVal = this.value; // the new usage value
+
+        var groupRealName = groupDiv.attr('data-group-display-name'); // get group display name for this construct
+        var constRealName = constrTable.attr('data-construct-display-name'); // get construct display name for this construct
+        var groupName = groupDiv.attr('data-group-safe-name');
+        var constName = constrTable.attr('data-construct-safe-name');
         var idx = thisEl.attr('data-idx');
+
+        parent.removeClass();
+        parent.addClass(newVal.toLowerCase().replace(/ /g, "-"));
         if (thisEl.attr('data-attr-name') != null) {
             var attrName = thisEl.attr('data-attr-name');
             setAttributeUse(groupName, constName, attrName, idx, newVal);
         } else {
             var fieldName = thisEl.attr('data-field-name');
-            setFieldUse(groupName, constName, attrName, idx, newVal);
+            setFieldUse(groupRealName, constRealName, fieldName, idx, newVal);
         }
     });
 
