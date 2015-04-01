@@ -62,13 +62,20 @@
 </div>
 
 <script type="text/javascript">
-    var active = undefined;
+    var active = undefined; // the 'active' group/schema being viewed and edited
     var profile = JSON.parse('<%= profile_modifying.to_json.html_safe %>')
 
+    /**
+     * Set the usage info for the construct named @constrName in @grpName.
+     */
     function setConstructUse(grpName, constrName, use) {
         profile['groups'][grpName]['constructs'][constrName]['use'] = use;
     }
 
+    /**
+     * Set the usage info for an attribute named @attrName of @constrName in group @grpName.
+     * @idx is the index of the attribute in the list of attributes on the construct.
+     */
     function setAttributeUse(grpName, constrName, attrName, idx, use) {
         var attr = profile['groups'][grpName]['constructs'][constrName]['attributes'][idx];
         if (attr['name'] === attrName) {
@@ -78,6 +85,10 @@
         }
     }
 
+    /**
+     * Set the usage info for an field named @fieldName of @constrName in group @grpName.
+     * @idx is the index of the field in the list of attributes on the construct.
+     */
     function setFieldUse(grpName, constrName, fieldName, idx, use) {
         var field = profile['groups'][grpName]['constructs'][constrName]['fields'][idx];
         if (field['name'] === fieldName) {
@@ -87,10 +98,16 @@
         }
     }
 
-    function getConstructUse(grpName, constrName, use) {
+    /**
+     * Get the current usage setting of the construct named @constrName in group @grpName.
+     */
+    function getConstructUse(grpName, constrName) {
         return profile['groups'][grpName]['constructs'][constrName]['use'];
     }
 
+    /**
+     * jQuery handler for when the usage setting of a particular construct is changed.
+     */
     $(".construct-usage-changer").click(function(evt) {
         evt.preventDefault(); // don't act like a link; we're handling this click
         var thisEl = $(this); // get this object as jQuery reference
@@ -125,6 +142,9 @@
         setConstructUse(groupRealName, constRealName, newUse);
     });
 
+    /**
+     * jQuery handler for when a group of constructs (read: a schema group) is selected for viewing.
+     */
     $(".group-accessor").change(function(e) {
         if (active) {
             active.hide();
@@ -135,6 +155,9 @@
         $(".group-accessor").find('option:first').attr('selected', 'selected');
     });
 
+    /**
+     * jQuery handlers for when a construct's field or attribute is changed.
+     */
     $(".field-usage-selector, .attr-usage-selector").change(function(e) { // when a field/attr usage level is changed, update the row highlighting
         var thisEl = $(this);
         var groupDiv = thisEl.closest("div[data-group-safe-name]"); // group root div with groupname info
