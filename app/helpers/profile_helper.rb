@@ -95,57 +95,61 @@ module ProfileHelper
     def profile_to_excel(pyaml)
         p = Axlsx::Package.new
         wb = p.workbook
-        pyaml.each do |key, value|
-            if key.length >= 31
-                smallkey = key[0...28] + "..."
-            else
-                smallkey = key
-            end
-            wb.add_worksheet(:name => smallkey) do |sheet|
-                sheet.add_row [key]
-                sheet.merge_cells("A1:G1")
-                if value["constructs"].nil?
-                    excel_cybox_objects(sheet, value)
+        wb.styles do |s|
+            title_cell = s.add_style :fg_color => "00", :sz => 20, :border => { :style => :thick, :color => "5182bb", :edges => [:bottom] }
+            header_cell = s.add_style :fg_color => "00", :sz => 14, :border => { :style => :thick, :color => "5182bb", :edges => [:bottom] }
+            pyaml['groups'].each do |groupName, groupHash|
+                if groupName.length >= 31
+                    smallkey = groupName[0...28] + "..."
                 else
-                    excel_constructs(sheet, value)
+                    smallkey = groupName
+                end
+                wb.add_worksheet(:name => smallkey) do |sheet|
+                    sheet.add_row [groupName, "", ""], :style => [title_cell, title_cell, title_cell]
+                    sheet.merge_cells("A1:C1")
+                    sheet.add_row []
+                    sheet.add_row ["Field", "Type", "Occurrence     "], :style => [header_cell, header_cell, header_cell]
+                    excel_constructs(sheet, groupHash, s)
                 end
             end
         end
         return p
     end
 
-    def excel_cybox_objects(sheet, objects)
-        sheet.add_row ["GROUPS"]
-        objects.each do |key, object|
-            sheet.add_row ["", key]
-            excel_constructs(sheet, object)
-            sheet.add_row []
-        end
-    end
-
-    def excel_constructs(sheet, value)
-        sheet.add_row []
+    def excel_constructs(sheet, value, xl_styles)
+        construct_header = xl_styles.add_style :bg_color => "00", :fg_color => "FF", :sz => 14
+        col_styles = {
+            'must' =>  (xl_styles.add_style :bg_color => "96b4d6", :fg_color => "18375b", :sz => 12),
+            'should' => (xl_styles.add_style :bg_color => "c7eecf", :fg_color => "09600b", :sz => 12),
+            'may' => (xl_styles.add_style :bg_color => "f9bf87", :fg_color => "bf6915", :sz => 12),
+            'should not' => (xl_styles.add_style :bg_color => "feeaa0", :fg_color => "bd6b15", :sz => 12),
+            'must not' => (xl_styles.add_style :bg_color => "fec7ce", :fg_color => "9a0511", :sz => 12)
+        }
         sheet.add_row []
         value['constructs'].each do |key, construct|
-            sheet.add_row [key]
+            row = sheet.add_row [key, "", ""], :style => [construct_header]
+            row_idx = sheet.rows.index(row)
+            sheet.merge_cells(row.cells[(0..2)])
             if construct['attributes']
-                sheet.add_row ["attributes"]
-                excel_fields(sheet, construct['attributes'])
+                excel_fields(sheet, construct['attributes'], col_styles, true)
             end
-            if construct['elements']
-                sheet.add_row ["elements"]
-                excel_fields(sheet, construct['elements'])
+            if construct['fields']
+                excel_fields(sheet, construct['fields'], col_styles)
             end
             sheet.add_row []
         end
     end
 
-    def excel_fields(sheet, fields)
+    def excel_fields(sheet, fields, styles, attributes = false)
         fields.each do |key, field|
+            if attributes
+                key = "@" + key
+            end
             if field.has_key?("type") and not field['type'].nil?
-                sheet.add_row [key, "Type: " + field["type"], field['use']]
+                curr_style = styles[field['use'].downcase()]
+                sheet.add_row [key, field["type"], field['use']], :style => [curr_style, curr_style, curr_style]
             else
-                sheet.add_row [key, "Type: <NONE>", field['use']]
+                sheet.add_row [key, "", field['use']]
             end
         end
     end
