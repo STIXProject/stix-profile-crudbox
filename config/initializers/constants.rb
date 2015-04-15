@@ -1,3 +1,6 @@
+# Copyright (c) 2015 - The MITRE Corporation
+# For license information, see the LICENSE.txt file
+#
 module SchemaProfiler
     USAGE_MUST = "Must"
     USAGE_SHOULD = "Should"

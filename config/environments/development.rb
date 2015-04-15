@@ -1,3 +1,6 @@
+# Copyright (c) 2015 - The MITRE Corporation
+# For license information, see the LICENSE.txt file
+#
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 

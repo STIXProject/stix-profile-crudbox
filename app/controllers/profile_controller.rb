@@ -1,3 +1,6 @@
+# Copyright (c) 2015 - The MITRE Corporation
+# For license information, see the LICENSE.txt file
+#
 require 'axlsx'
 require "yaml"
 require "safe_yaml/load"

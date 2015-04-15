@@ -1,3 +1,6 @@
+# Copyright (c) 2015 - The MITRE Corporation
+# For license information, see the LICENSE.txt file
+#
 Rails.application.routes.draw do
     root "profile#index"
     get "/profile/create", to: "profile#create"
