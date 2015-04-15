@@ -8,20 +8,25 @@ namespace :profile_mgmt do
 
     desc ""
     task :print_schemas do
-        profile = {} # ActiveSupport::OrderedHash.new
-        profile['name'] = 'Baseline Profile'
-        profile['version'] = ''
+        profile = {}
+        profile['name'] = "Baseline Profile"
+        profile['stix_version'] = ''
+        profile['version'] = 1
+        profile['status'] = "Approved"
+        profile['contact'] = "stix@mitre.org"
+        profile['distribution'] = "public"
+        profile['description'] = "Baseline profile for STIX 1.1.1, for use in generating clean profiles and clean comparisons."
         profile['groups'] = {}
         StixSchemaSpy::Schema.all.each do |schema|
-            if profile['version'].empty?
-                profile['version'] = schema.stix_version
+            if profile['stix_version'].empty?
+                profile['stix_version'] = schema.stix_version
             end
             if not schema.title.nil?
                 profile['groups'][schema.title] = {'project' => schema.project.to_s, 'constructs' => {}}
                 process_schema(profile, schema)
             end
         end
-        base_prof = File.open(Rails.root.join("test_profile_#{profile['version']}.yaml"), "w")
+        base_prof = File.open(Rails.root.join("test_profile_#{profile['stix_version']}.yaml"), "w")
         base_prof.write(YAML.dump(profile))
         base_prof.close
     end
@@ -61,75 +66,5 @@ namespace :profile_mgmt do
             end
             profile_hash['groups'][schema_title]['constructs'][type[0]] = this_type
         end
-    end
-
-    desc "Update the baseline profile information"
-    task :update_baseline do
-
-        profile_hash = {}
-        profile_hash["Profile Name"] = "Baseline Profile"
-        profile_hash["STIX Version"] = "1.1.1"
-        @schemas = Dir.glob(Rails.root.join("schemas/*.xsd"))
-        for file in @schemas
-            process_xsd(profile_hash, file, 0, "STIX - " + File.basename(file, ".xsd").gsub("_", " ").titleize)
-        end
-        for file in Dir.glob(Rails.root.join("schemas/cybox/*.xsd"))
-            process_xsd(profile_hash, file, 0, "CybOX - " + File.basename(file, ".xsd").gsub("_", " ").titleize)
-        end
-        object_hash = {}
-        profile_hash["CybOX - Objects"] = object_hash
-        for file in Dir.glob(Rails.root.join("schemas/cybox/objects/*.xsd"))
-            title = File.basename(file, ".xsd").gsub("_", " ").titleize
-            process_xsd(object_hash, file, 1, title)
-        end
-        base_prof = File.open(Rails.root.join("base_profile.yaml"), "w")
-        base_prof.write(YAML.dump(profile_hash))
-        base_prof.close
-    end
-
-    def process_xsd(profile_hash, file, level, title)
-        xsd_hash = { }
-        constructs = { }
-        xsd = File.open(file)
-        ndoc = Nokogiri::XML(xsd)
-        for elem in ndoc.xpath("//xs:complexType")
-            const_hash = {}
-            constructs[elem['name']] = const_hash
-            attrs = elem.xpath(".//xs:attribute")
-            fields = elem.xpath(".//xs:sequence//xs:element")
-            if not attrs.to_a.empty?
-                attr_hash = {}
-                const_hash["attributes"] = attr_hash
-                for attrb in attrs
-                    ref = attrb['ref']
-                    name = attrb['name']
-                    type = attrb['type']
-                    if ref
-                        attr_hash[ref] = {"type" => ref, "use" => SchemaProfiler::USAGE_PROHIBITED}
-                    else
-                        attr_hash[name] = {"type" => type, "use" => SchemaProfiler::USAGE_PROHIBITED}
-                    end
-                end
-            end
-            if not fields.to_a.empty?
-                elem_hash = {}
-                const_hash["elements"] = elem_hash
-                for attrb in fields
-                    ref = attrb['ref']
-                    name = attrb['name']
-                    type = attrb['type']
-                    if ref
-                        elem_hash[ref] = {"type" => ref, "use" => SchemaProfiler::USAGE_PROHIBITED}
-                    else
-                        elem_hash[name] = {"type" => type, "use" => SchemaProfiler::USAGE_PROHIBITED}
-                    end
-                end
-            end
-        end
-        if not constructs.to_a.empty?
-            xsd_hash["constructs"] = constructs
-        end
-        xsd.close
-        profile_hash[title] = xsd_hash
     end
 end

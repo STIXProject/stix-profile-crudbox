@@ -1,6 +1,12 @@
 ---
 name: Baseline Profile
-version: 1.1.1
+stix_version: 1.1.1
+version: 1
+status: Approved
+contact: stix@mitre.org
+distribution: public
+description: "Baseline profile for STIX 1.1.1, for use in generating clean profiles
+  and clean comparisons."
 groups:
   CybOX Common:
     project: cybox

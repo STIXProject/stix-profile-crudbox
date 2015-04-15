@@ -50,13 +50,13 @@
 
     <% if construct.has_key?("attributes") || construct.has_key?("fields") %>
         <caption class="hidden-notice" style="<%= 'display:none;' if SchemaProfiler::USAGE_MUST_NOT != construct['use'] %>">
-            Table hidden because construct is marked <strong>"<%= SchemaProfiler::USAGE_MUST_NOT %>"</strong>
+            Details hidden because construct is marked <strong>"<%= SchemaProfiler::USAGE_MUST_NOT %>"</strong>
         </caption>
         <thead style="<%= 'display:none;' if SchemaProfiler::USAGE_MUST_NOT == construct['use'] %>">
             <tr>
-                <th style="min-width: 300px; width: 300px;">Name</th>
-                <th style="width: 500px; min-width: 500px;">Type</th>
-                <th style="width: 125px; min-width: 125px;">Usage</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Usage</th>
             </tr>
         </thead>
     <% elsif construct.has_key?("is_vocab") && construct['is_vocab'] %>
