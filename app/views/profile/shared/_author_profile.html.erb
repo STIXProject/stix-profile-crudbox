@@ -14,100 +14,103 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-12 text-center">
-            <h3 class="text-primary">Profile Info</h3>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-4 col-sm-offset-2 text-center">
-            <div class="form-group">
-                <label for="profile-name">Profile Name</label>
-                <input type="text" class="form-control input-sm" id="profile-name" value="<%= profile_modifying['name'] %>">
+        <div id="metadata-container" class="col-xs-12 col-sm-4 col-md-3">
+            <div id="profile-metadata" data-spy="affix" data-offset-top="230">
+                <h3 class="text-primary">Profile Info</h3>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="form-group">
+                            <label for="profile-name">Name</label>
+                            <input type="text" class="form-control input-sm" id="profile-name" value="<%= profile_modifying['name'] %>">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="form-group">
+                            <label for="profile-status">Status</label>
+                            <input type="text" class="form-control input-sm" id="profile-status" value="<%= profile_modifying['status'] %>">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="form-group">
+                            <label for="profile-stix-version">STIX Version</label>
+                            <input type="text" class="form-control input-sm" id="profile-stix-version" value="<%= profile_modifying['stix_version'] %>">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="form-group">
+                            <label for="profile-version">Version</label>
+                            <input type="text" class="form-control input-sm" id="profile-version" value="<%= profile_modifying['version'] %>">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="form-group">
+                            <label for="profile-contact">Contact</label>
+                            <input type="text" class="form-control input-sm" id="profile-contact" value="<%= profile_modifying['contact'] %>">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="form-group">
+                            <label for="profile-dist">Distribution</label>
+                            <input type="text" class="form-control input-sm" id="profile-dist" value="<%= profile_modifying['distribution'] %>">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="profile-name">Profile Description</label>
+                    <textarea rows="3" class="form-control input-sm" id="profile-desc"><%= profile_modifying['description'].strip %></textarea>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="profile-version">Profile Version</label>
-                <input type="text" class="form-control input-sm" id="profile-version" value="<%= profile_modifying['version'] %>">
+        </div>
+        <div id="groups-container" class="col-xs-12 col-sm-8 col-md-9">
+            <h3 class="text-primary text-center">Choose Groups...</h3>
+            <div class="row">
+                <div class="col-xs-6 text-center">
+                    <select id="stix-selector" class="form-control group-accessor">
+                        <option value="choose" selected disabled="disabled">...from STIX</option>
+                        <% profile_modifying['groups'].select {|key, val| val['project'].downcase() == "stix"}.each do |group_name, group| %>
+                            <option value="<%= group_name %>" data-target="<%= attributize(group_name) %>">
+                                <%= group_name %>
+                            </option>
+                        <% end %>
+                    </select>
+                </div>
+                <div class="col-xs-6 text-center">
+                    <select id="cybox-selector" class="form-control group-accessor">
+                        <option value="choose" selected disabled="disabled">...from CybOX</option>
+                        <% profile_modifying['groups'].select {|key, val| val['project'].downcase() == "cybox"}.each do |group_name, group| %>
+                            <option value="<%= group_name %>" data-target="<%= attributize(group_name) %>">
+                                <%= group_name %>
+                            </option>
+                        <% end %>
+                    </select>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="profile-stix-version">STIX Version</label>
-                <input type="text" class="form-control input-sm" id="profile-stix-version" value="<%= profile_modifying['stix_version'] %>">
+            <div class="row">
+                <div class="col-xs-12">
+                    <hr/>
+                </div>
             </div>
-        </div>
-        <div class="col-xs-12 col-sm-4 text-center">
-            <div class="form-group">
-                <label for="profile-contact">Contact</label>
-                <input type="text" class="form-control input-sm" id="profile-contact" value="<%= profile_modifying['contact'] %>">
-            </div>
-            <div class="form-group">
-                <label for="profile-dist">Distribution</label>
-                <input type="text" class="form-control input-sm" id="profile-dist" value="<%= profile_modifying['distribution'] %>">
-            </div>
-            <div class="form-group">
-                <label for="profile-status">Status</label>
-                <input type="text" class="form-control input-sm" id="profile-status" value="<%= profile_modifying['status'] %>">
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-            <div class="form-group text-center">
-                <label for="profile-name">Profile Description</label>
-                <textarea rows="3" class="form-control input-sm" id="profile-desc"><%= profile_modifying['description'].strip %></textarea>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12">
-            <hr/>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12">
-            <h3 class="text-primary text-center">Profile Groups</h3>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-6 col-sm-3 col-sm-offset-3 text-center">
-            <label for="stix-selector"><h4>STIX Groups</h4></label>
-            <select id="stix-selector" class="form-control group-accessor">
-                <option value="choose" selected disabled="disabled">Select a group...</option>
-                <% profile_modifying['groups'].select {|key, val| val['project'].downcase() == "stix"}.each do |group_name, group| %>
-                    <option value="<%= group_name %>" data-target="<%= attributize(group_name) %>">
-                        <%= group_name %>
-                    </option>
-                <% end %>
-            </select>
-        </div>
-        <div class="col-xs-6 col-sm-3 text-center">
-            <label for="cybox-selector"><h4>CybOX Groups</h4></label>
-            <select id="cybox-selector" class="form-control group-accessor">
-                <option value="choose" selected disabled="disabled">Select a group...</option>
-                <% profile_modifying['groups'].select {|key, val| val['project'].downcase() == "cybox"}.each do |group_name, group| %>
-                    <option value="<%= group_name %>" data-target="<%= attributize(group_name) %>">
-                        <%= group_name %>
-                    </option>
-                <% end %>
-            </select>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12">
-            <hr/>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12">
-            <% profile_modifying['groups'].each do |group_name, group_hash| %>
-                <div data-group-safe-name="<%= attributize(group_name) %>" data-group-display-name="<%= group_name %>" style="display: none;">
-                    <h2 class="text-primary text-center" style="font-weight: 500;">
-                        <%= group_name %>
-                    </h2>
-                    <hr style="width: 50%" />
-                    <% group_hash['constructs'].each do |construct_name, construct_hash| %>
-                        <%= render partial: "profile/shared/construct_group", locals: {group_name: group_name, construct_name: construct_name, construct: construct_hash } %>
+            <div class="row">
+                <div class="col-xs-12">
+                    <% profile_modifying['groups'].each do |group_name, group_hash| %>
+                        <div data-group-safe-name="<%= attributize(group_name) %>" data-group-display-name="<%= group_name %>" style="display: none;">
+                            <h2 class="text-primary text-center" style="font-weight: 500;">
+                                <%= group_name %>
+                            </h2>
+                            <hr style="width: 50%" />
+                            <% group_hash['constructs'].each do |construct_name, construct_hash| %>
+                                <%= render partial: "profile/shared/construct_group", locals: {group_name: group_name, construct_name: construct_name, construct: construct_hash } %>
+                            <% end %>
+                        </div>
                     <% end %>
                 </div>
-            <% end %>
+            </div>
         </div>
     </div>
 </div>

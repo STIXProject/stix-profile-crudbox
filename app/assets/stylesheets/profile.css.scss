@@ -7,6 +7,11 @@ $may-color: #fcf8e3;
 $should-not-color: #FF9157;
 $must-not-color: #f2dede;
 
+@import "bootswatch/yeti/variables";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "bootswatch/yeti/bootswatch";
+
 .prof1 {
     color: $prof1-color;
 }
@@ -216,4 +221,40 @@ tr.must-not > td {
 
 .hidden-notice {
     font-style: italic;
+}
+
+#metadata-container {
+    background-color: #eeeeee;
+}
+
+#profile-metadata {
+    padding-bottom: 10px;
+    background-color: #eeeeee;
+    .form-group {
+        margin-bottom: 3px;
+    }
+
+    &.affix {
+        @media (max-width: $screen-sm) {
+            position: static !important; // makes the sidebar into a row on XS screen sizes
+        }
+        @media (min-width: $screen-sm) {
+            top: 50px;
+            left: 0px;
+            padding-left: 15px;
+            padding-right: 15px;
+            width: 256px;
+        }
+        @media (min-width: $screen-md) {
+            width: 240px;
+        }
+
+        @media (min-width: $screen-lg) {
+            width: 290px;
+        }
+    }
+}
+
+#groups-container {
+    min-height: 600px; // set min height on main content larger than sidebar to stop crazy jumping in affix cases
 }
