@@ -1,3 +1,5 @@
+**WARNING: This project is no longer active or maintained. Please contact stix@mitre.org with any questions or feedback.**
+
 stix-profile-crudbox
 ====================
 
